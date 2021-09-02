@@ -1,0 +1,43 @@
+/* .navbar-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateZ(0);
+  z-index: 100;
+} */
+
+.navbar-bg {
+  background-color: rgb(238, 77, 45);
+}
+
+.navbar-light .navbar-nav {
+  color: white;
+}
+
+.search-bnt {
+  color: white;
+  border-color: gray;
+}
+
+.d-flex {
+  width: auto;
+}
+
+.navbar-light .navbar-toggler {
+  margin-left: 16px;
+}
+
+.navbar-collapse {
+  margin-left: 16px;
+  margin-right: 16px;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-title-layout {
+  margin-right: 10px;
+  margin-left: 10px;
+  color: white !important;
+}

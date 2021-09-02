@@ -1,0 +1,48 @@
+import * as types from "../constants/auth.constants";
+import { toast } from "react-toastify";
+import api from "../../apiService";
+
+const register = (formData) => async (dispatch) => {
+  console.log(formData);
+  dispatch({ type: types.REGISTER_REQUEST });
+
+  try {
+    const data = await api.post("/auth/register", formData);
+    console.log(data);
+    dispatch({ type: types.REGISTER_SUCCESS, payload: data });
+    toast.success("Register successfully!");
+  } catch (error) {
+    dispatch({ type: types.REGISTER_FAILURE });
+  }
+};
+
+const login = (formData) => async (dispatch) => {
+  console.log("hahaha", formData);
+  dispatch({ type: types.LOGIN_REQUEST });
+
+  try {
+    const data = await api.post("/auth/login", formData);
+    console.log(data);
+    dispatch({ type: types.LOGIN_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: types.LOGIN_FAILURE });
+  }
+};
+
+const createProduct = (formData) => async (dispatch) => {
+  console.log("hahahahahahaha", formData);
+  dispatch({ type: types.POST_CREATE_PRODUCT_REQUEST });
+  try {
+    const data = await api.post("/auth/create", formData);
+    console.log(data);
+    dispatch({ type: types.POST_CREATE_PRODUCT_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: types.POST_CREATE_PRODUCT_FAILURE });
+  }
+};
+
+export const authActions = {
+  register,
+  login,
+  createProduct,
+};
