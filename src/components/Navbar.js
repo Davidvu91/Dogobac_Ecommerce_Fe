@@ -35,6 +35,10 @@ const Navbarr = () => {
           <Nav.Link as={Link} to="/auth/create" className="nav-title-layout">
             Create Product
           </Nav.Link>
+
+          <Nav.Link as={Link} to="/auth/profile" className="nav-title-layout">
+            Profile
+          </Nav.Link>
         </Nav>
         {/* <Form className="d-flex">
           <FormControl

@@ -9,6 +9,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import CreateProduct from "./pages/CreateProduct";
 import CartPage from "./pages/CartPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path={`/auth/login`} component={LoginPage} />
         <Route exact path={`/auth/register`} component={RegisterPage} />
         <Route exact path={`/auth/create`} component={CreateProduct} />
+        <Route exact path={`/auth/profile`} component={ProfilePage} />
       </Switch>
     </Router>
   );

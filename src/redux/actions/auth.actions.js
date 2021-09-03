@@ -3,11 +3,12 @@ import { toast } from "react-toastify";
 import api from "../../apiService";
 
 const register = (formData) => async (dispatch) => {
-  console.log(formData);
+  console.log("register info:", formData);
   dispatch({ type: types.REGISTER_REQUEST });
+  const LOCAL_BE_URL = "http://localhost:5000";
 
   try {
-    const data = await api.post("/auth/register", formData);
+    const data = await api.post(`${LOCAL_BE_URL}/user/create`, formData);
     console.log(data);
     dispatch({ type: types.REGISTER_SUCCESS, payload: data });
     toast.success("Register successfully!");
@@ -30,7 +31,7 @@ const login = (formData) => async (dispatch) => {
 };
 
 const createProduct = (formData) => async (dispatch) => {
-  console.log("hahahahahahaha", formData);
+  console.log("product info:", formData);
   dispatch({ type: types.POST_CREATE_PRODUCT_REQUEST });
   try {
     const data = await api.post("/auth/create", formData);
