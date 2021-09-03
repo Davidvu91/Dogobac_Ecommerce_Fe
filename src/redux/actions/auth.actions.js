@@ -11,7 +11,7 @@ const register = (formData) => async (dispatch) => {
   try {
     const data = await api.post(`${LOCAL_BE_URL}/user/create`, formData);
     console.log(data);
-    dispatch({ type: types.REGISTER_SUCCESS, payload: data });
+    dispatch({ type: types.REGISTER_SUCCESS, payload: data.data.data });
     toast.success("Register successfully!");
   } catch (error) {
     dispatch({ type: types.REGISTER_FAILURE });

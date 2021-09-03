@@ -5,6 +5,7 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_BACKEND_API,
   headers: {
     "Content-Type": "application/json",
+    Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
   },
 });
 
@@ -21,6 +22,9 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     console.log("Response:", response);
+    if (response.data.data.accessToken) {
+      localStorage.setItem("accessToken", response.data.data.accessToken);
+    }
     return response;
   },
   function (error) {
