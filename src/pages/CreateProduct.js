@@ -7,16 +7,20 @@ import "./style.css";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
-  const [formData, setstatFormData] = useState("");
+  const [formData, setFormData] = useState("");
+  const [getImage1, setGetImage1] = useState("");
+  const [getImage2, setGetImage2] = useState("");
+  const [getImage3, setGetImage3] = useState("");
+  console.log("uapload anh thanh cong", getImage1);
 
   const handleOnChange = (e) => {
-    setstatFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   // Setup Data before send to dispatch Action:
   let passData = {
     category: formData.category,
     dimension: formData.dimension,
-    imageUrl: [formData.imgUrl1, formData.imgUrl2, formData.imgUrl3],
+    imageUrl: [getImage1, getImage2, getImage3],
     info: formData.info,
     material: formData.material,
     name: formData.name,
@@ -31,8 +35,53 @@ const CreateProduct = () => {
     dispatch(authActions.createProduct(passData));
   };
 
+  //Upload Image1 functin
+  var myWidget1 = window.cloudinary.createUploadWidget(
+    {
+      cloudName: "dejusl2dv",
+      uploadPreset: "dogobac",
+    },
+    (error, result) => {
+      if (!error && result && result.event === "success") {
+        console.log("Done! Here is the image info: ", result.info);
+        let imageUrl1 = result.info.url;
+        setGetImage1(imageUrl1);
+      }
+    }
+  );
+
+  //Upload Image2 functin
+  var myWidget2 = window.cloudinary.createUploadWidget(
+    {
+      cloudName: "dejusl2dv",
+      uploadPreset: "dogobac",
+    },
+    (error, result) => {
+      if (!error && result && result.event === "success") {
+        console.log("Done! Here is the image info: ", result.info);
+        let imageUrl1 = result.info.url;
+        setGetImage2(imageUrl1);
+      }
+    }
+  );
+
+  //Upload Image3 functin
+  var myWidget3 = window.cloudinary.createUploadWidget(
+    {
+      cloudName: "dejusl2dv",
+      uploadPreset: "dogobac",
+    },
+    (error, result) => {
+      if (!error && result && result.event === "success") {
+        console.log("Done! Here is the image info: ", result.info);
+        let imageUrl1 = result.info.url;
+        setGetImage3(imageUrl1);
+      }
+    }
+  );
+
   return (
-    <div style={{ width: "80%", margin: "auto" }}>
+    <div style={{ width: "60%", margin: "auto" }}>
       <Form onSubmit={handleSubmit} className="loginForm">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
@@ -87,38 +136,41 @@ const CreateProduct = () => {
             onChange={handleOnChange}
           />
         </Form.Group>
+
+        {/* upload image below*/}
         <Row className="Url-image-row">
           <Col>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control
-                type="text"
-                placeholder="Image Url1"
-                name="imgUrl1"
-                onChange={handleOnChange}
-              />
-            </Form.Group>
+            <button
+              id="upload_widget"
+              class="cloudinary-button"
+              onClick={myWidget1.open}
+              className="uploadImg-btn"
+            >
+              Image 1
+            </button>
           </Col>
           <Col>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control
-                type="text"
-                placeholder="Image Url2"
-                name="imgUrl2"
-                onChange={handleOnChange}
-              />
-            </Form.Group>
+            <button
+              id="upload_widget"
+              class="cloudinary-button"
+              onClick={myWidget2.open}
+              className="uploadImg-btn"
+            >
+              Image 2
+            </button>
           </Col>
           <Col>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control
-                type="text"
-                placeholder="Image Url3"
-                name="imgUrl3"
-                onChange={handleOnChange}
-              />
-            </Form.Group>
+            <button
+              id="upload_widget"
+              class="cloudinary-button"
+              onClick={myWidget3.open}
+              className="uploadImg-btn"
+            >
+              Image 3
+            </button>
           </Col>
         </Row>
+        {/* upload image abow*/}
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
