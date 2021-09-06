@@ -8,16 +8,16 @@ const initialState = {
 const productReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    // GET product
-    case types.GET_PRODUCT_REQUEST:
+    // POST create product
+    case types.POST_CREATE_PRODUCT_REQUEST:
       return { ...state, loading: true };
-    case types.GET_PRODUCT_SUCCESS:
+    case types.POST_CREATE_PRODUCT_SUCCESS:
       return {
         ...state,
         products: payload,
         loading: false,
       };
-    case types.GET_PRODUCT_FAILURE:
+    case types.POST_CREATE_PRODUCT_FAILURE:
       return { ...state, loading: false };
     default:
       return state;

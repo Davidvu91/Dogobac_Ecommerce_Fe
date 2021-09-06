@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { Button, Col, Form, NavLink, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { authActions } from "../redux/actions/auth.actions";
+// import { authActions } from "../redux/actions/auth.actions";
+import { productActions } from "../redux/actions/product.action";
 import "./style.css";
 
 const CreateProduct = () => {
@@ -21,7 +22,7 @@ const CreateProduct = () => {
     category: formData.category,
     dimension: formData.dimension,
     imageUrl: [getImage1, getImage2, getImage3],
-    info: formData.info,
+    description: formData.description,
     material: formData.material,
     name: formData.name,
     price: formData.price,
@@ -32,7 +33,7 @@ const CreateProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(authActions.createProduct(passData));
+    dispatch(productActions.createProduct(passData));
   };
 
   //Upload Image1 functin
@@ -114,7 +115,7 @@ const CreateProduct = () => {
           <Form.Control
             type="text"
             placeholder="Thông tin"
-            name="info"
+            name="description"
             onChange={handleOnChange}
           />
         </Form.Group>

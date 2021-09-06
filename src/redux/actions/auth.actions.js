@@ -32,20 +32,7 @@ const login = (formData) => async (dispatch) => {
   }
 };
 
-const createProduct = (formData) => async (dispatch) => {
-  console.log("product info:", formData);
-  dispatch({ type: types.POST_CREATE_PRODUCT_REQUEST });
-  try {
-    const data = await api.post("/auth/create", formData);
-    console.log(data);
-    dispatch({ type: types.POST_CREATE_PRODUCT_SUCCESS, payload: data });
-  } catch (error) {
-    dispatch({ type: types.POST_CREATE_PRODUCT_FAILURE });
-  }
-};
-
 export const authActions = {
   register,
   login,
-  createProduct,
 };
