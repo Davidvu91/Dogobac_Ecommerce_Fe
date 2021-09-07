@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
 import { productActions } from "../redux/actions/product.action";
 import "./style.css";
 

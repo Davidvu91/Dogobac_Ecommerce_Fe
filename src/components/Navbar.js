@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 
 const Navbarr = () => {
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    window.location.href = "/";
+  };
   return (
     <Navbar expand="lg" className="navbar-bg">
       {/* <Navbar.Brand as={Link} to="/">
@@ -34,6 +39,9 @@ const Navbarr = () => {
 
           <Nav.Link as={Link} to="/auth/create" className="nav-title-layout">
             Create Product
+          </Nav.Link>
+          <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
+            Log out
           </Nav.Link>
 
           <Nav.Link as={Link} to="/auth/profile" className="nav-title-layout">

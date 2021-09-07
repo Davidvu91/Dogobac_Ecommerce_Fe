@@ -20,6 +20,8 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(authActions.login(formData));
+    e.target.email.value = "";
+    e.target.password.value = "";
   };
 
   console.log(formData);
