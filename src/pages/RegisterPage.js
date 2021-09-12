@@ -20,6 +20,10 @@ const RegisterPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(authActions.register(formData));
+    e.target.email.value = "";
+    e.target.password.value = "";
+    e.target.name.value = "";
+    setstatFormData("");
   };
 
   console.log(formData);

@@ -17,8 +17,8 @@ function App() {
       <Navbarr />
       <Switch>
         <Route exact path={`/`} component={HomePage} />
-        <ProtectedRoute exact path={`/cart`} component={CartPage} />
-        <Route exact path={`/:id`} component={ProductDetailPage} />
+        <Route exact path={`/cart`} component={CartPage} />
+        <Route exact path={`/product/:id`} component={ProductDetailPage} />
         <Route exact path={`/auth/login`} component={LoginPage} />
         <Route exact path={`/auth/register`} component={RegisterPage} />
         <Route exact path={`/auth/create`} component={CreateProduct} />
@@ -28,4 +28,5 @@ function App() {
   );
 }
 
+//  <ProtectedRoute exact path={`/cart`} component={CartPage} />
 export default App;

@@ -22,6 +22,7 @@ const LoginPage = () => {
     dispatch(authActions.login(formData));
     e.target.email.value = "";
     e.target.password.value = "";
+    setstatFormData("");
   };
 
   console.log(formData);

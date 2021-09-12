@@ -24,6 +24,8 @@ const CreateProduct = () => {
     name: formData.name,
     price: formData.price,
     status: formData.status,
+    quantity: formData.quantity,
+    shipping: formData.shipping,
   };
 
   console.log("hihi data before pass", passData);
@@ -40,6 +42,8 @@ const CreateProduct = () => {
     e.target.name.value = "";
     e.target.price.value = "";
     e.target.status.value = "";
+    e.target.quantity.value = "";
+    e.target.shipping.value = "";
   };
 
   //Upload Image functin
@@ -93,6 +97,7 @@ const CreateProduct = () => {
             type="text"
             placeholder="Thông tin"
             name="description"
+            as="textarea"
             onChange={handleOnChange}
           />
         </Form.Group>
@@ -120,6 +125,22 @@ const CreateProduct = () => {
             type="text"
             placeholder="Category"
             name="category"
+            onChange={handleOnChange}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control
+            type="text"
+            placeholder="Quantity"
+            name="quantity"
+            onChange={handleOnChange}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control
+            type="text"
+            placeholder="Shipping"
+            name="shipping"
             onChange={handleOnChange}
           />
         </Form.Group>

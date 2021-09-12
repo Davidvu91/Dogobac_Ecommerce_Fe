@@ -26,6 +26,11 @@ const login = (formData) => async (dispatch) => {
   try {
     const data = await api.post("/auth/loginWithEmail", formData);
     console.log(data);
+    // luu accesstoken trong localStorage
+    api.defaults.headers.common["authorization"] =
+      "Bearer " + data.data.data.accessToken;
+    api.defaults.headers.authorization = "Bearer " + data.data.data.accessToken;
+
     dispatch({ type: types.LOGIN_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: types.LOGIN_FAILURE });
