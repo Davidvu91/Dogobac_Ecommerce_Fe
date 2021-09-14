@@ -10,6 +10,7 @@ import CreateProduct from "./pages/CreateProduct";
 import CartPage from "./pages/CartPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProfilePage from "./pages/ProfilePage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route exact path={`/auth/create`} component={CreateProduct} />
         <Route exact path={`/auth/profile`} component={ProfilePage} />
       </Switch>
+      <Footer />
     </Router>
   );
 }

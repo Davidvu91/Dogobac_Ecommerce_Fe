@@ -1,22 +1,31 @@
-import React from "react";
-import { Button, Card, Col, Row } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Col, Row, Card, Button } from "react-bootstrap";
+import { useHistory, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
-import { useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
+// import { productActions } from "../../redux/actions/product.action";
 
-import "./mainpage.css";
-import { productActions } from "../redux/actions/product.action";
+const RelatedPorducts = ({ loading, product }) => {
+  console.log("single Product data:", product);
+  let products = product.relatedProduct;
+  console.log("related products la:", products);
+  // const loading = useSelector((state) => state.productReducer.loading);
+  // const data = useSelector((state) => state.productReducer.relatedProducts);
+  // const products = data.data?.data;
 
-const MainPage = ({ products, loading }) => {
+  // const productId = params.id;
+  // // console.log("related products nhan duoc de render:", products);
   // const order = "asc";
   // const sortBy = "price";
   // const limit = 8;
-  const dispatch = useDispatch();
-  const history = useHistory();
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   // dispatch(productActions.getSingleProductById(productId));
+  //   dispatch(productActions.getRelatedProduct(productId, order, sortBy, limit));
+  // }, []);
 
+  const history = useHistory();
   const handleClickProduct = (productId) => {
-    dispatch(productActions.getSingleProductById(productId));
-    // dispatch(productActions.getRelatedProduct(productId, order, sortBy, limit));
     history.push(`product/${productId}`);
   };
 
@@ -28,7 +37,7 @@ const MainPage = ({ products, loading }) => {
         </div>
       ) : (
         <Row>
-          {products.map((product) => (
+          {products?.map((product) => (
             <Col lg={3} md={6} xs={12} className="home-card">
               <Card
                 style={{
@@ -56,4 +65,4 @@ const MainPage = ({ products, loading }) => {
   );
 };
 
-export default MainPage;
+export default RelatedPorducts;

@@ -2,8 +2,9 @@ import * as types from "../constants/product.constants";
 
 const initialState = {
   data: {},
+  relatedProducts: {},
   loading: false,
-  selectedProduct: null,
+  selectedProduct: {},
 };
 
 const productReducer = (state = initialState, action) => {
@@ -33,6 +34,13 @@ const productReducer = (state = initialState, action) => {
     case types.GET_SIGLE_PRODUCT_SUCCESS:
       return { ...state, selectedProduct: payload, loading: false };
     case types.GET_SIGLE_PRODUCT_FAILURE:
+      return { ...state, loading: false };
+    // GET RELATED PRODUCTS
+    case types.GET_RELATED_PRODUCT_REQUEST:
+      return { ...state, loading: true };
+    case types.GET_RELATED_PRODUCT_SUCCESS:
+      return { ...state, relatedProducts: payload, loading: false };
+    case types.GET_RELATED_PRODUCT_FAILURE:
       return { ...state, loading: false };
     default:
       return state;

@@ -2,33 +2,21 @@ import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
 import Comment from "./Comment";
 
-const DescriptionPart = () => {
+const DescriptionPart = ({ product }) => {
   return (
     <>
       <Card style={{ width: "100%" }} className="review-card">
         <Card.Header>THÔNG TIN SẢN PHẨM CHI TIẾT</Card.Header>
         <Card.Body>
-          <Card.Text>
-            My Comment heere: Some quick example text to build on the card title
-            and make up the bulk of the card's content.
-          </Card.Text>
-          <Card.Text>
-            My Comment heere: Some quick example text to build on the card title
-            and make up the bulk of the card's content.
-          </Card.Text>
-          <Card.Text>
-            My Comment heere: Some quick example text to build on the card title
-            and make up the bulk of the card's content.
-          </Card.Text>
-          <Card.Text>
-            My Comment heere: Some quick example text to build on the card title
-            and make up the bulk of the card's content.
-          </Card.Text>
-          <Card.Text>
-            My Comment heere: Some quick example text to build on the card title
-            and make up the bulk of the card's content.
-          </Card.Text>
+          <Card.Text>{product.description}</Card.Text>
         </Card.Body>
+        <Card.Img variant="top" src={product.imageUrl[1]} />
+        <br />
+        <Card.Text>
+          Giao hàng miễn phí toàn thành phố Vũng Tàu, Bảo hành 5 năm
+        </Card.Text>
+        <br />
+        <Card.Img variant="top" src={product.imageUrl[2]} />
       </Card>
       <Comment />
     </>

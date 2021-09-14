@@ -5,7 +5,6 @@ import { cartActions } from "../../redux/actions/cart.actions";
 import "./productDetail.css";
 
 const PricePart = ({ product }) => {
-  console.log("thong tin san pham:", product);
   const [count, setCount] = useState(1);
 
   const handleAdd = (e) => {

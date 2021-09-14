@@ -38,18 +38,41 @@ const getAllProducts =
 // http://localhost:5000/product/6139bc61e106fce635bb1e0d
 
 const getSingleProductById = (productId) => async (dispatch) => {
+  console.log("productId nhan dc khi click:", productId);
   dispatch({ type: types.GET_SIGLE_PRODUCT_REQUEST, payload: null });
   try {
-    const data = await api.get(`product/${productId}`);
-    console.log("single product data:", data);
+    const data = await api.get(`/product/${productId}`);
+    console.log("get single product data:", data);
+
     dispatch({ type: types.GET_ALL_PRODUCT_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: types.GET_SIGLE_PRODUCT_FAILURE, payload: null });
   }
 };
 
+// GET RELATED PRODUCT
+// http://localhost:5000/product/related/6139c15fe106fce635bb1e25?order=desc&sortBy=createdAt&limit=6
+
+// const getRelatedProduct =
+//   (productId, order, sortBy, limit) => async (dispatch) => {
+//     console.log("data receive :", productId, order, sortBy, limit);
+//     dispatch({ type: types.GET_RELATED_PRODUCT_REQUEST, payload: null });
+//     try {
+//       console.log("run this ", { productId, order, sortBy, limit });
+//       let url = `/product/related/${productId}?order=${order}&sortBy=${sortBy}&limit=${limit}`;
+//       const data = await api.get(url);
+
+//       console.log("get related products data:", data);
+
+//       dispatch({ type: types.GET_RELATED_PRODUCT_SUCCESS, payload: data });
+//     } catch (error) {
+//       dispatch({ type: types.GET_RELATED_PRODUCT_FAILURE, payload: null });
+//     }
+//   };
+
 export const productActions = {
   createProduct,
   getAllProducts,
   getSingleProductById,
+  // getRelatedProduct,
 };

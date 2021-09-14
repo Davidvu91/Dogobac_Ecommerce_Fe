@@ -1,9 +1,17 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
+import { userActions } from "../redux/actions/user.actions";
+
 const Navbarr = () => {
+  const dispatch = useDispatch();
+  const handleGetSingleProfile = (e) => {
+    dispatch(userActions.getSingleUserInfo());
+  };
+
   const handleLogOut = (e) => {
     e.preventDefault();
     localStorage.clear();
@@ -25,14 +33,6 @@ const Navbarr = () => {
             ĐỒ GỖ BẮC
           </Nav.Link>
 
-          <Nav.Link as={Link} to="/cart" className="nav-title-layout">
-            Cart
-          </Nav.Link>
-
-          <Nav.Link as={Link} to="/auth/login" className="nav-title-layout">
-            Login
-          </Nav.Link>
-
           <Nav.Link as={Link} to="/auth/register" className="nav-title-layout">
             Register
           </Nav.Link>
@@ -40,11 +40,25 @@ const Navbarr = () => {
           <Nav.Link as={Link} to="/auth/create" className="nav-title-layout">
             Create Product
           </Nav.Link>
+
+          <Nav.Link as={Link} to="/auth/login" className="nav-title-layout">
+            Login
+          </Nav.Link>
+
           <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
             Log out
           </Nav.Link>
 
-          <Nav.Link as={Link} to="/auth/profile" className="nav-title-layout">
+          <Nav.Link as={Link} to="/cart" className="nav-title-layout">
+            Cart
+          </Nav.Link>
+
+          <Nav.Link
+            as={Link}
+            to="/auth/profile"
+            className="nav-title-layout "
+            onClick={handleGetSingleProfile}
+          >
             Profile
           </Nav.Link>
         </Nav>

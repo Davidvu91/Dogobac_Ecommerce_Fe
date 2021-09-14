@@ -1,0 +1,9 @@
+.carousel-inner {
+  height: 90vh !important;
+}
+
+.carousel-caption {
+  top: 1rem;
+  /* background-color: rgb(238, 77, 45); */
+  bottom: unset;
+}
