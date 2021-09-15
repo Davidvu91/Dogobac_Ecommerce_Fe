@@ -49,40 +49,39 @@ const HomePage = () => {
           <CarouselPart />
         </Col>
       </Row>
-      <Row>
-        <Container>
-          <Row style={{ justifyContent: "center" }} className="row-padding">
-            <Col lg={6} md={6} xs={12}>
-              <SearchBox
-                loading={loading}
-                searchInput={searchInput}
-                handleSearchChange={handleSearchInputChange}
-                handleSubmit={handleSubmit}
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={12} md={12} xs={12} className="row-padding">
-              {products ? (
-                <MainPage products={products} loading={loading} />
-              ) : (
-                <h1>Loading...</h1>
-              )}
-            </Col>
-          </Row>
-          <hr />
 
-          <Row className="justify-content-center">
-            <Col md={6}>
-              <PaginationBar
-                pageNum={page}
-                setPageNum={setPage}
-                totalPageNum={totalPage}
-              />
-            </Col>
-          </Row>
-        </Container>
-      </Row>
+      <Container>
+        <Row style={{ justifyContent: "center" }} className="row-padding">
+          <Col lg={6} md={6} xs={12}>
+            <SearchBox
+              loading={loading}
+              searchInput={searchInput}
+              handleSearchChange={handleSearchInputChange}
+              handleSubmit={handleSubmit}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={12} md={12} xs={12} className="row-padding">
+            {products ? (
+              <MainPage products={products} loading={loading} />
+            ) : (
+              <h1>Loading...</h1>
+            )}
+          </Col>
+        </Row>
+        <hr />
+
+        <Row className="justify-content-center">
+          <Col md={6}>
+            <PaginationBar
+              pageNum={page}
+              setPageNum={setPage}
+              totalPageNum={totalPage}
+            />
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };

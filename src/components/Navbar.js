@@ -17,6 +17,7 @@ const Navbarr = () => {
     localStorage.clear();
     window.location.href = "/";
   };
+
   return (
     <Navbar expand="lg" className="navbar-bg">
       {/* <Navbar.Brand as={Link} to="/">
@@ -49,7 +50,12 @@ const Navbarr = () => {
             Log out
           </Nav.Link>
 
-          <Nav.Link as={Link} to="/cart" className="nav-title-layout">
+          <Nav.Link
+            as={Link}
+            to="/cart"
+            className="nav-title-layout"
+            onClick={handleGetSingleProfile}
+          >
             Cart
           </Nav.Link>
 

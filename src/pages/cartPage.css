@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+.cart-page {
+  /* border: 5px solid green; */
+  margin-top: 79px;
+  margin-bottom: 100px;
+}
+
+.cart-container {
+  border: 1px solid #88886d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  box-shadow: 2px 4px #88886d;
+}
+
+.cart-block {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cart-item {
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.cart-ticksign {
+  /* border: 2px solid black; */
+  align-self: center;
+}
+
+.cart-productInfo {
+  /* border: 2px solid black; */
+  display: flex;
+}
+
+.cart-productDemension {
+  /* border: 2px solid black; */
+  color: chocolate;
+}
+.cart-quantity {
+  /* border: 2px solid black; */
+  color: chocolate;
+}
+.cart-priceUnit {
+  /* border: 2px solid black; */
+  color: chocolate;
+}
+.cart-totalMoney {
+  /* border: 2px solid black; */
+  color: chocolate;
+}
+.cart-delete {
+  /* border: 2px solid black; */
+  color: chocolate;
+}
+
+.cart-Image {
+  /* border: 2px solid red; */
+  height: 65px;
+  width: 100px;
+}
+.cart-productName {
+  /* border: 2px solid red; */
+  color: chocolate;
+  margin-left: 10px;
+  align-self: center;
+}
+
+.check-box {
+  width: 19px;
+  height: 19px;
+  margin: revert;
+}

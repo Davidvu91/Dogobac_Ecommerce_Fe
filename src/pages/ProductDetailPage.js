@@ -7,6 +7,7 @@ import MainImage from "../components/productDetail/MainImage";
 import PricePart from "../components/productDetail/PricePart";
 import RelatedPorducts from "../components/productDetail/RelatedPorducts";
 import Review from "../components/productDetail/Review";
+import Comment from "../components/Comment";
 import { productActions } from "../redux/actions/product.action";
 
 const ProductDetailPage = () => {
@@ -53,7 +54,14 @@ const ProductDetailPage = () => {
               {product ? <Review product={product} /> : <h1>Loading</h1>}
             </Col>
           </Row>
-          {/* Part 3 - Related Products*/}
+          {/* Part 3 - Comment on Single Product*/}
+          <Row>
+            <Col lg={12} md={12} xs={12}>
+              <Comment />
+            </Col>
+          </Row>
+
+          {/* Part 4 - Related Products*/}
           <Row className="row-padding">
             <Col lg={12} md={12} xs={12}>
               {product ? (

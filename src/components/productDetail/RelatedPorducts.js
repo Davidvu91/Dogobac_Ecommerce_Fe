@@ -26,7 +26,7 @@ const RelatedPorducts = ({ loading, product }) => {
 
   const history = useHistory();
   const handleClickProduct = (productId) => {
-    history.push(`product/${productId}`);
+    history.push(`/product/${productId}`);
   };
 
   return (

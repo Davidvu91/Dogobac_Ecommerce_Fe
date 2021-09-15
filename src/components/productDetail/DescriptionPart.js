@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
-import Comment from "./Comment";
 
 const DescriptionPart = ({ product }) => {
   return (
@@ -18,7 +17,6 @@ const DescriptionPart = ({ product }) => {
         <br />
         <Card.Img variant="top" src={product.imageUrl[2]} />
       </Card>
-      <Comment />
     </>
   );
 };

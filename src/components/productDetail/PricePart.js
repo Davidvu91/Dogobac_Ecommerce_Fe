@@ -18,8 +18,10 @@ const PricePart = ({ product }) => {
     } else return 1;
   };
   const dispatch = useDispatch();
+  const passData = { quantity: count };
+  console.log("data before sent to order:", passData);
   const addToCart = () => {
-    dispatch(cartActions.addToCart(product, count));
+    dispatch(cartActions.addToCart(product, passData));
   };
 
   return (
@@ -43,7 +45,7 @@ const PricePart = ({ product }) => {
           <Button
             variant=""
             className="single-btn detail-ntn"
-            onClick={() => addToCart()}
+            onClick={addToCart}
           >
             Thêm Vào Giỏ
           </Button>
