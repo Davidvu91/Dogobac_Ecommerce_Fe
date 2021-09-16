@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import SideBar from "../components/dashBoard/SideBar";
 import { productActions } from "../redux/actions/product.action";
 import "./style.css";
 
@@ -63,118 +64,123 @@ const CreateProduct = () => {
   );
 
   return (
-    <div style={{ width: "60%", margin: "auto" }}>
-      <Form onSubmit={handleSubmit} className="loginForm">
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Tên sản phẩm..."
-            name="name"
-            onChange={handleOnChange}
-          />
-        </Form.Group>
+    <Row>
+      <Col lg={2} md={3}>
+        <SideBar />
+      </Col>
+      <Col lg={10} md={9}>
+        <Form onSubmit={handleSubmit} className="loginForm">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="text"
+              placeholder="Tên sản phẩm..."
+              name="name"
+              onChange={handleOnChange}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Kích thước"
-            name="dimension"
-            onChange={handleOnChange}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="text"
+              placeholder="Kích thước"
+              name="dimension"
+              onChange={handleOnChange}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Chất liệu"
-            name="material"
-            onChange={handleOnChange}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="text"
+              placeholder="Chất liệu"
+              name="material"
+              onChange={handleOnChange}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Thông tin"
-            name="description"
-            as="textarea"
-            onChange={handleOnChange}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="text"
+              placeholder="Thông tin"
+              name="description"
+              as="textarea"
+              onChange={handleOnChange}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Giá"
-            name="price"
-            onChange={handleOnChange}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="text"
+              placeholder="Giá"
+              name="price"
+              onChange={handleOnChange}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Tình trạng"
-            name="status"
-            onChange={handleOnChange}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="text"
+              placeholder="Tình trạng"
+              name="status"
+              onChange={handleOnChange}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Category"
-            name="category"
-            onChange={handleOnChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Quantity"
-            name="quantity"
-            onChange={handleOnChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Shipping"
-            name="shipping"
-            onChange={handleOnChange}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="text"
+              placeholder="Category"
+              name="category"
+              onChange={handleOnChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="text"
+              placeholder="Quantity"
+              name="quantity"
+              onChange={handleOnChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="text"
+              placeholder="Shipping"
+              name="shipping"
+              onChange={handleOnChange}
+            />
+          </Form.Group>
 
-        {/* upload image below*/}
-        <Row className="Url-image-row">
-          <Col>
-            <button
-              type="button"
-              id="upload_widget"
-              class="cloudinary-button"
-              onClick={myWidget.open}
-              className="uploadImg-btn"
-            >
-              Upload Image
-            </button>
-          </Col>
-        </Row>
-        {/* upload image abow*/}
-
-        <div className="login-btn">
-          <Row>
-            <Button
-              variant=""
-              type="submit"
-              className="single-btn"
-              onSubmit={handleSubmit}
-            >
-              Tạo Sản Phẩm
-            </Button>
+          {/* upload image below*/}
+          <Row className="Url-image-row">
+            <Col>
+              <button
+                type="button"
+                id="upload_widget"
+                class="cloudinary-button"
+                onClick={myWidget.open}
+                className="uploadImg-btn"
+              >
+                Upload Image
+              </button>
+            </Col>
           </Row>
-        </div>
-      </Form>
-    </div>
+          {/* upload image abow*/}
+
+          <div className="login-btn">
+            <Row>
+              <Button
+                variant=""
+                type="submit"
+                className="single-btn"
+                onSubmit={handleSubmit}
+              >
+                Tạo Sản Phẩm
+              </Button>
+            </Row>
+          </div>
+        </Form>
+      </Col>
+    </Row>
   );
 };
 

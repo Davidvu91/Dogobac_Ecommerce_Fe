@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./cartPage.css";
 import { cartActions } from "../redux/actions/cart.actions";
+import { userActions } from "../redux/actions/user.actions";
 
 const CartPage = () => {
   // const loading = useSelector((state) => state.userReducer.loading);
@@ -10,6 +11,7 @@ const CartPage = () => {
   console.log("Im in cart page, I got carts info:", carts);
 
   const dispatch = useDispatch();
+
   const handleDeleteCart = (cartId) => {
     console.log("hahahah", cartId);
     dispatch(cartActions.deleteCart(cartId));

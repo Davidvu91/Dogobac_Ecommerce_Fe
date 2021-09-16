@@ -2,7 +2,7 @@ import * as types from "../constants/user.constants";
 import { toast } from "react-toastify";
 import api from "../../apiService";
 
-const REACT_APP_BACKEND_API = process.env.REACT_APP_BACKEND_API;
+// const REACT_APP_BACKEND_API = process.env.REACT_APP_BACKEND_API;
 
 // GET SINGLE USER INFORMATION:
 // http://localhost:5000/user/info
@@ -31,4 +31,17 @@ const updateUserInfo = (passData) => async (dispatch) => {
   }
 };
 
-export const userActions = { getSingleUserInfo, updateUserInfo };
+// GET ALL USERS
+// http://localhost:5000/user/getall
+const getAllUsers = () => async (dispatch) => {
+  dispatch({ type: types.GET_ALL_USERS_REQUEST, payload: null });
+  try {
+    const data = await api.get("user/getall");
+    console.log("List of users:", data);
+    dispatch({ type: types.GET_ALL_USERS_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: types.GET_ALL_USERS_FAILURE, payload: null });
+  }
+};
+
+export const userActions = { getSingleUserInfo, updateUserInfo, getAllUsers };

@@ -38,9 +38,9 @@ const Navbarr = () => {
             Register
           </Nav.Link>
 
-          <Nav.Link as={Link} to="/auth/create" className="nav-title-layout">
+          {/* <Nav.Link as={Link} to="/auth/create" className="nav-title-layout">
             Create Product
-          </Nav.Link>
+          </Nav.Link> */}
 
           <Nav.Link as={Link} to="/auth/login" className="nav-title-layout">
             Login
@@ -56,7 +56,7 @@ const Navbarr = () => {
             className="nav-title-layout"
             onClick={handleGetSingleProfile}
           >
-            Cart
+            <i class="fas fa-cart-plus fa-lg"></i>
           </Nav.Link>
 
           <Nav.Link
@@ -65,7 +65,15 @@ const Navbarr = () => {
             className="nav-title-layout "
             onClick={handleGetSingleProfile}
           >
-            Profile
+            <i class="fas fa-user fa-lg"></i>
+          </Nav.Link>
+
+          <Nav.Link
+            as={Link}
+            to="/admin/dashboard"
+            className="nav-title-layout "
+          >
+            <i class="fas fa-user-cog fa-lg"></i>
           </Nav.Link>
         </Nav>
         {/* <Form className="d-flex">
