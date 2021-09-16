@@ -7,6 +7,7 @@ import CarouselPart from "../components/Carousel";
 import MainPage from "../components/MainPage";
 import PaginationBar from "../components/PaginationBar";
 import SearchBox from "../components/SearchBox";
+import Testimonial from "../components/Testimonial";
 import { productActions } from "../redux/actions/product.action";
 import "./style.css";
 
@@ -71,7 +72,6 @@ const HomePage = () => {
           </Col>
         </Row>
         <hr />
-
         <Row className="justify-content-center">
           <Col md={6}>
             <PaginationBar
@@ -81,6 +81,13 @@ const HomePage = () => {
             />
           </Col>
         </Row>
+        <Row className=" row-padding ">
+          <Col>
+            {" "}
+            <Testimonial />{" "}
+          </Col>
+        </Row>
+        <br /> <br />
       </Container>
     </>
   );

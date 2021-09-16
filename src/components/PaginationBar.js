@@ -1,5 +1,6 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
+import "./pagination.css";
 
 const PaginationBar = ({ pageNum, setPageNum, totalPageNum }) => {
   const handleClickOnFirst = () => {

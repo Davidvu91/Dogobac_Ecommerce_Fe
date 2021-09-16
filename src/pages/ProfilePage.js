@@ -37,6 +37,7 @@ const ProfilePage = () => {
             <Card.Body className="profile-content">
               <Card.Title>{profile?.name}</Card.Title>
               <Card.Text>{profile?.email}</Card.Text>
+              <Card.Text>{profile?.phone}</Card.Text>
               <Card.Text>{profile?.address}</Card.Text>
               <Button variant="" className="single-btn" onClick={handleShow}>
                 Update Profile

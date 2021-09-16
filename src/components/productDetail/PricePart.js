@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import { cartActions } from "../../redux/actions/cart.actions";
 import "./productDetail.css";
 
@@ -20,6 +21,7 @@ const PricePart = ({ product }) => {
   const dispatch = useDispatch();
   const passData = { quantity: count };
   console.log("data before sent to order:", passData);
+
   const addToCart = () => {
     dispatch(cartActions.addToCart(product, passData));
   };
@@ -49,7 +51,13 @@ const PricePart = ({ product }) => {
           >
             Thêm Vào Giỏ
           </Button>
-          <Button variant="" className="single-btn detail-ntn">
+          <Button
+            variant=""
+            className="single-btn detail-ntn"
+            onClick={addToCart}
+            as={Link}
+            to="/cart"
+          >
             Mua Ngay
           </Button>
         </ListGroup.Item>

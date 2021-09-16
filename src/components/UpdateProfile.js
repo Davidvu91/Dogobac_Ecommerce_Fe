@@ -32,6 +32,7 @@ const UpdateProfile = () => {
     name: formData.name,
     email: formData.email,
     address: formData.address,
+    phone: formData.phone,
     avataUrl: getImage,
   };
   console.log("data befor dispatch:", passData);
@@ -45,6 +46,7 @@ const UpdateProfile = () => {
     e.target.name.value = "";
     e.target.email.value = "";
     e.target.address.value = "";
+    e.target.phone.value = "";
   };
 
   return (
@@ -74,6 +76,15 @@ const UpdateProfile = () => {
             placeholder="Địa chỉ"
             name="address"
             as="textarea"
+            onChange={handleOnChange}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control
+            type="number"
+            placeholder="Số điện thoại"
+            name="phone"
             onChange={handleOnChange}
           />
         </Form.Group>

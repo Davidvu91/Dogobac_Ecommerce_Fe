@@ -13,6 +13,7 @@ import ProfilePage from "./pages/ProfilePage";
 import Footer from "./components/Footer";
 import DashBoard from "./pages/DashBoard";
 import ListOfUsers from "./pages/ListOfUsers";
+import BillInfo from "./pages/BillInfo";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route exact path={`/admin/dashboard`} component={DashBoard} />
         <Route exact path={`/auth/create`} component={CreateProduct} />
         <Route exact path={`/auth/listUsers`} component={ListOfUsers} />
+        <Route exact path={`/auth/bill`} component={BillInfo} />
       </Switch>
       <Footer />
     </Router>
