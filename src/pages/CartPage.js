@@ -5,6 +5,7 @@ import "./cartPage.css";
 import { cartActions } from "../redux/actions/cart.actions";
 import UpdateProfile from "../components/UpdateProfile";
 import { useHistory } from "react-router-dom";
+import { userActions } from "../redux/actions/user.actions";
 
 const CartPage = () => {
   const loading = useSelector((state) => state.userReducer.loading);
@@ -32,18 +33,28 @@ const CartPage = () => {
   // };
   const handleClose = () => setShow(false);
   const history = useHistory();
+
+  //Functions call actions onClick
+
+  const handleGetSingleProfile = (e) => {
+    dispatch(userActions.getSingleUserInfo());
+  };
+
   let handleOnActions = () => {
     console.log("actions...");
     if (!phone || !address) return setShow(true);
     console.log("show...");
+    handleGetSingleProfile();
     history.push("/auth/bill");
   };
-
-  const totalMoney = carts?.reduce(
-    (initValue, cart) =>
-      initValue + cart.items.quantity * cart.items.productId.price,
-    0
-  );
+  console.log("line 50", carts);
+  let totalMoney =
+    carts?.length &&
+    carts.reduce(
+      (initValue, cart) =>
+        initValue + cart.items.quantity * cart.items.productId.price,
+      0
+    );
   console.log("tong tien la:", totalMoney);
 
   return (

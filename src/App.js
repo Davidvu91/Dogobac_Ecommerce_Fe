@@ -14,11 +14,13 @@ import Footer from "./components/Footer";
 import DashBoard from "./pages/DashBoard";
 import ListOfUsers from "./pages/ListOfUsers";
 import BillInfo from "./pages/BillInfo";
+import Toastify from "./components/Toastify";
 
 function App() {
   return (
     <Router>
       <Navbarr />
+      <Toastify />
       <Switch>
         <Route exact path={`/`} component={HomePage} />
         <Route exact path={`/cart`} component={CartPage} />

@@ -1,59 +1,110 @@
 import React from "react";
 import { Col, Container, Row, Button, Modal } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import "./billInfo.css";
 
 const BillInfo = () => {
-  return (
-    <Container>
-      <Row className="bill-header row-padding">
-        <Col>
-          <h3>ĐỒ GỖ BẮC | Thông Tin Hóa Đơn</h3>
-        </Col>
-      </Row>
-      <Row className="bill-body row-padding">
-        <Row>
-          <h3>Thông Tin Người Mua</h3>
-        </Row>
-        <Row>
-          <Col>Số Đt:</Col>
-          <Col>Địa chỉ:</Col>
-        </Row>
-      </Row>
-      <Row className="bill-body row-padding ">
-        <Row>
-          <h3>Thông Tin Sản Phẩm</h3>
-        </Row>
+  const loading = useSelector((state) => state.userReducer.loading);
+  const user = useSelector((state) => state.userReducer.user);
+  console.log("users in Bill Page:", user);
 
-        {/* Bắt đầu vòng lặp */}
-        <Row>
-          <Col>
+  let userInfo = user?.data?.data?.user;
+  console.log("hihihi", userInfo);
+  let carts = user?.data?.data?.user?.cart;
+  console.log("Im in cart page, I got carts info:", carts);
+
+  const totalMoney = carts?.reduce(
+    (initValue, cart) =>
+      initValue + cart.items.quantity * cart.items.productId.price,
+    0
+  );
+
+  return (
+    <>
+      {loading ? (
+        <h1>...loading</h1>
+      ) : (
+        <Container>
+          <Row className="bill-header row-padding">
+            <Col>
+              <h3>ĐỒ GỖ BẮC | Thông Tin Hóa Đơn</h3>
+            </Col>
+          </Row>
+          <Row className="bill-body row-padding">
             <Row>
-              <Col>Image</Col>
-              <Col>Name</Col>
+              <h3>Thông Tin Người Mua</h3>
             </Row>
-          </Col>
-          <Col>Price</Col>
-          <Col>Quantity</Col>
-          <Col>Total</Col>
-        </Row>
-        {/* Kết thúc vòng lặp */}
-      </Row>
-      <Row className="bill-footer row-padding">
-        <Row>
-          <Col>Sub Total:</Col>
-        </Row>
-        <Row>
-          <Col>Phương thức thanh toán: Thanh toán khi nhận hàng</Col>
-        </Row>
-        <Row>
-          <Col>
-            <Button variant="" className="single-btn">
-              Xác Nhận Mua Hàng
-            </Button>
-          </Col>
-        </Row>
-      </Row>
-    </Container>
+            <Row>
+              <Col lg={2} md={2} xs={2}>
+                Số Đt:(+84) {userInfo.phone}
+              </Col>
+              <Col>Địa chỉ: {userInfo.address}</Col>
+            </Row>
+          </Row>
+          <Row className="bill-body row-padding ">
+            <Row className=" row-padding">
+              <h3>Thông Tin Sản Phẩm</h3>
+            </Row>
+
+            {/* Bắt đầu vòng lặp */}
+            <Row>
+              {carts?.map((cart) => (
+                <Row key={cart._id}>
+                  <Col lg={6} md={6} xs={6}>
+                    <Row>
+                      <Col lg={3} md={3} xs={3}>
+                        {" "}
+                        <img
+                          src={cart.items.productId.imageUrl[0]}
+                          alt=""
+                          className="cart-Image"
+                        />
+                      </Col>
+                      <Col lg={9} md={9} xs={9}>
+                        {cart.items.productId.name}
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col>
+                    {" "}
+                    <span>Price: </span>
+                    {cart.items.productId.price}
+                  </Col>
+                  <Col>
+                    <span>Quantity: </span> {cart.items.quantity}
+                  </Col>
+                  <Col>
+                    <span>Total: </span>{" "}
+                    {cart.items.quantity * cart.items.productId.price}
+                  </Col>
+                </Row>
+              ))}
+            </Row>
+            {/* Kết thúc vòng lặp */}
+          </Row>
+          <Row className="bill-footer row-padding">
+            <Row className=" row-padding">
+              <Col>
+                Sub Total: <b>{totalMoney}</b>{" "}
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                {" "}
+                Phương thức thanh toán: <i>Thanh toán khi nhận hàng</i>{" "}
+              </Col>
+            </Row>
+            <Row className=" row-padding ">
+              <Col>
+                <Button variant="" className="single-btn">
+                  Xác Nhận Mua Hàng
+                </Button>
+              </Col>
+            </Row>
+          </Row>
+        </Container>
+      )}
+    </>
   );
 };
 

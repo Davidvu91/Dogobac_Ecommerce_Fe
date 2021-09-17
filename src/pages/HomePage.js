@@ -71,7 +71,6 @@ const HomePage = () => {
             )}
           </Col>
         </Row>
-        <hr />
         <Row className="justify-content-center">
           <Col md={6}>
             <PaginationBar
@@ -81,6 +80,7 @@ const HomePage = () => {
             />
           </Col>
         </Row>
+        <hr />
         <Row className=" row-padding ">
           <Col>
             {" "}

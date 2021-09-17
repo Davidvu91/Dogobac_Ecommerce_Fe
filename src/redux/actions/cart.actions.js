@@ -1,6 +1,7 @@
 import * as types from "../constants/cart.constants";
 import { toast } from "react-toastify";
 import api from "../../apiService";
+import { userActions } from "./user.actions";
 
 //ADD A PRODUCT TO CART
 // http://localhost:5000/cart/add/6139bc0fe106fce635bb1e0a
@@ -27,7 +28,7 @@ const deleteCart = (cartId) => async (dispatch) => {
   try {
     await api.delete(`/cart/delete/${cartId}`);
     dispatch({ type: types.DELETE_SINGLE_CART_SUCCESS, payload: null });
-
+    dispatch(userActions.getSingleUserInfo);
     toast.success(`Delete cart successfully!`);
   } catch (error) {
     dispatch({ type: types.DELETE_SINGLE_CART_FAILURE, payload: null });

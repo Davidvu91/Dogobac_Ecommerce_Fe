@@ -1,5 +1,6 @@
 import * as types from "../constants/auth.constants";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import api from "../../apiService";
 
 // const LOCAL_BE_URL = "http://localhost:5000";
@@ -32,6 +33,7 @@ const login = (formData) => async (dispatch) => {
     api.defaults.headers.authorization = "Bearer " + data.data.data.accessToken;
 
     dispatch({ type: types.LOGIN_SUCCESS, payload: data });
+    toast.success("Login successfully!");
   } catch (error) {
     dispatch({ type: types.LOGIN_FAILURE });
   }
