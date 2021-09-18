@@ -50,7 +50,7 @@ const ProfilePage = () => {
               <Modal.Title>Update Your Profile</Modal.Title>
             </Modal.Header>
 
-            <UpdateProfile />
+            <UpdateProfile handleClose={handleClose} profile={profile} />
             <Modal.Footer>
               <Button variant="dark" onClick={handleClose}>
                 Close

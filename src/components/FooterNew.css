@@ -1,0 +1,38 @@
+/* .footer {
+  background-color: grey;
+} */
+
+.footer-container {
+  background-color: rgb(33, 37, 41);
+  color: white;
+}
+
+/* .footer-main-row {
+  justify-content: center;
+}
+
+.footer-subBox {
+  border-bottom: 1px solid green;
+}
+
+.footer-sub-container {
+  border-bottom: 1px solid blue;
+}
+
+.footer-main-icon {
+  border-bottom: 1px solid yellowgreen;
+}
+
+.footer-content {
+  border-bottom: 1px solid yellowgreen;
+} */
+
+a:hover {
+  color: rgb(238, 77, 45);
+  text-decoration: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}

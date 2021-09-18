@@ -10,11 +10,11 @@ import CreateProduct from "./pages/CreateProduct";
 import CartPage from "./pages/CartPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProfilePage from "./pages/ProfilePage";
-import Footer from "./components/Footer";
 import DashBoard from "./pages/DashBoard";
 import ListOfUsers from "./pages/ListOfUsers";
 import BillInfo from "./pages/BillInfo";
 import Toastify from "./components/Toastify";
+import FooterNew from "./components/FooterNew";
 
 function App() {
   return (
@@ -23,17 +23,17 @@ function App() {
       <Toastify />
       <Switch>
         <Route exact path={`/`} component={HomePage} />
-        <Route exact path={`/cart`} component={CartPage} />
         <Route exact path={`/product/:id`} component={ProductDetailPage} />
         <Route exact path={`/auth/login`} component={LoginPage} />
         <Route exact path={`/auth/register`} component={RegisterPage} />
-        <Route exact path={`/auth/profile`} component={ProfilePage} />
-        <Route exact path={`/admin/dashboard`} component={DashBoard} />
         <Route exact path={`/auth/create`} component={CreateProduct} />
         <Route exact path={`/auth/listUsers`} component={ListOfUsers} />
         <Route exact path={`/auth/bill`} component={BillInfo} />
+        <ProtectedRoute exact path={`/auth/profile`} component={ProfilePage} />
+        <ProtectedRoute exact path={`/cart`} component={CartPage} />
+        <ProtectedRoute exact path={`/admin/dashboard`} component={DashBoard} />
       </Switch>
-      <Footer />
+      <FooterNew />
     </Router>
   );
 }

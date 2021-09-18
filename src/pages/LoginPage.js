@@ -1,12 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import { Button, Form, NavLink, Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 import { authActions } from "../redux/actions/auth.actions";
 import "./loginRegister.css";
 
 const LoginPage = () => {
+  const isAuthenticated = useSelector(
+    (state) => state.authReducer.isAuthenticated
+  );
+  console.log("....isAuthenticated:", isAuthenticated);
   const dispatch = useDispatch();
   const [formData, setstatFormData] = useState({
     email: "",
@@ -17,12 +23,14 @@ const LoginPage = () => {
     setstatFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const history = useHistory();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(authActions.login(formData));
     e.target.email.value = "";
     e.target.password.value = "";
     setstatFormData("");
+    dispatch(authActions.login(formData, history));
   };
 
   console.log(formData);

@@ -1,6 +1,6 @@
 import * as types from "../constants/user.constants";
-import { toast } from "react-toastify";
 import api from "../../apiService";
+import { toast } from "react-toastify";
 
 // const REACT_APP_BACKEND_API = process.env.REACT_APP_BACKEND_API;
 
@@ -19,13 +19,15 @@ const getSingleUserInfo = () => async (dispatch) => {
 
 // UPDATE USER INFO:
 // http://localhost:5000/user/update
-const updateUserInfo = (passData) => async (dispatch) => {
+const updateUserInfo = (passData, history) => async (dispatch) => {
   console.log("data before send to server:", passData);
   dispatch({ type: types.UPDATA_SINGLE_USER_REQUEST, payload: null });
   try {
     const data = await api.put("user/update", passData);
     console.log("Updated user info:", data);
     dispatch({ type: types.UPDATA_SINGLE_USER_SUCCESS, payload: data });
+    history.push("/auth/profile");
+    toast.success("Update Your Profile successfully!");
   } catch (error) {
     dispatch({ type: types.UPDATA_SINGLE_USER_FAILURE, payload: null });
   }

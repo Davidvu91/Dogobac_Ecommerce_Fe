@@ -6,6 +6,7 @@ import { cartActions } from "../../redux/actions/cart.actions";
 import "./productDetail.css";
 
 const PricePart = ({ product }) => {
+  const history = useHistory();
   const [count, setCount] = useState(1);
 
   const handleAdd = (e) => {
@@ -23,7 +24,17 @@ const PricePart = ({ product }) => {
   console.log("data before sent to order:", passData);
 
   const addToCart = () => {
-    dispatch(cartActions.addToCart(product, passData));
+    dispatch(cartActions.addToCart(product, passData, history));
+  };
+
+  const handelByNow = async () => {
+    console.log("bynow....");
+    try {
+      await addToCart();
+      history.push("/cart");
+    } catch (error) {
+      throw new Error("something wrong....");
+    }
   };
 
   return (
@@ -54,9 +65,7 @@ const PricePart = ({ product }) => {
           <Button
             variant=""
             className="single-btn detail-ntn"
-            onClick={addToCart}
-            as={Link}
-            to="/cart"
+            onClick={handelByNow}
           >
             Mua Ngay
           </Button>

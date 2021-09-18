@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Row, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import DBPagination from "./DBPagination";
 import "./listProduct.css";
+import Moment from "react-moment";
+import NumberFormat from "react-number-format";
 
 const ListProduct = () => {
   const [page, setPage] = useState(1);
@@ -28,34 +29,48 @@ const ListProduct = () => {
         <h1>...isloading</h1>
       ) : (
         <Container>
-          <h1> LIST OF YOUR PRODUCT: {totalProducts}</h1>
+          <Row className="row-padding">
+            <h3> LIST OF YOUR PRODUCTS: {totalProducts}</h3>
+          </Row>
           {products?.map((product) => (
             <Row className="row-padding, listProduct">
-              <Col className="check-box">
-                <input type="checkbox" name="checkBox" className="check-box" />{" "}
-              </Col>
-              <Col className="image-box">
-                {" "}
-                <img
-                  src={product.imageUrl[0]}
-                  alt="product img"
-                  className="image-dashboard"
-                />
-              </Col>
-              <Col className="productName-box">{product.name} </Col>
-              <Col className="price-box">{product.price} </Col>
-              <Col className="createdDay-box">{product.createdAt} </Col>
-              <Col className="actions-box">
-                <Row>
-                  <Col>
-                    <Link>
-                      <i class="fas fa-trash"></i>
-                    </Link>
+              <Col lg={10} md={10}>
+                <Row className="row-padding">
+                  <Col lg={2} md={2} className="image-box">
+                    {" "}
+                    <img
+                      src={product.imageUrl[0]}
+                      alt="product img"
+                      className="image-dashboard"
+                    />
                   </Col>
-                  <Col>
-                    <Link>
+                  <Col lg={6} md={6} className="productName-box">
+                    {product.name}{" "}
+                  </Col>
+                  <Col lg={2} md={2} className="price-box">
+                    <NumberFormat
+                      value={product.price}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                      prefix={"VND"}
+                    />
+                  </Col>
+                  <Col lg={2} md={2} className="createdDay-box">
+                    <Moment format="YYYY/MM/DD">{product.createdAt}</Moment>
+                  </Col>
+                </Row>
+              </Col>
+              <Col lg={2} md={2} className="actions-box">
+                <Row>
+                  <Col lg={4} md={4}>
+                    <Button variant="">
                       <i class="fas fa-edit"></i>
-                    </Link>
+                    </Button>
+                  </Col>
+                  <Col lg={4} md={4}>
+                    <Button variant="">
+                      <i class="fas fa-trash"></i>
+                    </Button>
                   </Col>
                 </Row>
               </Col>

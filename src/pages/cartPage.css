@@ -65,8 +65,7 @@
 
 .cart-Image {
   /* border: 2px solid red; */
-  height: 65px;
-  width: 100px;
+  width: 100%;
 }
 .cart-productName {
   /* border: 2px solid red; */

@@ -3,6 +3,7 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { useDispatch } from "react-redux";
+import NumberFormat from "react-number-format";
 
 import "./mainpage.css";
 import { productActions } from "../redux/actions/product.action";
@@ -44,7 +45,12 @@ const MainPage = ({ products, loading }) => {
                   <Card.Title>{product.name}</Card.Title>
                   <Card.Text>Kích Thước:{product.dimension}</Card.Text>
                   <Button variant="" className="single-btn">
-                    {product.price}
+                    <NumberFormat
+                      value={product.price}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                      prefix={"VND"}
+                    />
                   </Button>
                 </Card.Body>
               </Card>

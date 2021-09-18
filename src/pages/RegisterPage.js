@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Button, Form, NavLink, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { authActions } from "../redux/actions/auth.actions";
 import "./style.css";
@@ -16,10 +17,10 @@ const RegisterPage = () => {
   const handleOnChange = (e) => {
     setstatFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(authActions.register(formData));
+    dispatch(authActions.register(formData, history));
     e.target.email.value = "";
     e.target.password.value = "";
     e.target.name.value = "";

@@ -5,3 +5,15 @@
 .dash-row {
   border: 1px solid green;
 } */
+
+.dash-box {
+  word-wrap: break-word;
+}
+
+.image-dashboard {
+  width: 100%;
+}
+
+.dash-row {
+  background-color: rgb(245, 245, 245);
+}

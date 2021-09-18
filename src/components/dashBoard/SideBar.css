@@ -1,0 +1,11 @@
+.nav-link {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: rgb(238, 77, 45);
+}
+.sidebar-icon {
+  align-self: center;
+}

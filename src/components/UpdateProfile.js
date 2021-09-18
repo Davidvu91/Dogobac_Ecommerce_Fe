@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import { Col, Form, Row, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { userActions } from "../redux/actions/user.actions";
+import { useHistory } from "react-router-dom";
 
-const UpdateProfile = () => {
-  const [formData, setFormData] = useState({});
-  const [getImage, setGetImage] = useState("");
+const UpdateProfile = ({ handleClose, profile }) => {
+  console.log("profile befor update:", profile);
+  const [formData, setFormData] = useState({
+    name: profile.name,
+    email: profile.email,
+    address: profile.address,
+    phone: profile.phone,
+  });
+  const [getImage, setGetImage] = useState(profile.avataUrl);
 
   const handleOnChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,16 +44,15 @@ const UpdateProfile = () => {
   };
   console.log("data befor dispatch:", passData);
 
+  const history = useHistory();
   const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(userActions.updateUserInfo(passData));
+    dispatch(userActions.updateUserInfo(passData, history));
     setFormData({});
     setGetImage([]);
-    e.target.name.value = "";
-    e.target.email.value = "";
-    e.target.address.value = "";
-    e.target.phone.value = "";
+    handleClose();
   };
 
   return (
@@ -57,6 +63,7 @@ const UpdateProfile = () => {
             type="text"
             placeholder="Tên hiển thị"
             name="name"
+            value={formData.name}
             onChange={handleOnChange}
           />
         </Form.Group>
@@ -66,6 +73,7 @@ const UpdateProfile = () => {
             type="email"
             placeholder="Email"
             name="email"
+            value={formData.email}
             onChange={handleOnChange}
           />
         </Form.Group>
@@ -75,6 +83,7 @@ const UpdateProfile = () => {
             type="text"
             placeholder="Địa chỉ"
             name="address"
+            value={formData.address}
             as="textarea"
             onChange={handleOnChange}
           />
@@ -85,6 +94,7 @@ const UpdateProfile = () => {
             type="number"
             placeholder="Số điện thoại"
             name="phone"
+            value={formData.phone}
             onChange={handleOnChange}
           />
         </Form.Group>

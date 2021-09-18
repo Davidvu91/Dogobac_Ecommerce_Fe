@@ -1,12 +1,18 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
 import { userActions } from "../redux/actions/user.actions";
 
 const Navbarr = () => {
+  const user = useSelector((state) => state.userReducer.user);
+  let profile = user?.data?.data?.user;
+  console.log("profile in navBar:", profile);
+  let role = profile?.role;
+  console.log("role of user:", role);
+
   const dispatch = useDispatch();
   const handleGetSingleProfile = (e) => {
     dispatch(userActions.getSingleUserInfo());
@@ -58,23 +64,24 @@ const Navbarr = () => {
           >
             <i class="fas fa-cart-plus fa-lg"></i>
           </Nav.Link>
-
-          <Nav.Link
-            as={Link}
-            to="/auth/profile"
-            className="nav-title-layout "
-            onClick={handleGetSingleProfile}
-          >
-            <i class="fas fa-user fa-lg"></i>
-          </Nav.Link>
-
-          <Nav.Link
-            as={Link}
-            to="/admin/dashboard"
-            className="nav-title-layout "
-          >
-            <i class="fas fa-user-cog fa-lg"></i>
-          </Nav.Link>
+          {role === 0 || role === undefined ? (
+            <Nav.Link
+              as={Link}
+              to="/auth/profile"
+              className="nav-title-layout "
+              onClick={handleGetSingleProfile}
+            >
+              <i class="fas fa-user fa-lg"></i>
+            </Nav.Link>
+          ) : (
+            <Nav.Link
+              as={Link}
+              to="/admin/dashboard"
+              className="nav-title-layout "
+            >
+              <i class="fas fa-tachometer-alt fa-2x"></i>
+            </Nav.Link>
+          )}
         </Nav>
         {/* <Form className="d-flex">
           <FormControl

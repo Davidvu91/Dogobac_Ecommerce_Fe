@@ -1,12 +1,12 @@
 import * as types from "../constants/auth.constants";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import api from "../../apiService";
 
 // const LOCAL_BE_URL = "http://localhost:5000";
 // const REACT_APP_BACKEND_API = process.env.REACT_APP_BACKEND_API;
 
-const register = (formData) => async (dispatch) => {
+const register = (formData, history) => async (dispatch) => {
   console.log("register info:", formData);
   dispatch({ type: types.REGISTER_REQUEST });
 
@@ -14,13 +14,15 @@ const register = (formData) => async (dispatch) => {
     const data = await api.post("/user/create", formData);
     console.log(data);
     dispatch({ type: types.REGISTER_SUCCESS, payload: data.data.data });
+    history.push("/auth/login");
     toast.success("Register successfully!");
   } catch (error) {
     dispatch({ type: types.REGISTER_FAILURE });
+    toast.error("Register Failure!");
   }
 };
 
-const login = (formData) => async (dispatch) => {
+const login = (formData, history) => async (dispatch) => {
   console.log("login info", formData);
   dispatch({ type: types.LOGIN_REQUEST });
 
@@ -33,9 +35,11 @@ const login = (formData) => async (dispatch) => {
     api.defaults.headers.authorization = "Bearer " + data.data.data.accessToken;
 
     dispatch({ type: types.LOGIN_SUCCESS, payload: data });
+    history.push("/");
     toast.success("Login successfully!");
   } catch (error) {
     dispatch({ type: types.LOGIN_FAILURE });
+    toast.error("Login Failure!");
   }
 };
 

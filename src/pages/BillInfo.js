@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row, Button, Modal } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import "./billInfo.css";
+import NumberFormat from "react-number-format";
 
 const BillInfo = () => {
   const loading = useSelector((state) => state.userReducer.loading);
@@ -35,6 +36,9 @@ const BillInfo = () => {
               <h3>Thông Tin Người Mua</h3>
             </Row>
             <Row>
+              <h4>Tên: {userInfo.name}</h4>
+            </Row>
+            <Row>
               <Col lg={2} md={2} xs={2}>
                 Số Đt:(+84) {userInfo.phone}
               </Col>
@@ -49,7 +53,7 @@ const BillInfo = () => {
             {/* Bắt đầu vòng lặp */}
             <Row>
               {carts?.map((cart) => (
-                <Row key={cart._id}>
+                <Row key={cart._id} className="row-padding">
                   <Col lg={6} md={6} xs={6}>
                     <Row>
                       <Col lg={3} md={3} xs={3}>
@@ -68,14 +72,24 @@ const BillInfo = () => {
                   <Col>
                     {" "}
                     <span>Price: </span>
-                    {cart.items.productId.price}
+                    <NumberFormat
+                      value={cart.items.productId.price}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                      prefix={"VND"}
+                    />
                   </Col>
                   <Col>
                     <span>Quantity: </span> {cart.items.quantity}
                   </Col>
                   <Col>
                     <span>Total: </span>{" "}
-                    {cart.items.quantity * cart.items.productId.price}
+                    <NumberFormat
+                      value={cart.items.quantity * cart.items.productId.price}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                      prefix={"VND"}
+                    />
                   </Col>
                 </Row>
               ))}
@@ -85,7 +99,15 @@ const BillInfo = () => {
           <Row className="bill-footer row-padding">
             <Row className=" row-padding">
               <Col>
-                Sub Total: <b>{totalMoney}</b>{" "}
+                <span> Sub Total: </span>
+                <b>
+                  <NumberFormat
+                    value={totalMoney}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    prefix={"VND"}
+                  />
+                </b>
               </Col>
             </Row>
             <Row>
