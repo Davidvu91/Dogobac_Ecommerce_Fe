@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Col, Row, Card, Button } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
+import NumberFormat from "react-number-format";
 // import { useSelector, useDispatch } from "react-redux";
 // import { productActions } from "../../redux/actions/product.action";
 
@@ -53,7 +54,12 @@ const RelatedPorducts = ({ loading, product }) => {
                   <Card.Title>{product.name}</Card.Title>
                   <Card.Text>Kích Thước:{product.dimension}</Card.Text>
                   <Button variant="" className="single-btn">
-                    {product.price}
+                    <NumberFormat
+                      value={product.price}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                      prefix={"VND"}
+                    />
                   </Button>
                 </Card.Body>
               </Card>

@@ -5,6 +5,7 @@ import { userActions } from "../redux/actions/user.actions";
 import { useHistory } from "react-router-dom";
 
 const UpdateProfile = ({ handleClose, profile }) => {
+  console.log("handleclose:", handleClose);
   console.log("profile befor update:", profile);
   const [formData, setFormData] = useState({
     name: profile && profile.name,
@@ -52,7 +53,6 @@ const UpdateProfile = ({ handleClose, profile }) => {
     dispatch(userActions.updateUserInfo(passData, history));
     setFormData({});
     setGetImage([]);
-    handleClose();
   };
 
   return (

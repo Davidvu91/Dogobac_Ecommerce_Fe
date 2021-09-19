@@ -58,7 +58,7 @@ const CartPage = () => {
     carts.length &&
     carts.reduce(
       (initValue, cart) =>
-        initValue + cart.items.quantity * cart.items.productId.price,
+        initValue + cart?.items?.quantity * cart?.items?.productId?.price,
       0
     );
   console.log("tong tien la:", totalMoney);
@@ -92,13 +92,13 @@ const CartPage = () => {
                       <Row>
                         <Col lg={4} md={4}>
                           <img
-                            src={cart.items.productId.imageUrl[0]}
+                            src={cart?.items?.productId?.imageUrl[0]}
                             alt=""
                             className="cart-Image"
                           />
                         </Col>
                         <Col lg={8} md={8}>
-                          {cart.items.productId.name}
+                          {cart?.items?.productId?.name}
                         </Col>
                       </Row>
                     </Col>

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { cartActions } from "../../redux/actions/cart.actions";
 import "./productDetail.css";
+import NumberFormat from "react-number-format";
 
 const PricePart = ({ product }) => {
   const history = useHistory();
@@ -42,7 +43,19 @@ const PricePart = ({ product }) => {
       <Card.Header>Tên Sản Phẩm: {product.name}</Card.Header>
       <ListGroup variant="flush">
         <ListGroup.Item>Kích Thước: {product.dimension}</ListGroup.Item>
-        <ListGroup.Item>Giá: {product.price}</ListGroup.Item>
+        <ListGroup.Item>
+          Giá:{" "}
+          <b>
+            {" "}
+            <NumberFormat
+              value={product.price}
+              displayType={"text"}
+              thousandSeparator={true}
+              prefix={"VND"}
+              style={{ color: "rgb(238,77,45)" }}
+            />
+          </b>
+        </ListGroup.Item>
         <ListGroup.Item>
           Số Lượng:
           <Button variant="" onClick={handleSub} className="calulate-btn">

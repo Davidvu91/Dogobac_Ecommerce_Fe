@@ -1,9 +1,12 @@
 import React from "react";
-import { Card, ListGroup } from "react-bootstrap";
+import { Card, Row } from "react-bootstrap";
 
 const DescriptionPart = ({ product }) => {
   return (
     <>
+      <Row>
+        <h4> PRODUCT DETAILS</h4>
+      </Row>
       <Card style={{ width: "100%" }} className="review-card">
         <Card.Header>THÔNG TIN SẢN PHẨM CHI TIẾT</Card.Header>
         <Card.Body>
