@@ -31,7 +31,6 @@ const deleteCart = (cartId, history) => async (dispatch) => {
     console.log("delete cart thanh cong");
     toast.success(`Delete Item successfully!`);
     dispatch(userActions.getSingleUserInfo());
-    history.push("/cart");
   } catch (error) {
     dispatch({ type: types.DELETE_SINGLE_CART_FAILURE, payload: null });
   }

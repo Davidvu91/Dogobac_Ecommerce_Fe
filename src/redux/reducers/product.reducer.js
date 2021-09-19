@@ -2,6 +2,7 @@ import * as types from "../constants/product.constants";
 
 const initialState = {
   data: {},
+  updatedproduct: {},
   relatedProducts: {},
   loading: false,
   selectedProduct: {},
@@ -41,6 +42,20 @@ const productReducer = (state = initialState, action) => {
     case types.GET_RELATED_PRODUCT_SUCCESS:
       return { ...state, relatedProducts: payload, loading: false };
     case types.GET_RELATED_PRODUCT_FAILURE:
+      return { ...state, loading: false };
+    //UPDATE SINGLE PRODUCT
+    case types.UPDATE_SIGLE_PRODUCT_REQUEST:
+      return { ...state, loading: true };
+    case types.UPDATE_SIGLE_PRODUCT_SUCCESS:
+      return { ...state, loading: false, updatedproduct: payload };
+    case types.UPDATE_SIGLE_PRODUCT_FAILURE:
+      return { ...state, loading: false };
+    //DELETE SINGLE PRODUCT
+    case types.DELETE_SIGLE_PRODUCT_REQUEST:
+      return { ...state, loading: true };
+    case types.DELETE_SIGLE_PRODUCT_SUCCESS:
+      return { ...state, loading: false };
+    case types.DELETE_SIGLE_PRODUCT_FAILURE:
       return { ...state, loading: false };
     default:
       return state;

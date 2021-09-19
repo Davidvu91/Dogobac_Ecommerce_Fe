@@ -20,13 +20,13 @@ const CartPage = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(userActions.getSingleUserInfo());
-  }, [dispatch]);
-
   let handleDeleteCart = (cartId) => {
     dispatch(cartActions.deleteCart(cartId, history));
   };
+
+  useEffect(() => {
+    dispatch(userActions.getSingleUserInfo());
+  }, [dispatch]);
 
   let phone = userInfo?.phone;
   console.log("phone: ", phone);
@@ -54,7 +54,8 @@ const CartPage = () => {
   };
 
   let totalMoney =
-    carts?.length &&
+    carts &&
+    carts.length &&
     carts.reduce(
       (initValue, cart) =>
         initValue + cart.items.quantity * cart.items.productId.price,

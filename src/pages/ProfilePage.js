@@ -16,7 +16,6 @@ const ProfilePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("hahhahahahaah");
     dispatch(userActions.getSingleUserInfo());
   }, [dispatch]);
   // MODALS:

@@ -7,12 +7,12 @@ import { useHistory } from "react-router-dom";
 const UpdateProfile = ({ handleClose, profile }) => {
   console.log("profile befor update:", profile);
   const [formData, setFormData] = useState({
-    name: profile.name,
-    email: profile.email,
-    address: profile.address,
-    phone: profile.phone,
+    name: profile && profile.name,
+    email: profile && profile.email,
+    address: profile && profile.address,
+    phone: profile && profile.phone,
   });
-  const [getImage, setGetImage] = useState(profile.avataUrl);
+  const [getImage, setGetImage] = useState(profile && profile.avataUrl);
 
   const handleOnChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -91,7 +91,7 @@ const UpdateProfile = ({ handleClose, profile }) => {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
-            type="number"
+            type="text"
             placeholder="Số điện thoại"
             name="phone"
             value={formData.phone}

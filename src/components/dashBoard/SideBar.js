@@ -15,8 +15,13 @@ const SideBar = () => {
     <Navbar className="sidebar-card">
       <ListGroup variant="flush">
         <ListGroup.Item className="sidebar-icon">
-          <Nav.Link as={Link} to="/admin/dashboard" className="dash-board-link">
-            <i class="fas fa-tasks fa-3x"></i>
+          <Nav.Link
+            as={Link}
+            to="/admin/dashboard"
+            className="dash-board-link dash-board-header"
+          >
+            <i class="fas fa-tasks"></i>
+            <span> Dash Board </span>
           </Nav.Link>
         </ListGroup.Item>
 

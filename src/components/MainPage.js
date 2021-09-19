@@ -9,15 +9,11 @@ import "./mainpage.css";
 import { productActions } from "../redux/actions/product.action";
 
 const MainPage = ({ products, loading }) => {
-  // const order = "asc";
-  // const sortBy = "price";
-  // const limit = 8;
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleClickProduct = (productId) => {
     dispatch(productActions.getSingleProductById(productId));
-    // dispatch(productActions.getRelatedProduct(productId, order, sortBy, limit));
     history.push(`product/${productId}`);
   };
 

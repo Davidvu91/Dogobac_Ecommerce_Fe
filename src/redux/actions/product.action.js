@@ -50,6 +50,38 @@ const getSingleProductById = (productId) => async (dispatch) => {
   }
 };
 
+// UPDATE SINGLE PRODUCT
+// localhost:5000/product/6139c15fe106fce635bb1e25
+const upadateSingleProduct =
+  (productId, passData, history) => async (dispatch) => {
+    console.log("productId to Update:", productId);
+    dispatch({ type: types.UPDATE_SIGLE_PRODUCT_REQUEST, payload: null });
+    try {
+      const data = await api.put(`product/${productId}`, passData);
+      console.log("updated product in actions:", data);
+      dispatch({ type: types.UPDATE_SIGLE_PRODUCT_SUCCESS, payload: data });
+      toast.success("update product successfully");
+      history.push("/admin/dashboard");
+    } catch (error) {
+      dispatch({ type: types.UPDATE_SIGLE_PRODUCT_FAILURE, payload: null });
+      toast.error("something wrong...");
+    }
+  };
+
+//DELET SINGLE PRODUCT:
+// localhost:5000/product/613b65258620bc438d81078c
+const deletSingleProduct = (productId) => async (dispatch) => {
+  console.log("id of deleted product:", productId);
+  dispatch({ type: types.DELETE_SIGLE_PRODUCT_REQUEST, payload: null });
+  try {
+    await api.delete(`product/${productId}`);
+    dispatch({ type: types.DELETE_SIGLE_PRODUCT_SUCCESS, payload: null });
+    toast.success("Delete product successfully");
+  } catch (error) {
+    dispatch({ type: types.DELETE_SIGLE_PRODUCT_FAILURE, payload: null });
+  }
+};
+
 // GET RELATED PRODUCT
 // http://localhost:5000/product/related/6139c15fe106fce635bb1e25?order=desc&sortBy=createdAt&limit=6
 
@@ -74,5 +106,6 @@ export const productActions = {
   createProduct,
   getAllProducts,
   getSingleProductById,
-  // getRelatedProduct,
+  upadateSingleProduct,
+  deletSingleProduct,
 };

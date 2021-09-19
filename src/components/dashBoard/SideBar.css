@@ -8,4 +8,9 @@
 }
 .sidebar-icon {
   align-self: center;
+  background-color: rgb(33, 37, 41);
+}
+
+.dash-board-header {
+  color: white;
 }
