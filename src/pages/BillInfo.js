@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, Button, Modal } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./billInfo.css";
 import NumberFormat from "react-number-format";
+import { orderActions } from "../redux/actions/order.actions";
 
 const BillInfo = () => {
   const loading = useSelector((state) => state.userReducer.loading);
@@ -12,13 +13,35 @@ const BillInfo = () => {
   let userInfo = user?.data?.data?.user;
   console.log("hihihi", userInfo);
   let carts = user?.data?.data?.user?.cart;
-  console.log("Im in cart page, I got carts info:", carts);
+  console.log("Im in bill info, I got carts info:", carts);
 
   const totalMoney = carts?.reduce(
     (initValue, cart) =>
       initValue + cart.items.quantity * cart.items.productId.price,
     0
   );
+
+  let cartIds = [];
+  let n = carts.length;
+  for (let i = 0; i < n; i++) {
+    console.log("cartids...:", carts[i]._id);
+    cartIds.push(carts[i]._id);
+  }
+  console.log("cartIds:", cartIds);
+
+  const owner = userInfo._id;
+
+  const passData = {};
+
+  passData.amount = totalMoney;
+  passData.items = cartIds;
+  passData.owner = owner;
+  console.log("passData:", passData);
+
+  const dispatch = useDispatch();
+  const handleCreateOrder = () => {
+    dispatch(orderActions.createOrder(passData));
+  };
 
   return (
     <>
@@ -118,7 +141,11 @@ const BillInfo = () => {
             </Row>
             <Row className=" row-padding ">
               <Col>
-                <Button variant="" className="single-btn">
+                <Button
+                  variant=""
+                  className="single-btn"
+                  onClick={handleCreateOrder}
+                >
                   Xác Nhận Mua Hàng
                 </Button>
               </Col>

@@ -41,15 +41,15 @@ const CartPage = () => {
 
   //Functions call actions onClick
 
-  const handleGetSingleProfile = (e) => {
-    dispatch(userActions.getSingleUserInfo());
-  };
+  // const handleGetSingleProfile = (e) => {
+  //   dispatch(userActions.getSingleUserInfo());
+  // };
 
   let handleOnActions = () => {
     console.log("actions...");
     if (!phone || !address) return setShow(true);
     console.log("show...");
-    handleGetSingleProfile();
+    dispatch(userActions.getSingleUserInfo());
     history.push("/auth/bill");
   };
 
@@ -108,25 +108,27 @@ const CartPage = () => {
                 <Col lg={7} md={7}>
                   <Row>
                     <Col lg={2} md={2}>
-                      {cart.items.productId.dimension}{" "}
+                      {cart?.items?.productId?.dimension}{" "}
                     </Col>
                     <Col lg={1} md={1}>
-                      {cart.items.quantity}{" "}
+                      {cart?.items?.quantity}{" "}
                     </Col>
                     <Col lg={2} md={2}>
                       <NumberFormat
-                        value={cart.items.productId.price}
+                        value={cart?.items?.productId?.price}
                         displayType={"text"}
                         thousandSeparator={true}
                         prefix={"VND"}
                       />
                     </Col>
                     <Col lg={3} md={3}>
-                      <Moment format="YYYY/MM/DD">{cart.createdAt}</Moment>
+                      <Moment format="YYYY/MM/DD">{cart?.createdAt}</Moment>
                     </Col>
                     <Col lg={3} md={3}>
                       <NumberFormat
-                        value={cart.items.quantity * cart.items.productId.price}
+                        value={
+                          cart?.items?.quantity * cart?.items?.productId?.price
+                        }
                         displayType={"text"}
                         thousandSeparator={true}
                         prefix={"VND"}

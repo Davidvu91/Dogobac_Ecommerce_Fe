@@ -21,7 +21,7 @@ const cartReducer = (state = initialState, action) => {
     case types.DELETE_SINGLE_CART_SUCCESS:
       return { ...state, loading: false };
     case types.DELETE_SINGLE_CART_FAILURE:
-      return { ...state, payload: false };
+      return { ...state, loading: false };
     default:
       return state;
   }

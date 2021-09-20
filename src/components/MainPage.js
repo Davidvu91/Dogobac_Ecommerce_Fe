@@ -45,7 +45,7 @@ const MainPage = ({ products, loading }) => {
                       value={product.price}
                       displayType={"text"}
                       thousandSeparator={true}
-                      prefix={"VND"}
+                      prefix={"VND "}
                     />
                   </Button>
                 </Card.Body>

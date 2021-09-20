@@ -70,13 +70,14 @@ const upadateSingleProduct =
 
 //DELET SINGLE PRODUCT:
 // localhost:5000/product/613b65258620bc438d81078c
-const deletSingleProduct = (productId) => async (dispatch) => {
+const deletSingleProduct = (productId, history) => async (dispatch) => {
   console.log("id of deleted product:", productId);
   dispatch({ type: types.DELETE_SIGLE_PRODUCT_REQUEST, payload: null });
   try {
     await api.delete(`product/${productId}`);
     dispatch({ type: types.DELETE_SIGLE_PRODUCT_SUCCESS, payload: null });
-    toast.success("Delete product successfully");
+    dispatch(productActions.getAllProducts);
+    history.push("/admin/dashboard");
   } catch (error) {
     dispatch({ type: types.DELETE_SIGLE_PRODUCT_FAILURE, payload: null });
   }

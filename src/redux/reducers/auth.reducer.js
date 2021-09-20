@@ -1,9 +1,10 @@
 import * as types from "../constants/auth.constants";
+const isAuthenticated = !!localStorage.getItem("accessToken");
 
 const initialState = {
   user: {},
   loading: false,
-  isAuthenticated: false,
+  isAuthenticated,
 };
 
 const authReducer = (state = initialState, action) => {

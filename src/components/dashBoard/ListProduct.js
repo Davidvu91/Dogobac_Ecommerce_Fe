@@ -10,6 +10,7 @@ import PopupToDelete from "../PopupToDelete";
 import { useHistory } from "react-router";
 
 const ListProduct = () => {
+  const [selectedId, setSelectedId] = useState("");
   const order = "asc";
   const sortBy = "createdAt";
   const limit = 6;
@@ -46,8 +47,9 @@ const ListProduct = () => {
     history.push(`edit/${productId}`);
   };
 
-  const handleDeleteProduct = (productId) => {
-    console.log("poroductId receive on click to delete", productId);
+  const handleDeleteProduct = () => {
+    console.log("selectedId: ", selectedId);
+    dispatch(productActions.deletSingleProduct(selectedId, history));
   };
 
   return (
@@ -104,7 +106,7 @@ const ListProduct = () => {
                       variant=""
                       onClick={() => {
                         handleShow();
-                        handleDeleteProduct(product._id);
+                        setSelectedId(product._id);
                       }}
                     >
                       <i class="fas fa-trash"></i>
@@ -132,7 +134,13 @@ const ListProduct = () => {
               <Button variant="dark" onClick={handleClose}>
                 Cancel
               </Button>
-              <Button variant="danger" onClick={handleDeleteProduct}>
+              <Button
+                variant="danger"
+                onClick={() => {
+                  handleDeleteProduct();
+                  handleClose();
+                }}
+              >
                 Delete
               </Button>
             </Modal.Footer>

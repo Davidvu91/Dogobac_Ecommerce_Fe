@@ -16,6 +16,7 @@ import BillInfo from "./pages/BillInfo";
 import Toastify from "./components/Toastify";
 import FooterNew from "./components/FooterNew";
 import EditProduct from "./pages/EditProduct";
+import ListOfOrder from "./components/dashBoard/ListOfOrder";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route exact path={`/auth/register`} component={RegisterPage} />
         <Route exact path={`/auth/create`} component={CreateProduct} />
         <Route exact path={`/auth/listUsers`} component={ListOfUsers} />
+        <Route exact path={`/auth/listOrders`} component={ListOfOrder} />
         <Route exact path={`/auth/bill`} component={BillInfo} />
         <Route exact path={`/admin/edit/:productId`} component={EditProduct} />
         <ProtectedRoute exact path={`/auth/profile`} component={ProfilePage} />

@@ -43,7 +43,7 @@ const SideBar = () => {
         </ListGroup.Item>
 
         <ListGroup.Item className="sidebar-item">
-          <Nav.Link as={Link} to="/" className="dash-board-link">
+          <Nav.Link as={Link} to="/auth/listOrders" className="dash-board-link">
             List of Orders
           </Nav.Link>
         </ListGroup.Item>

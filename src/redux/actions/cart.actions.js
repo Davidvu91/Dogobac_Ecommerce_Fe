@@ -24,15 +24,17 @@ const addToCart = (product, passData, history) => async (dispatch) => {
 //DELETE A SINGLE CART
 // http://localhost:5000/cart/delete/6141747b8ca8b56cbeaaa90c
 const deleteCart = (cartId, history) => async (dispatch) => {
-  dispatch({ type: types.DELETE_SINGLE_CART_REQUEST, payload: null });
+  dispatch({ type: types.DELETE_SINGLE_CART_REQUEST });
+  console.log("dong 27...");
   try {
+    console.log("hihihi...");
     await api.delete(`/cart/delete/${cartId}`);
-    dispatch({ type: types.DELETE_SINGLE_CART_SUCCESS, payload: null });
+    dispatch({ type: types.DELETE_SINGLE_CART_SUCCESS });
     console.log("delete cart thanh cong");
     toast.success(`Delete Item successfully!`);
-    dispatch(userActions.getSingleUserInfo());
+    dispatch(userActions.getSingleUserInfo);
   } catch (error) {
-    dispatch({ type: types.DELETE_SINGLE_CART_FAILURE, payload: null });
+    dispatch({ type: types.DELETE_SINGLE_CART_FAILURE });
   }
 };
 
