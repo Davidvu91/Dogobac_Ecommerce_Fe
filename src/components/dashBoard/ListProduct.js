@@ -81,7 +81,7 @@ const ListProduct = () => {
                       value={product.price}
                       displayType={"text"}
                       thousandSeparator={true}
-                      prefix={"VND"}
+                      prefix={"VND "}
                     />
                   </Col>
                   <Col lg={2} md={2} className="createdDay-box">

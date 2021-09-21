@@ -46,6 +46,7 @@ const ListOfUsers = () => {
                             src={user.avataUrl}
                             alt="user img"
                             className="image-dashboard  "
+                            style={{ borderRadius: "50%" }}
                           />
                         </Col>
                         <Col lg={2} md={2} className="userName-box dash-box">

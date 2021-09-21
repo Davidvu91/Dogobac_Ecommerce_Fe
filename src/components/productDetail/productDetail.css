@@ -1,15 +1,12 @@
-.review-card {
-  padding-right: 0px;
-  padding-left: 0px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+.image-price-part {
+  padding-left: 45px;
 }
 
 .detail-ntn {
   border: none;
   margin-left: 0px;
   margin-right: 5px;
-  width: 125px;
+  width: 135px;
 }
 
 .calulate-btn {
@@ -18,9 +15,37 @@
   border: 1px solid grey;
   margin-right: 15px;
   margin-left: 15px;
-  width: 50px;
+  width: 55px;
 }
 
 .calulate-btn:hover {
   background-color: #ee4d2d;
+}
+
+/* Price part */
+.info-container {
+  font-family: Montserrat;
+}
+
+.info-title {
+  font-weight: bold;
+}
+
+/* product despription */
+
+.detail-description {
+  font-family: Montserrat;
+  padding-left: 45px;
+}
+
+/* Related Products */
+.related-product-title {
+  font-family: Montserrat;
+  font-weight: bold;
+  padding-top: 45px;
+  padding-bottom: 30px;
+}
+
+.related-product-container {
+  padding-left: 45px;
 }

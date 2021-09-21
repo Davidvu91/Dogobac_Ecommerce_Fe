@@ -1,15 +1,8 @@
-/* .navbar-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  transform: translateZ(0);
-  z-index: 100;
-} */
-
 .navbar-bg {
-  background-color: rgb(238, 77, 45);
+  background-color: rgb(33, 37, 41);
 }
+
+/* background-color: rgb(238, 77, 45); */
 
 .navbar-light .navbar-nav {
   color: white;
@@ -39,5 +32,8 @@
 .nav-title-layout {
   margin-right: 10px;
   margin-left: 10px;
-  color: white !important;
+  color: rgb(238, 77, 45) !important;
+  font-family: Montserrat;
+  font-weight: 800;
+  align-self: center;
 }

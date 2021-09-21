@@ -26,7 +26,7 @@ const SideBar = () => {
         </ListGroup.Item>
 
         <ListGroup.Item className="sidebar-item">
-          <Nav.Link as={Link} to="/auth/profile" className="dash-board-link">
+          <Nav.Link as={Link} to="/admin/profile" className="dash-board-link">
             Admin Profile
           </Nav.Link>
         </ListGroup.Item>

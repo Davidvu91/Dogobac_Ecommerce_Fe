@@ -28,27 +28,36 @@ const MainPage = ({ products, loading }) => {
           {products.map((product) => (
             <Col lg={3} md={6} xs={12} className="home-card">
               <Card
-                style={{
-                  textDecoration: "none",
-                  color: "black",
-                  textAlign: "center",
-                }}
                 key={product._id}
                 onClick={() => handleClickProduct(product._id)}
+                className="display-card"
               >
-                <Card.Img variant="top" src={product.imageUrl[0]} />
-                <Card.Body>
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>Kích Thước:{product.dimension}</Card.Text>
-                  <Button variant="" className="single-btn">
-                    <NumberFormat
-                      value={product.price}
-                      displayType={"text"}
-                      thousandSeparator={true}
-                      prefix={"VND "}
-                    />
-                  </Button>
-                </Card.Body>
+                <div className="display-card-group">
+                  <div className="display-image">
+                    <img alt="product" src={product.imageUrl[0]} width="100%" />
+                  </div>
+                  <div className="display-card-icon">
+                    <i class="fab fa-instagram-square icon"></i>
+                  </div>
+                </div>
+
+                <div className="card-body">
+                  <div className="card-name">{product.name}</div>
+                  <div className="card-content">
+                    Kích Thước:{product.dimension}
+                  </div>
+                  <div className="card-content">
+                    <b>
+                      <NumberFormat
+                        value={product.price}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                        prefix={"VND "}
+                        style={{ color: "rgb(238,77,45)" }}
+                      />
+                    </b>
+                  </div>
+                </div>
               </Card>
             </Col>
           ))}

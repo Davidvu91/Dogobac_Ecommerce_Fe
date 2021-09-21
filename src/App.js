@@ -17,6 +17,7 @@ import Toastify from "./components/Toastify";
 import FooterNew from "./components/FooterNew";
 import EditProduct from "./pages/EditProduct";
 import ListOfOrder from "./components/dashBoard/ListOfOrder";
+import AdminProfile from "./components/dashBoard/AdminProfile";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route exact path={`/auth/listUsers`} component={ListOfUsers} />
         <Route exact path={`/auth/listOrders`} component={ListOfOrder} />
         <Route exact path={`/auth/bill`} component={BillInfo} />
+        <Route exact path={`/admin/profile`} component={AdminProfile} />
         <Route exact path={`/admin/edit/:productId`} component={EditProduct} />
         <ProtectedRoute exact path={`/auth/profile`} component={ProfilePage} />
         <ProtectedRoute exact path={`/cart`} component={CartPage} />
@@ -42,5 +44,4 @@ function App() {
   );
 }
 
-//  <ProtectedRoute exact path={`/cart`} component={CartPage} />
 export default App;

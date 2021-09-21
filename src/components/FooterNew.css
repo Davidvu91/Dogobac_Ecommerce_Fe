@@ -1,31 +1,8 @@
-/* .footer {
-  background-color: grey;
-} */
-
 .footer-container {
   background-color: rgb(33, 37, 41);
   color: white;
+  padding: 2rem 0;
 }
-
-/* .footer-main-row {
-  justify-content: center;
-}
-
-.footer-subBox {
-  border-bottom: 1px solid green;
-}
-
-.footer-sub-container {
-  border-bottom: 1px solid blue;
-}
-
-.footer-main-icon {
-  border-bottom: 1px solid yellowgreen;
-}
-
-.footer-content {
-  border-bottom: 1px solid yellowgreen;
-} */
 
 a:hover {
   color: rgb(238, 77, 45);
@@ -35,4 +12,31 @@ a:hover {
 a {
   color: white;
   text-decoration: none;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: Montserrat;
+  margin-bottom: 16px;
+}
+
+.footer-sub-content {
+  display: flex;
+}
+
+.footer-sub-icon {
+  margin-right: 16px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: Montserrat;
+}
+
+.footer-main-icon {
+  justify-content: center;
 }

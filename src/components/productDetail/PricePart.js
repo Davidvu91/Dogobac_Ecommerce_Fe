@@ -39,10 +39,11 @@ const PricePart = ({ product }) => {
   };
 
   return (
-    <Card style={{ width: "100%" }}>
-      <Card.Header>Tên Sản Phẩm: {product.name}</Card.Header>
+    <Card style={{ width: "100%" }} className="info-container">
+      <Card.Header className="info-title"> {product.name}</Card.Header>
       <ListGroup variant="flush">
         <ListGroup.Item>Kích Thước: {product.dimension}</ListGroup.Item>
+        <ListGroup.Item>Đánh Giá: </ListGroup.Item>
         <ListGroup.Item>
           Giá:{" "}
           <b>

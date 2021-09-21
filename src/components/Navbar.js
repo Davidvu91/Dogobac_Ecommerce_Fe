@@ -37,7 +37,7 @@ const Navbarr = () => {
           navbarScroll
         >
           <Nav.Link as={Link} to="/" className="nav-title-layout">
-            ĐỒ GỖ BẮC
+            <img src="/do-go-bac.png" alt="logo" />
           </Nav.Link>
 
           <Nav.Link as={Link} to="/auth/register" className="nav-title-layout">

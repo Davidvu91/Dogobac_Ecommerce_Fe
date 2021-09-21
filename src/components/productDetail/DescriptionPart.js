@@ -1,25 +1,20 @@
 import React from "react";
-import { Card, Row } from "react-bootstrap";
+import "./productDetail.css";
 
 const DescriptionPart = ({ product }) => {
   return (
     <>
-      <Row>
-        <h4> PRODUCT DETAILS</h4>
-      </Row>
-      <Card style={{ width: "100%" }} className="review-card">
-        <Card.Header>THÔNG TIN SẢN PHẨM CHI TIẾT</Card.Header>
-        <Card.Body>
-          <Card.Text>{product.description}</Card.Text>
-        </Card.Body>
-        <Card.Img variant="top" src={product.imageUrl[1]} />
-        <br />
-        <Card.Text>
-          Giao hàng miễn phí toàn thành phố Vũng Tàu, Bảo hành 5 năm
-        </Card.Text>
-        <br />
-        <Card.Img variant="top" src={product.imageUrl[2]} />
-      </Card>
+      <div style={{ width: "100%" }} className="detail-description">
+        <div>
+          <h4>THÔNG TIN SẢN PHẨM CHI TIẾT</h4>
+        </div>
+        <div>
+          <p>{product.description}</p>
+        </div>
+        <img src={product.imageUrl[1]} alt="product" />
+        <p>Giao hàng miễn phí toàn thành phố Vũng Tàu, Bảo hành 5 năm</p>
+        <img src={product.imageUrl[2]} alt="product" />
+      </div>
     </>
   );
 };
