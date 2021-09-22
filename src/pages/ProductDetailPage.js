@@ -69,7 +69,7 @@ const ProductDetailPage = () => {
               </Row>
               <Row>
                 <Col lg={12} md={12} xs={12}>
-                  <Comment dispatch={dispatch} />
+                  <Comment dispatch={dispatch} productId={productId} />
                 </Col>
               </Row>
             </Col>
