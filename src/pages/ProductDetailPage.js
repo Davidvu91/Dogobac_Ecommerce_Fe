@@ -32,7 +32,7 @@ const ProductDetailPage = () => {
       {loading ? (
         <h1>...is loading</h1>
       ) : (
-        <Container>
+        <Container className="mt-5">
           <Row>
             <Col lg={9} md={9} xs={12}>
               <Row className="row-padding image-price-part">
@@ -69,7 +69,7 @@ const ProductDetailPage = () => {
               </Row>
               <Row>
                 <Col lg={12} md={12} xs={12}>
-                  <Comment />
+                  <Comment dispatch={dispatch} />
                 </Col>
               </Row>
             </Col>

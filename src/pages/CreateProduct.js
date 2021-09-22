@@ -64,7 +64,7 @@ const CreateProduct = () => {
   );
 
   return (
-    <Container>
+    <Container className="create-product-container">
       <Row>
         <Col lg={2} md={3}>
           <SideBar />

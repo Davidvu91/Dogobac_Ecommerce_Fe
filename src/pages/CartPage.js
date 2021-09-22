@@ -68,10 +68,10 @@ const CartPage = () => {
       {loading ? (
         <h1>...loading</h1>
       ) : (
-        <Container>
+        <Container className="cartPage-container">
           <Row className=" row-padding">
             <Col>
-              <h3>ĐỒ GỖ BẮC | Giỏ Hàng Của Bạn:</h3>
+              <h3 className="cartPage-title">ĐỒ GỖ BẮC | Giỏ Hàng Của Bạn:</h3>
             </Col>
           </Row>
           <Row className="cart-page row-padding">
@@ -118,13 +118,17 @@ const CartPage = () => {
                         value={cart?.items?.productId?.price}
                         displayType={"text"}
                         thousandSeparator={true}
-                        prefix={"VND"}
+                        prefix={"VND "}
                       />
                     </Col>
                     <Col lg={3} md={3}>
                       <Moment format="YYYY/MM/DD">{cart?.createdAt}</Moment>
                     </Col>
-                    <Col lg={3} md={3}>
+                    <Col
+                      lg={3}
+                      md={3}
+                      style={{ fontWeight: "bold", color: "rgb(238,77,45)" }}
+                    >
                       <NumberFormat
                         value={
                           cart?.items?.quantity * cart?.items?.productId?.price
@@ -149,13 +153,19 @@ const CartPage = () => {
             ))}
             <Row className="cart-order row-padding">
               <Row>
-                <Col lg={3} md={6} xs={12}>
-                  <span>Tong tien:</span>
+                <Col
+                  lg={3}
+                  md={6}
+                  xs={12}
+                  style={{ fontWeight: "bold", color: "rgb(238,77,45)" }}
+                >
+                  <span>Tong tien: </span>
+
                   <NumberFormat
                     value={totalMoney}
                     displayType={"text"}
                     thousandSeparator={true}
-                    prefix={"VND"}
+                    prefix={"VND "}
                   />
                 </Col>
               </Row>

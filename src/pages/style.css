@@ -36,20 +36,26 @@
   height: 35px;
 }
 
-/* MainPage */
-/* .home-card {
-  margin-bottom: 6px;
-}
-.home-card:hover {
-  transform: scale(1.01);
-  transition: 0.25s;
-}
-
-.sidebar-column {
-  padding-right: 0px;
-} */
-
 .row-padding {
   padding-bottom: 19px;
-  margin-top: 19px;
+  /* margin-top: 19px; */
+}
+
+/* Thank page */
+
+.thank-page {
+  font-family: Montserrat;
+  padding-left: 45px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+.thanks-title {
+  font-weight: bold;
+}
+
+/* Create product */
+
+.create-product-container {
+  font-family: Montserrat;
 }

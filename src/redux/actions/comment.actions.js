@@ -4,11 +4,15 @@ import api from "../../apiService";
 
 // CREATE A COMMENT TO SINGLE PRODUCT:
 // http://localhost:5000/review/create/6139bbb0e106fce635bb1e07
-const createComment = (data) => async (dispatch) => {
-  console.log(data);
-  dispatch({ type: types.CREATE_COMMENT_TO_PRODUCT_REQUEST, payload: null });
+const createComment = (productId) => async (dispatch) => {
+  console.log(productId);
+  dispatch({ type: types.CREATE_COMMENT_TO_PRODUCT_REQUEST });
   try {
-  } catch (error) {}
+    await api.post(`/review/create/${productId}`);
+    dispatch({ type: types.CREATE_COMMENT_TO_PRODUCT_SUCCESS });
+  } catch (error) {
+    dispatch({ type: types.CREATE_COMMENT_TO_PRODUCT_FAILURE });
+  }
 };
 
 export const commentActions = {

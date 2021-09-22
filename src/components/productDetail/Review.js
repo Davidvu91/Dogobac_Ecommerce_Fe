@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { RatingView } from "react-simple-star-rating";
 import "./Review.css";
 import Moment from "react-moment";

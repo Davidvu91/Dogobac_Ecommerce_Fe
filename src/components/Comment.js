@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { Rating } from "react-simple-star-rating";
 import "./Comment.css";
 
-const Comment = () => {
+const Comment = (dispatch) => {
   const [rating, setRating] = useState(1);
 
   const handleRating = (rate) => {
@@ -11,6 +11,8 @@ const Comment = () => {
     setRating(rate);
     // Some logic
   };
+  console.log("rating: ", rating);
+
   return (
     <Form className="comment-container">
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

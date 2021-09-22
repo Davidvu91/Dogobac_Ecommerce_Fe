@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Card, ListGroup } from "react-bootstrap";
+import { Button, ListGroup } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { cartActions } from "../../redux/actions/cart.actions";
 import "./productDetail.css";
 import NumberFormat from "react-number-format";
@@ -39,8 +39,8 @@ const PricePart = ({ product }) => {
   };
 
   return (
-    <Card style={{ width: "100%" }} className="info-container">
-      <Card.Header className="info-title"> {product.name}</Card.Header>
+    <div style={{ width: "100%" }} className="info-container">
+      <h2 className="info-title"> {product.name}</h2>
       <ListGroup variant="flush">
         <ListGroup.Item>Kích Thước: {product.dimension}</ListGroup.Item>
         <ListGroup.Item>Đánh Giá: </ListGroup.Item>
@@ -52,7 +52,7 @@ const PricePart = ({ product }) => {
               value={product.price}
               displayType={"text"}
               thousandSeparator={true}
-              prefix={"VND"}
+              prefix={"VND "}
               style={{ color: "rgb(238,77,45)" }}
             />
           </b>
@@ -85,7 +85,7 @@ const PricePart = ({ product }) => {
           </Button>
         </ListGroup.Item>
       </ListGroup>
-    </Card>
+    </div>
   );
 };
 

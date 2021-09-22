@@ -33,7 +33,7 @@ const ProfilePage = () => {
         <>
           <Card className="profileStyle">
             <Card.Img variant="top" src={profile?.avataUrl} />
-            <Card.Body className="profile-content">
+            <div className="profile-content">
               <Card.Title>{profile?.name}</Card.Title>
               <Card.Text>{profile?.email}</Card.Text>
               <Card.Text>{profile?.phone}</Card.Text>
@@ -41,7 +41,7 @@ const ProfilePage = () => {
               <Button variant="" className="single-btn" onClick={handleShow}>
                 Update Profile
               </Button>
-            </Card.Body>
+            </div>
           </Card>
           {/* MODALS: */}
           <Modal show={show} onHide={handleClose}>

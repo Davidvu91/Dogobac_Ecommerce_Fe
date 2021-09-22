@@ -1,5 +1,14 @@
+.bill-info-page {
+  font-family: Montserrat;
+  padding-left: 45px;
+}
+
 .bill-body {
   background-color: rgb(244, 244, 244);
+}
+
+.bill-info-title {
+  font-weight: bold;
 }
 
 .bill-footer {

@@ -1,0 +1,45 @@
+.running-part {
+  position: sticky;
+  top: 7rem;
+  bottom: 0px;
+  font-family: Montserrat;
+  width: 50%;
+  margin: auto;
+}
+
+.runing-title-container {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  color: rgb(238, 77, 45);
+}
+
+.running-title {
+  font-weight: 600;
+  position: absolute;
+  top: 0.5rem;
+  right: -2rem;
+  background-color: rgba(255, 212, 36, 0.9);
+  color: rgb(238, 77, 45);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+.runing-img {
+  /* padding-left: 20px;
+  padding-right: 20px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.running-content-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.running-bnt-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}

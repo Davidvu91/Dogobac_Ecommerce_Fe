@@ -4,22 +4,24 @@ import "./searchbox.css";
 
 const SearchBox = ({ searchInput, handleSearchChange, handleSubmit }) => {
   return (
-    <Form className="d-flex" onSubmit={handleSubmit}>
-      <FormControl
-        className="mr-2"
-        placeholder="Search..."
-        value={searchInput}
-        onChange={handleSearchChange}
-      />
-      <Button
-        variant="dark"
-        className="search-bnt"
-        type="submit"
-        onSubmit={handleSubmit}
-      >
-        Search...
-      </Button>
-    </Form>
+    <div className="search-container mt-5">
+      <Form className="d-flex" onSubmit={handleSubmit}>
+        <FormControl
+          className="mr-2"
+          placeholder="Search..."
+          value={searchInput}
+          onChange={handleSearchChange}
+        />
+        <Button
+          variant="dark"
+          className="search-bnt"
+          type="submit"
+          onSubmit={handleSubmit}
+        >
+          Search...
+        </Button>
+      </Form>
+    </div>
   );
 };
 

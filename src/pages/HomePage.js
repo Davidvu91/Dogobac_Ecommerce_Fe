@@ -7,7 +7,7 @@ import CarouselPart from "../components/Carousel";
 import MainPage from "../components/MainPage";
 import PaginationBar from "../components/PaginationBar";
 import SearchBox from "../components/SearchBox";
-// import Testimonial from "../components/Testimonial";
+import Testimonial from "../components/Testimonial";
 import { productActions } from "../redux/actions/product.action";
 import "./style.css";
 
@@ -82,7 +82,10 @@ const HomePage = () => {
         </Row>
         <hr />
         <Row className=" row-padding ">
-          <Col> {/* <Testimonial />{" "} */}</Col>
+          <Col>
+            {" "}
+            <Testimonial />{" "}
+          </Col>
         </Row>
         <br /> <br />
       </Container>

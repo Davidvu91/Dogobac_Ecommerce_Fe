@@ -19,7 +19,10 @@
 
 .display-image {
   width: 100%;
-  overflow: hidden;
+}
+
+.display-image img {
+  width: 100%;
 }
 
 .display-card-group:hover .display-image img {
@@ -60,6 +63,7 @@
   opacity: 0;
   transition-duration: 0.3s;
   margin-top: 10px;
+  font-family: Montserrat;
 }
 
 .display-card:hover .card-content {
@@ -70,4 +74,5 @@
 
 .card-name {
   font-family: Montserrat;
+  font-weight: bold;
 }

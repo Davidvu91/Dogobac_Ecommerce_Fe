@@ -1,21 +1,15 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+
+import "./Running.css";
 
 const RunningPart = () => {
   return (
-    <Container>
-      <Row className="row-padding">
-        <div>
-          <div>Something</div>
-          <div>Something</div>
-          <div>Something</div>
-          <div>Something</div>
-        </div>
-        <div>
-          <button> Go Some Where</button>
-        </div>
-      </Row>
-    </Container>
+    <div className="running-part">
+      <div className="runing-img">
+        <img src="/discount-5.png" alt="sell-off" width="100%" />
+      </div>
+      <div className="running-title">Nhận Ngay</div>
+    </div>
   );
 };
 

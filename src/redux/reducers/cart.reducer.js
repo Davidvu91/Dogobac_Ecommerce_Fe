@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const cartReducer = (state = initialState, action) => {
-  const { type, payload } = action;
+  const { type } = action;
   switch (type) {
     // ADD PRODUCT TO CART
     case types.ADD_PRODUCT_TO_CART_REQUEST:

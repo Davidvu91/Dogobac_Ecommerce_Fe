@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { useDispatch } from "react-redux";
@@ -18,7 +18,7 @@ const MainPage = ({ products, loading }) => {
   };
 
   return (
-    <>
+    <div className="mt-5">
       {loading ? (
         <div className="text-center">
           <ClipLoader color="#f86c6b" size={150} loading={true} />
@@ -34,28 +34,26 @@ const MainPage = ({ products, loading }) => {
               >
                 <div className="display-card-group">
                   <div className="display-image">
-                    <img alt="product" src={product.imageUrl[0]} width="100%" />
+                    <img alt="product" src={product.imageUrl[0]} />
                   </div>
-                  <div className="display-card-icon">
-                    <i class="fab fa-instagram-square icon"></i>
-                  </div>
+                  {/* <div className="display-card-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                  </div> */}
                 </div>
 
                 <div className="card-body">
-                  <div className="card-name">{product.name}</div>
+                  <h5 className="card-name">{product.name}</h5>
                   <div className="card-content">
-                    Kích Thước:{product.dimension}
+                    Kích Thước: {product.dimension}
                   </div>
                   <div className="card-content">
-                    <b>
-                      <NumberFormat
-                        value={product.price}
-                        displayType={"text"}
-                        thousandSeparator={true}
-                        prefix={"VND "}
-                        style={{ color: "rgb(238,77,45)" }}
-                      />
-                    </b>
+                    <NumberFormat
+                      value={product.price}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                      prefix={"VND "}
+                      style={{ color: "rgb(238,77,45)" }}
+                    />
                   </div>
                 </div>
               </Card>
@@ -63,7 +61,7 @@ const MainPage = ({ products, loading }) => {
           ))}
         </Row>
       )}
-    </>
+    </div>
   );
 };
 

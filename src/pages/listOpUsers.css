@@ -1,17 +1,22 @@
-/* .dash-box {
-  border: 1px solid red;
+.list-users-container {
+  font-family: Montserrat;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
-.dash-row {
-  border: 1px solid green;
-} */
+.list-user-content {
+  padding-left: 15px;
+  padding-top: 20px;
+}
 
 .dash-box {
   word-wrap: break-word;
 }
 
 .image-dashboard {
+  border: 1px solid grey;
   width: 100%;
+  padding: 10px;
 }
 
 .dash-row {

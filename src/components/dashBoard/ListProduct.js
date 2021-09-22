@@ -57,8 +57,8 @@ const ListProduct = () => {
       {loading ? (
         <h1>...isloading</h1>
       ) : (
-        <Container>
-          <Row className="row-padding">
+        <Container className="mt-5 list-product-container">
+          <Row className="">
             <h3> LIST OF YOUR PRODUCTS: {totalProducts}</h3>
           </Row>
           {products?.map((product) => (

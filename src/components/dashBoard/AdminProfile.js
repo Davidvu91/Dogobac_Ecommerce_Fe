@@ -5,16 +5,13 @@ import ProfilePage from "../../pages/ProfilePage";
 
 const AdminProfile = () => {
   return (
-    <Container>
+    <Container className="admin-profile" style={{ fontFamily: "Montserrat" }}>
       <Row className="row-padding">
         <Col lg={2} md={3}>
           {" "}
           <SideBar />
         </Col>{" "}
         <Col lg={4} md={4}>
-          <Row>
-            <h4> Admin Profile</h4>
-          </Row>
           <Row>
             <Col>
               {" "}

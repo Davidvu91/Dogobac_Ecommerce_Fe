@@ -22,3 +22,8 @@
   background-color: rgba(236, 64, 33, 0.884) !important;
   border: solid 1px #5a4181;
 }
+
+.page-item.active .page-link {
+  background-color: rgb(238, 77, 45);
+  border-color: rgb(238, 77, 45);
+}

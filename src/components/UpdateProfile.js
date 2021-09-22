@@ -53,6 +53,7 @@ const UpdateProfile = ({ handleClose, profile }) => {
     dispatch(userActions.updateUserInfo(passData, history));
     setFormData({});
     setGetImage([]);
+    handleClose();
   };
 
   return (

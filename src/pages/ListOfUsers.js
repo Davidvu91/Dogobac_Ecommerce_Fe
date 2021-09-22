@@ -25,7 +25,7 @@ const ListOfUsers = () => {
       {loading ? (
         <h1>...is loading</h1>
       ) : (
-        <Container>
+        <Container className="list-users-container">
           <Row className="row-padding ">
             <Col lg={2} md={3}>
               {" "}
@@ -35,7 +35,7 @@ const ListOfUsers = () => {
               <Row className="row-padding">
                 <h3> LIST OF YOUR USER: {totalUsers} </h3>
               </Row>
-              <Row className="row-padding dash-row">
+              <Row className="row-padding dash-row list-user-content">
                 {users?.map((user) => (
                   <Row className="row-padding ">
                     <Col lg={10} md={10}>

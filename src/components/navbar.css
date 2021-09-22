@@ -1,5 +1,9 @@
 .navbar-bg {
-  background-color: rgb(33, 37, 41);
+  background-color: white;
+  box-shadow: 0 0px 15px 0px rgb(0 0 0 / 15%);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 
 /* background-color: rgb(238, 77, 45); */

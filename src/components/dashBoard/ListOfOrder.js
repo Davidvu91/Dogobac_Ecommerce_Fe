@@ -25,7 +25,10 @@ const ListOfOrder = () => {
       {loading ? (
         <h1>...loading</h1>
       ) : (
-        <Container>
+        <Container
+          className="list-order-container mt-5"
+          style={{ fontFamily: "Montserrat" }}
+        >
           <Row className="row-padding">
             <Col lg={2} md={3}>
               {" "}

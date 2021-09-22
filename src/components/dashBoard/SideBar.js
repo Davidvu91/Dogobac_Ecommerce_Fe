@@ -12,7 +12,7 @@ const SideBar = () => {
   };
 
   return (
-    <Navbar className="sidebar-card">
+    <Navbar className="sidebar-card mt-5">
       <ListGroup variant="flush">
         <ListGroup.Item className="sidebar-icon">
           <Nav.Link

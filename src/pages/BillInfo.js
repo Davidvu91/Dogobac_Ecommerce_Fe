@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { Col, Container, Row, Button, Modal } from "react-bootstrap";
+import React from "react";
+import { Col, Container, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import "./billInfo.css";
 import NumberFormat from "react-number-format";
 import { orderActions } from "../redux/actions/order.actions";
+import { useHistory } from "react-router-dom";
 
 const BillInfo = () => {
   const loading = useSelector((state) => state.userReducer.loading);
@@ -38,9 +39,11 @@ const BillInfo = () => {
   passData.owner = owner;
   console.log("passData:", passData);
 
+  const history = useHistory();
   const dispatch = useDispatch();
   const handleCreateOrder = () => {
     dispatch(orderActions.createOrder(passData));
+    history.push("/thanks");
   };
 
   return (
@@ -48,10 +51,10 @@ const BillInfo = () => {
       {loading ? (
         <h1>...loading</h1>
       ) : (
-        <Container>
+        <Container className="bill-info-page">
           <Row className="bill-header row-padding">
             <Col>
-              <h3>ĐỒ GỖ BẮC | Thông Tin Hóa Đơn</h3>
+              <h3 className="bill-info-title">ĐỒ GỖ BẮC | Thông Tin Hóa Đơn</h3>
             </Col>
           </Row>
           <Row className="bill-body row-padding">
@@ -128,7 +131,8 @@ const BillInfo = () => {
                     value={totalMoney}
                     displayType={"text"}
                     thousandSeparator={true}
-                    prefix={"VND"}
+                    prefix={"VND "}
+                    style={{ color: "rgb(238,77,45)" }}
                   />
                 </b>
               </Col>

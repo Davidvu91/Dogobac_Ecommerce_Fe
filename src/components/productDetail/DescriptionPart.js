@@ -11,9 +11,7 @@ const DescriptionPart = ({ product }) => {
         <div>
           <p>{product.description}</p>
         </div>
-        <img src={product.imageUrl[1]} alt="product" />
         <p>Giao hàng miễn phí toàn thành phố Vũng Tàu, Bảo hành 5 năm</p>
-        <img src={product.imageUrl[2]} alt="product" />
       </div>
     </>
   );

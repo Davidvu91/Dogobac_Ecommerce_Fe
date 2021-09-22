@@ -49,3 +49,9 @@
 .related-product-container {
   padding-left: 45px;
 }
+
+/* Running part */
+
+.running-part-container {
+  border: 1px solid gray;
+}

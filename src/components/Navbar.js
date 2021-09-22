@@ -25,65 +25,70 @@ const Navbarr = () => {
   };
 
   return (
-    <Navbar expand="lg" className="navbar-bg">
-      {/* <Navbar.Brand as={Link} to="/">
+    <>
+      <Navbar expand="lg" className="navbar-bg">
+        {/* <Navbar.Brand as={Link} to="/">
         <img src={logo} alt="coderbook" width="50px" />
       </Navbar.Brand> */}
-      <Navbar.Toggle aria-controls="navbarScroll" />
-      <Navbar.Collapse id="navbarScroll">
-        <Nav
-          className="mr-auto my-2 my-lg-0"
-          style={{ maxHeight: "100px" }}
-          navbarScroll
-        >
-          <Nav.Link as={Link} to="/" className="nav-title-layout">
-            <img src="/do-go-bac.png" alt="logo" />
-          </Nav.Link>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="mr-auto my-2 my-lg-0"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          >
+            <Nav.Link as={Link} to="/" className="nav-title-layout">
+              <img src="/do-go-bac.png" alt="logo" height="45px" />
+            </Nav.Link>
 
-          <Nav.Link as={Link} to="/auth/register" className="nav-title-layout">
-            Register
-          </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/auth/register"
+              className="nav-title-layout"
+            >
+              Register
+            </Nav.Link>
 
-          {/* <Nav.Link as={Link} to="/auth/create" className="nav-title-layout">
+            {/* <Nav.Link as={Link} to="/auth/create" className="nav-title-layout">
             Create Product
           </Nav.Link> */}
 
-          <Nav.Link as={Link} to="/auth/login" className="nav-title-layout">
-            Login
-          </Nav.Link>
+            <Nav.Link as={Link} to="/auth/login" className="nav-title-layout">
+              Login
+            </Nav.Link>
 
-          <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
-            Log out
-          </Nav.Link>
+            <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
+              Log out
+            </Nav.Link>
 
-          <Nav.Link
-            as={Link}
-            to="/cart"
-            className="nav-title-layout"
-            onClick={handleGetSingleProfile}
-          >
-            <i class="fas fa-cart-plus fa-lg"></i>
-          </Nav.Link>
-          {role === 0 || role === undefined ? (
             <Nav.Link
               as={Link}
-              to="/auth/profile"
-              className="nav-title-layout "
+              to="/cart"
+              className="nav-title-layout"
               onClick={handleGetSingleProfile}
             >
-              <i class="fas fa-user fa-lg"></i>
+              <i class="fas fa-cart-plus fa-lg"></i>
             </Nav.Link>
-          ) : (
-            <Nav.Link
-              as={Link}
-              to="/admin/dashboard"
-              className="nav-title-layout "
-            >
-              <i class="fas fa-tachometer-alt fa-2x"></i>
-            </Nav.Link>
-          )}
-        </Nav>
-        {/* <Form className="d-flex">
+            {role === 0 || role === undefined ? (
+              <Nav.Link
+                as={Link}
+                to="/auth/profile"
+                className="nav-title-layout "
+                onClick={handleGetSingleProfile}
+              >
+                <i class="fas fa-user fa-lg"></i>
+              </Nav.Link>
+            ) : (
+              <Nav.Link
+                as={Link}
+                to="/admin/dashboard"
+                className="nav-title-layout "
+              >
+                <i class="fas fa-tachometer-alt fa-2x"></i>
+              </Nav.Link>
+            )}
+          </Nav>
+          {/* <Form className="d-flex">
           <FormControl
             type="search"
             placeholder="Search"
@@ -94,8 +99,10 @@ const Navbarr = () => {
             Search
           </Button>
         </Form> */}
-      </Navbar.Collapse>
-    </Navbar>
+        </Navbar.Collapse>
+      </Navbar>
+      <div style={{ height: "6rem" }}></div>
+    </>
   );
 };
 
