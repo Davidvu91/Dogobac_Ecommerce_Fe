@@ -8,6 +8,7 @@ import NumberFormat from "react-number-format";
 import { productActions } from "../../redux/actions/product.action";
 import PopupToDelete from "../PopupToDelete";
 import { useHistory } from "react-router";
+import { ClipLoader } from "react-spinners";
 
 const ListProduct = () => {
   const [selectedId, setSelectedId] = useState("");
@@ -55,7 +56,9 @@ const ListProduct = () => {
   return (
     <>
       {loading ? (
-        <h1>...isloading</h1>
+        <div className="text-center">
+          <ClipLoader color="#f86c6b" size={150} loading={true} />
+        </div>
       ) : (
         <Container className="mt-5 list-product-container">
           <Row className="">

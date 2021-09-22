@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import { userActions } from "../redux/actions/user.actions";
 import Moment from "react-moment";
 import NumberFormat from "react-number-format";
+import { ClipLoader } from "react-spinners";
 
 const CartPage = () => {
   const history = useHistory();
@@ -34,16 +35,8 @@ const CartPage = () => {
   console.log("address:", address);
   //MODALS:
   const [show, setShow] = useState(false);
-  // const handleShow = () => {
-  //   console.log("handle show");
-  // };
+
   const handleClose = () => setShow(false);
-
-  //Functions call actions onClick
-
-  // const handleGetSingleProfile = (e) => {
-  //   dispatch(userActions.getSingleUserInfo());
-  // };
 
   let handleOnActions = () => {
     console.log("actions...");
@@ -66,7 +59,9 @@ const CartPage = () => {
   return (
     <>
       {loading ? (
-        <h1>...loading</h1>
+        <div className="text-center">
+          <ClipLoader color="#f86c6b" size={150} loading={true} />
+        </div>
       ) : (
         <Container className="cartPage-container">
           <Row className=" row-padding">

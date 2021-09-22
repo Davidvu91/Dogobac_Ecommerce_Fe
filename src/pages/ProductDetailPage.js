@@ -10,6 +10,7 @@ import RelatedPorducts from "../components/productDetail/RelatedPorducts";
 import Review from "../components/productDetail/Review";
 import RunningPart from "../components/productDetail/RunningPart";
 import { productActions } from "../redux/actions/product.action";
+import { ClipLoader } from "react-spinners";
 
 const ProductDetailPage = () => {
   const params = useParams();
@@ -30,7 +31,9 @@ const ProductDetailPage = () => {
   return (
     <>
       {loading ? (
-        <h1>...is loading</h1>
+        <div className="text-center">
+          <ClipLoader color="#f86c6b" size={150} loading={true} />
+        </div>
       ) : (
         <Container className="mt-5">
           <Row>

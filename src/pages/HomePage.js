@@ -9,6 +9,7 @@ import PaginationBar from "../components/PaginationBar";
 import SearchBox from "../components/SearchBox";
 import Testimonial from "../components/Testimonial";
 import { productActions } from "../redux/actions/product.action";
+import { ClipLoader } from "react-spinners";
 import "./style.css";
 
 const HomePage = () => {
@@ -67,7 +68,9 @@ const HomePage = () => {
             {products ? (
               <MainPage products={products} loading={loading} />
             ) : (
-              <h1>Loading...</h1>
+              <div className="text-center">
+                <ClipLoader color="#f86c6b" size={150} loading={true} />
+              </div>
             )}
           </Col>
         </Row>
