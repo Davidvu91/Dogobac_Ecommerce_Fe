@@ -6,7 +6,7 @@ const DescriptionPart = ({ product }) => {
     <>
       <div style={{ width: "100%" }} className="detail-description">
         <div>
-          <h4>THÔNG TIN SẢN PHẨM CHI TIẾT</h4>
+          <h4 className="detail-title">Thông Tin Chi Tiết</h4>
         </div>
         <div>
           <p>{product.description}</p>
