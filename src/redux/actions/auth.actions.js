@@ -2,6 +2,7 @@ import * as types from "../constants/auth.constants";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import api from "../../apiService";
+import { userActions } from "./user.actions";
 
 // const LOCAL_BE_URL = "http://localhost:5000";
 // const REACT_APP_BACKEND_API = process.env.REACT_APP_BACKEND_API;
@@ -35,6 +36,7 @@ const login = (formData, history) => async (dispatch) => {
     api.defaults.headers.authorization = "Bearer " + data.data.data.accessToken;
 
     dispatch({ type: types.LOGIN_SUCCESS, payload: data });
+    dispatch(userActions.getSingleUserInfo());
     history.push("/");
     toast.success("Login successfully!");
   } catch (error) {

@@ -22,6 +22,13 @@ const orderReducer = (state = initialState, action) => {
       return { ...state, loading: false, data: payload };
     case types.GET_ALL_ORDER_FAILURE:
       return { ...state, loading: false };
+    //PUT - UPDATE ORDER STATUS:
+    case types.PUT_UPDATE_ORDER_REQUEST:
+      return { ...state, loading: true };
+    case types.PUT_UPDATE_ORDER_SUCCESS:
+      return { ...state, loading: false, data: payload };
+    case types.PUT_UPDATE_ORDER_FAILURE:
+      return { ...state, loading: false };
     default:
       return state;
   }

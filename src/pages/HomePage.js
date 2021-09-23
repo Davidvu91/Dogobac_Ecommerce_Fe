@@ -15,7 +15,7 @@ import "./style.css";
 const HomePage = () => {
   const order = "asc";
   const sortBy = "price";
-  const limit = 8;
+  const limit = 12;
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [searchInput, setSearchInput] = useState("");

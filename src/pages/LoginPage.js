@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Button, Form, NavLink, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { userActions } from "../redux/actions/user.actions";
 
 import { Link } from "react-router-dom";
 import { authActions } from "../redux/actions/auth.actions";
@@ -12,8 +13,21 @@ const LoginPage = () => {
   const isAuthenticated = useSelector(
     (state) => state.authReducer.isAuthenticated
   );
+  const data = useSelector((state) => state.authReducer.user?.data);
+  console.log("data in login page:", data);
   console.log("....isAuthenticated:", isAuthenticated);
+
+  let user = data?.data?.user;
+  console.log("user in login page...............", user);
+  let userId = user?._id;
+  console.log("userId in login page:", userId);
+
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(userActions.getSingleUserInfo());
+  }, [dispatch]);
+
   const [formData, setstatFormData] = useState({
     email: "",
     password: "",

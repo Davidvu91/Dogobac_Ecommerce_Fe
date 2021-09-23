@@ -5,6 +5,7 @@ import SideBar from "../components/dashBoard/SideBar";
 import { userActions } from "../redux/actions/user.actions";
 import "./listOpUsers.css";
 import Moment from "react-moment";
+import { ClipLoader } from "react-spinners";
 
 const ListOfUsers = () => {
   const data = useSelector((state) => state.userReducer.listUsers);
@@ -23,7 +24,9 @@ const ListOfUsers = () => {
   return (
     <>
       {loading ? (
-        <h1>...is loading</h1>
+        <div className="text-center">
+          <ClipLoader color="#f86c6b" size={150} loading={true} />
+        </div>
       ) : (
         <Container className="list-users-container">
           <Row className="row-padding ">

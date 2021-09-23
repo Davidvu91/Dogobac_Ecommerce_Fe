@@ -65,59 +65,61 @@ const ListProduct = () => {
             <h3> LIST OF YOUR PRODUCTS: {totalProducts}</h3>
           </Row>
           {products?.map((product) => (
-            <Row className="row-padding, listProduct">
-              <Col lg={10} md={10}>
-                <Row className="row-padding">
-                  <Col lg={2} md={2} className="image-box">
-                    {" "}
-                    <img
-                      src={product.imageUrl[0]}
-                      alt="product img"
-                      className="image-dashboard"
-                    />
-                  </Col>
-                  <Col lg={6} md={6} className="productName-box">
-                    {product.name}{" "}
-                  </Col>
-                  <Col lg={2} md={2} className="price-box">
-                    <NumberFormat
-                      value={product.price}
-                      displayType={"text"}
-                      thousandSeparator={true}
-                      prefix={"VND "}
-                    />
-                  </Col>
-                  <Col lg={2} md={2} className="createdDay-box">
-                    <Moment format="YYYY/MM/DD">{product.createdAt}</Moment>
-                  </Col>
-                </Row>
-              </Col>
-              <Col lg={2} md={2} className="actions-box">
-                <Row>
-                  <Col lg={4} md={4}>
-                    <Button
-                      variant=""
-                      onClick={() => {
-                        handleUpdateProduct(product._id);
-                      }}
-                    >
-                      <i class="fas fa-edit"></i>
-                    </Button>
-                  </Col>
-                  <Col lg={4} md={4}>
-                    <Button
-                      variant=""
-                      onClick={() => {
-                        handleShow();
-                        setSelectedId(product._id);
-                      }}
-                    >
-                      <i class="fas fa-trash"></i>
-                    </Button>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
+            <div className="list-product-mainBox">
+              <Row className=" listProduct">
+                <Col lg={10} md={10}>
+                  <Row className="row-padding">
+                    <Col lg={2} md={2} className="image-box">
+                      {" "}
+                      <img
+                        src={product.imageUrl[0]}
+                        alt="product img"
+                        className="image-dashboard"
+                      />
+                    </Col>
+                    <Col lg={6} md={6} className="productName-box">
+                      {product.name}{" "}
+                    </Col>
+                    <Col lg={2} md={2} className="price-box">
+                      <NumberFormat
+                        value={product.price}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                        prefix={"VND "}
+                      />
+                    </Col>
+                    <Col lg={2} md={2} className="createdDay-box">
+                      <Moment format="YYYY/MM/DD">{product.createdAt}</Moment>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col lg={2} md={2} className="actions-box">
+                  <Row>
+                    <Col lg={4} md={4}>
+                      <Button
+                        variant=""
+                        onClick={() => {
+                          handleUpdateProduct(product._id);
+                        }}
+                      >
+                        <i class="fas fa-edit"></i>
+                      </Button>
+                    </Col>
+                    <Col lg={4} md={4}>
+                      <Button
+                        variant=""
+                        onClick={() => {
+                          handleShow();
+                          setSelectedId(product._id);
+                        }}
+                      >
+                        <i class="fas fa-trash"></i>
+                      </Button>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </div>
           ))}
 
           <Row>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -14,6 +14,10 @@ const Navbarr = () => {
   console.log("role of user:", role);
 
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(userActions.getSingleUserInfo());
+  }, [dispatch]);
+
   const handleGetSingleProfile = (e) => {
     dispatch(userActions.getSingleUserInfo());
   };
@@ -43,49 +47,59 @@ const Navbarr = () => {
 
             <Nav.Link
               as={Link}
-              to="/auth/register"
-              className="nav-title-layout"
-            >
-              Register
-            </Nav.Link>
-
-            {/* <Nav.Link as={Link} to="/auth/create" className="nav-title-layout">
-            Create Product
-          </Nav.Link> */}
-
-            <Nav.Link as={Link} to="/auth/login" className="nav-title-layout">
-              Login
-            </Nav.Link>
-
-            <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
-              Log out
-            </Nav.Link>
-
-            <Nav.Link
-              as={Link}
               to="/cart"
               className="nav-title-layout"
               onClick={handleGetSingleProfile}
             >
               <i class="fas fa-cart-plus fa-lg"></i>
             </Nav.Link>
-            {role === 0 || role === undefined ? (
-              <Nav.Link
-                as={Link}
-                to="/auth/profile"
-                className="nav-title-layout "
-                onClick={handleGetSingleProfile}
-              >
-                <i class="fas fa-user fa-lg"></i>
-              </Nav.Link>
+            {role === undefined ? (
+              <>
+                <Nav.Link
+                  as={Link}
+                  to="/auth/register"
+                  className="nav-title-layout"
+                >
+                  Register
+                </Nav.Link>
+
+                <Nav.Link
+                  as={Link}
+                  to="/auth/login"
+                  className="nav-title-layout"
+                >
+                  Login
+                </Nav.Link>
+              </>
+            ) : role === 0 ? (
+              <>
+                <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
+                  Log out
+                </Nav.Link>
+
+                <Nav.Link
+                  as={Link}
+                  to="/auth/profile"
+                  className="nav-title-layout "
+                  onClick={handleGetSingleProfile}
+                >
+                  <i class="fas fa-user fa-lg"></i>
+                </Nav.Link>
+              </>
             ) : (
-              <Nav.Link
-                as={Link}
-                to="/admin/dashboard"
-                className="nav-title-layout "
-              >
-                <i class="fas fa-tachometer-alt fa-2x"></i>
-              </Nav.Link>
+              <>
+                <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
+                  Log out
+                </Nav.Link>
+
+                <Nav.Link
+                  as={Link}
+                  to="/admin/dashboard"
+                  className="nav-title-layout "
+                >
+                  <i class="fas fa-tachometer-alt fa-2x"></i>
+                </Nav.Link>
+              </>
             )}
           </Nav>
           {/* <Form className="d-flex">

@@ -5,6 +5,7 @@ import "./billInfo.css";
 import NumberFormat from "react-number-format";
 import { orderActions } from "../redux/actions/order.actions";
 import { useHistory } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 
 const BillInfo = () => {
   const loading = useSelector((state) => state.userReducer.loading);
@@ -49,7 +50,9 @@ const BillInfo = () => {
   return (
     <>
       {loading ? (
-        <h1>...loading</h1>
+        <div className="text-center">
+          <ClipLoader color="#f86c6b" size={150} loading={true} />
+        </div>
       ) : (
         <Container className="bill-info-page">
           <Row className="bill-header row-padding">

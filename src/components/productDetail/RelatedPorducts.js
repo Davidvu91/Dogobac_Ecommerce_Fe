@@ -37,9 +37,9 @@ const RelatedPorducts = ({ loading, product }) => {
                   <div className="display-image">
                     <img alt="product" src={product.imageUrl[0]} width="100%" />
                   </div>
-                  <div className="display-card-icon">
+                  {/* <div className="display-card-icon">
                     <i class="fab fa-instagram-square icon"></i>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="card-body">

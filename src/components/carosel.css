@@ -3,7 +3,19 @@
 }
 
 .carousel-caption {
-  top: 1rem;
-  /* background-color: rgb(238, 77, 45); */
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
   bottom: unset;
+  font-family: Montserrat;
+  padding-top: 20px;
+}
+
+.carousel-title {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.carousel-text {
+  font-weight: bold;
+  margin-bottom: 0px;
 }

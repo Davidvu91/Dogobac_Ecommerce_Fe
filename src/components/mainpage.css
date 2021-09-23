@@ -19,6 +19,7 @@
 
 .display-image {
   width: 100%;
+  overflow: hidden;
 }
 
 .display-image img {

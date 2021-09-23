@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { orderActions } from "../../redux/actions/order.actions";
 import SideBar from "./SideBar";
 import Moment from "react-moment";
 import NumberFormat from "react-number-format";
+import { ClipLoader } from "react-spinners";
 
 const ListOfOrder = () => {
+  const [statusChange, setStatusChange] = useState("paid");
   const data = useSelector((state) => state.orderReducer.data);
   const loading = useSelector((state) => state.orderReducer.loading);
   console.log("loading:", loading);
@@ -20,10 +22,21 @@ const ListOfOrder = () => {
     dispatch(orderActions.getAllOrder());
   }, [dispatch]);
 
+  const handleUpdateOrder = (orderId) => {
+    setStatusChange("paid");
+    console.log("statusChange: ", statusChange);
+    const passData = { status: statusChange };
+    console.log("orderId: ", orderId);
+    console.log("passDta:", passData);
+    dispatch(orderActions.updateStatusOfOrder(orderId, passData));
+  };
+
   return (
     <>
       {loading ? (
-        <h1>...loading</h1>
+        <div className="text-center">
+          <ClipLoader color="#f86c6b" size={150} loading={true} />
+        </div>
       ) : (
         <Container
           className="list-order-container mt-5"
@@ -41,7 +54,10 @@ const ListOfOrder = () => {
               {orders?.map((order) => (
                 <Row
                   className="row-padding"
-                  style={{ backgroundColor: "rgb(245,245,245)" }}
+                  style={{
+                    backgroundColor: "rgb(245,245,245)",
+                    paddingTop: "30px",
+                  }}
                 >
                   <Col lg={10} md={10}>
                     <Row>
@@ -65,7 +81,12 @@ const ListOfOrder = () => {
                   <Col lg={2} md={2}>
                     <Row>
                       <Col lg={3} md={3}>
-                        <Button variant="">
+                        <Button
+                          variant=""
+                          onClick={() => {
+                            handleUpdateOrder(order._id);
+                          }}
+                        >
                           <i class="fas fa-edit"></i>
                         </Button>
                       </Col>
