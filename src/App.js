@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Navbarr from "./components/Navbar";
 import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CreateProduct from "./pages/CreateProduct";
 import CartPage from "./pages/CartPage";
@@ -19,6 +18,7 @@ import EditProduct from "./pages/EditProduct";
 import ListOfOrder from "./components/dashBoard/ListOfOrder";
 import AdminProfile from "./components/dashBoard/AdminProfile";
 import Thankyou from "./pages/Thankyou";
+import Register from "./components/validationForm/Register";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
         <Route exact path={`/`} component={HomePage} />
         <Route exact path={`/product/:id`} component={ProductDetailPage} />
         <Route exact path={`/auth/login`} component={LoginPage} />
-        <Route exact path={`/auth/register`} component={RegisterPage} />
+        <Route exact path={`/auth/register`} component={Register} />
         <Route exact path={`/auth/create`} component={CreateProduct} />
         <Route exact path={`/auth/listUsers`} component={ListOfUsers} />
         <Route exact path={`/auth/listOrders`} component={ListOfOrder} />

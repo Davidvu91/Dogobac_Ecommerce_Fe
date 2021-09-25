@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { authActions } from "../redux/actions/auth.actions";
 import "./style.css";
+
 const RegisterPage = () => {
   const dispatch = useDispatch();
   const [formData, setstatFormData] = useState({

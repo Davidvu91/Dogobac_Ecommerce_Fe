@@ -1,0 +1,43 @@
+.form-main-container {
+  border: 1px solid lightgray;
+  box-shadow: 1px 5px 15px #8888;
+  border-radius: 10px;
+  padding-bottom: 35px;
+  padding-top: 10px;
+}
+
+.validate-register-contatiner {
+  font-family: Montserrat;
+  margin: auto;
+  width: 350px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.inValid-text {
+  color: red;
+  font-size: small;
+}
+
+.form-field-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+
+.form-submit-btn {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.single-form-bnt {
+  color: #fff;
+  background-color: rgb(238 77 45);
+  width: 100%;
+}

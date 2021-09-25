@@ -35,7 +35,6 @@ const CartPage = () => {
   console.log("address:", address);
   //MODALS:
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
 
   let handleOnActions = () => {
