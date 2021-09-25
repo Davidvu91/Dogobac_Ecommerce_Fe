@@ -76,9 +76,10 @@ const deletSingleProduct = (productId, history) => async (dispatch) => {
   try {
     await api.delete(`product/${productId}`);
     dispatch({ type: types.DELETE_SIGLE_PRODUCT_SUCCESS, payload: null });
-    dispatch(productActions.getAllProducts);
+    dispatch(productActions.getAllProducts("asc", "createdAt", 6, 1));
     history.push("/admin/dashboard");
   } catch (error) {
+    console.log("error:", error);
     dispatch({ type: types.DELETE_SIGLE_PRODUCT_FAILURE, payload: null });
   }
 };

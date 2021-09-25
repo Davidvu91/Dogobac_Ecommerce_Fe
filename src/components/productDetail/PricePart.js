@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { cartActions } from "../../redux/actions/cart.actions";
 import "./productDetail.css";
 import NumberFormat from "react-number-format";
+import { redirectActions } from "../../redux/actions/redirect.actions";
 
 const PricePart = ({ product }) => {
   const history = useHistory();
@@ -28,14 +29,8 @@ const PricePart = ({ product }) => {
     dispatch(cartActions.addToCart(product, passData, history));
   };
 
-  const handelByNow = async () => {
-    console.log("bynow....");
-    try {
-      await addToCart();
-      history.push("/cart");
-    } catch (error) {
-      throw new Error("something wrong....");
-    }
+  const handelBuyNow = () => {
+    dispatch(cartActions.buyNow(product, passData));
   };
 
   return (
@@ -79,7 +74,7 @@ const PricePart = ({ product }) => {
           <Button
             variant=""
             className="single-btn detail-ntn"
-            onClick={handelByNow}
+            onClick={handelBuyNow}
           >
             Mua Ngay
           </Button>

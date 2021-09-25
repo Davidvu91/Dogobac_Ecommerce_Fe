@@ -1,29 +1,34 @@
 import React from "react";
-import { Button, Form, NavLink } from "react-bootstrap";
-import "./validate.css";
 import { Formik } from "formik";
-import { SignupSchema } from "./Valid.Shema";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
 import { authActions } from "../../redux/actions/auth.actions";
+import { useHistory } from "react-router";
+import { Form, Button, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Register = () => {
+const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-
-  //check email validate:
-
   return (
     <div className="validate-register-contatiner">
       <Formik
-        initialValues={{ name: "", email: "", password: "" }}
-        validationSchema={SignupSchema}
+        initialValues={{ email: "", password: "" }}
+        validate={(values) => {
+          const errors = {};
+          if (!values.email) {
+            errors.email = "Bạn chưa nhập email!";
+          } else if (
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+          ) {
+            errors.email = "Email chưa hợp lệ!";
+          }
+          return errors;
+        }}
         onSubmit={(values) => {
-          console.log(values);
+          console.log("values:", values);
           const formData = values;
-          console.log("passData:", formData);
-          dispatch(authActions.register(formData, history));
+          console.log("formData:", formData);
+          dispatch(authActions.login(formData, history));
         }}
       >
         {({
@@ -36,33 +41,18 @@ const Register = () => {
         }) => (
           <Form onSubmit={handleSubmit} className="form-main-container">
             <div className="form-field-container">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="name"
-                name="name"
-                placeholder="Tên"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-              />
-              {errors.name && touched.name ? (
-                <div className="inValid-text">{errors.name}</div>
-              ) : null}
-            </div>
-
-            <div className="form-field-container">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Email..."
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
               />
-              {errors.email && touched.email ? (
-                <div className="inValid-text">{errors.email}</div>
-              ) : null}
+              <div className="inValid-text">
+                {errors.email && touched.email && errors.email}
+              </div>
             </div>
 
             <div className="form-field-container">
@@ -70,27 +60,24 @@ const Register = () => {
               <Form.Control
                 type="password"
                 name="password"
-                placeholder="Password"
+                placeholder="Password..."
                 onChange={handleChange}
-                s
                 onBlur={handleBlur}
                 value={values.password}
               />
-              {errors.password && touched.password ? (
-                <div className="inValid-text">{errors.password}</div>
-              ) : null}
+              {errors.password && touched.password && errors.password}
             </div>
 
             <div className="lg-rg-content">
-              <p>Bạn đã có tài khoản? </p>
-              <NavLink as={Link} to="/auth/login" style={{ color: "blue" }}>
-                Đăng Nhập
+              <p>Already has an account? </p>
+              <NavLink as={Link} to="/auth/register" style={{ color: "blue" }}>
+                Đăng Ký
               </NavLink>
             </div>
 
             <div className="form-submit-btn">
               <Button variant="" type="submit" className="single-form-bnt">
-                Tạo Tài Khoản
+                Đăng Nhập
               </Button>
             </div>
           </Form>
@@ -100,4 +87,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

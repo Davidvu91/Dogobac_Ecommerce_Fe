@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useHistory,
+} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Navbarr from "./components/Navbar";
-import LoginPage from "./pages/LoginPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CreateProduct from "./pages/CreateProduct";
 import CartPage from "./pages/CartPage";
@@ -19,16 +23,30 @@ import ListOfOrder from "./components/dashBoard/ListOfOrder";
 import AdminProfile from "./components/dashBoard/AdminProfile";
 import Thankyou from "./pages/Thankyou";
 import Register from "./components/validationForm/Register";
+import { useDispatch, useSelector } from "react-redux";
+import { redirectActions } from "./redux/actions/redirect.actions";
+import Login from "./components/validationForm/Login";
 
 function App() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const redirect = useSelector((state) => state.redirectReducer.redirect);
+  console.log("redirect:... ", redirect);
+  useEffect(() => {
+    if (redirect) {
+      const tempRedirect = redirect;
+      dispatch(redirectActions.deleteRedirect());
+      history.push(tempRedirect);
+    }
+  }, [redirect, dispatch]);
   return (
-    <Router>
+    <div>
       <Navbarr />
       <Toastify />
       <Switch>
         <Route exact path={`/`} component={HomePage} />
         <Route exact path={`/product/:id`} component={ProductDetailPage} />
-        <Route exact path={`/auth/login`} component={LoginPage} />
+        <Route exact path={`/auth/login`} component={Login} />
         <Route exact path={`/auth/register`} component={Register} />
         <Route exact path={`/auth/create`} component={CreateProduct} />
         <Route exact path={`/auth/listUsers`} component={ListOfUsers} />
@@ -42,7 +60,7 @@ function App() {
         <ProtectedRoute exact path={`/admin/dashboard`} component={DashBoard} />
       </Switch>
       <FooterNew />
-    </Router>
+    </div>
   );
 }
 

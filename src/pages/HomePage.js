@@ -11,6 +11,7 @@ import Testimonial from "../components/Testimonial";
 import { productActions } from "../redux/actions/product.action";
 import { ClipLoader } from "react-spinners";
 import "./style.css";
+import Category from "../components/category/Category";
 
 const HomePage = () => {
   const order = "asc";
@@ -46,11 +47,13 @@ const HomePage = () => {
 
   return (
     <>
-      <Row>
-        <Col lg={12} md={12} xs={12}>
-          <CarouselPart />
-        </Col>
-      </Row>
+      <Container>
+        <Row>
+          <Col lg={12} md={12} xs={12}>
+            <CarouselPart />
+          </Col>
+        </Row>
+      </Container>
 
       <Container>
         <Row style={{ justifyContent: "center" }} className="row-padding">
@@ -61,6 +64,11 @@ const HomePage = () => {
               handleSearchChange={handleSearchInputChange}
               handleSubmit={handleSubmit}
             />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={12} md={12} xs={12}>
+            <Category />
           </Col>
         </Row>
         <Row>

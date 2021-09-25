@@ -73,10 +73,6 @@ const Navbarr = () => {
               </>
             ) : role === 0 ? (
               <>
-                <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
-                  Log out
-                </Nav.Link>
-
                 <Nav.Link
                   as={Link}
                   to="/auth/profile"
@@ -85,19 +81,22 @@ const Navbarr = () => {
                 >
                   <i class="fas fa-user fa-lg"></i>
                 </Nav.Link>
-              </>
-            ) : (
-              <>
+
                 <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
                   Log out
                 </Nav.Link>
-
+              </>
+            ) : (
+              <>
                 <Nav.Link
                   as={Link}
                   to="/admin/dashboard"
                   className="nav-title-layout "
                 >
                   <i class="fas fa-tachometer-alt fa-2x"></i>
+                </Nav.Link>
+                <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
+                  Log out
                 </Nav.Link>
               </>
             )}
