@@ -1,21 +1,21 @@
 .carousel-inner {
-  height: 90vh !important;
+  height: 85vh !important;
 }
 
-.carousel-caption {
+/* .carousel-caption {
   top: 0;
   background-color: rgba(0, 0, 0, 0.6);
   bottom: unset;
   font-family: Montserrat;
   padding-top: 20px;
-}
+} */
 
-.carousel-title {
+/* .carousel-title {
   font-weight: bold;
   font-size: xx-large;
-}
+} */
 
-.carousel-text {
+/* .carousel-text {
   font-weight: bold;
   margin-bottom: 0px;
-}
+} */

@@ -16,51 +16,51 @@ const CarouselPart = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1631173883/jeuhj2arwfpgth46w5on.jpg"
+            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632669833/cyzdzhzgmyoyxhfam6wf.jpg"
             alt="First slide"
           />
           <Carousel.Caption className="carousel-content">
-            <h3 className="carousel-title">SOFA GỖ TỰ NHIÊN CAO CẤP</h3>
-            <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p>
+            {/* <h3 className="carousel-title">SOFA GỖ TỰ NHIÊN CAO CẤP</h3>
+            <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1631526110/shncyj8xuajwpgtdgbyw.jpg"
+            src="https://res.cloudinary.com/dejusl2dv/image/upload/v1632669844/erblmqhflyusoesjlw4i.jpg"
             alt="Second slide"
           />
 
           <Carousel.Caption className="carousel-content">
-            <h3 className="carousel-title">SOFA GỖ TỰ NHIÊN CAO CẤP</h3>
-            <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p>
+            {/* <h3 className="carousel-title">SOFA GỖ TỰ NHIÊN CAO CẤP</h3>
+            <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1631174830/eiwaxv8talirsexd5cnz.jpg"
+            src="https://res.cloudinary.com/dejusl2dv/image/upload/v1632669852/flcqd0vkagacqoqsqabw.jpg"
             alt="Third slide"
           />
 
           <Carousel.Caption className="carousel-content">
-            <h3 className="carousel-title"> SOFA GỖ TỰ NHIÊN CAO CẤP</h3>
-            <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p>
+            {/* <h3 className="carousel-title"> SOFA GỖ TỰ NHIÊN CAO CẤP</h3>
+            <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1631174955/f08eeoewjvwh3txboytj.jpg"
-            alt="Third slide"
+            src="https://doanhnghiepvanbagoto.com/uploads/plugin/product_items/1078/14-1.jpg"
+            alt="Fourth slide"
           />
 
           <Carousel.Caption className="carousel-content">
-            <h3 className="carousel-title"> SOFA GỖ TỰ NHIÊN CAO CẤP</h3>
-            <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p>
+            {/* <h3 className="carousel-title"> SOFA GỖ TỰ NHIÊN CAO CẤP</h3>
+            <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p> */}
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

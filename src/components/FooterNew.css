@@ -32,11 +32,17 @@ a {
 }
 
 .footer-text {
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 10px;
   font-family: Montserrat;
 }
 
 .footer-main-icon {
   justify-content: center;
+}
+.link-class {
+  display: flex;
+}
+.icon-title {
+  margin-left: 5px;
 }

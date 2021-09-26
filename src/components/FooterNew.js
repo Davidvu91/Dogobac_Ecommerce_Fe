@@ -83,19 +83,22 @@ const FooterNew = () => {
                     <Row>
                       {" "}
                       <Link className="link-class footer-text" to="/">
-                        <i class="fab fa-facebook-square icon fa-2x"></i>
+                        <i class="fab fa-facebook-square icon fa-2x"> </i>
+                        <p className="icon-title"> FaceBook</p>
                       </Link>
                     </Row>
                     <Row>
                       {" "}
                       <Link className="link-class footer-text" to="/">
                         <i class="fab fa-twitter-square icon fa-2x"></i>
+                        <p className="icon-title"> Twitter</p>
                       </Link>
                     </Row>
                     <Row>
                       {" "}
                       <Link className="link-class footer-text" to="/">
                         <i class="fab fa-instagram-square icon fa-2x"></i>
+                        <p className="icon-title"> Instagram</p>
                       </Link>
                     </Row>
                   </Row>

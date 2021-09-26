@@ -14,8 +14,8 @@ const Category = ({ handleCategory }) => {
         >
           <img
             className="category-img"
-            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1631173883/jeuhj2arwfpgth46w5on.jpg"
-            alt="Category"
+            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632661470/j9qdrivanxgqzoduqh9o.jpg"
+            alt="sofa"
           />
           <p className="category-text"> Sofa</p>
         </div>

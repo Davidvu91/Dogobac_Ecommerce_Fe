@@ -23,24 +23,44 @@ const NextBtn = (props) => {
   );
 };
 const Testimonial = () => {
+  const content = {
+    content1:
+      "Qua cuộc thi thiết kế Triple I tôi đánh giá DO GO BAC là một doanh nghiệp đề cao tính sáng tạo, luôn thay đổi và cập nhật các xu hướng trên Thế GIới.",
+    content2:
+      "Ở DO GO BAC cái gì cũng đẹp, sản phẩm sáng tạo và đa dạng, tôi thật sự thích các sản phẩm ở đây. Dung đã chọn mua bàn ghế ăn, bàn...",
+    content3:
+      "Là kiến trúc sư, mình đặc biệt ấn tượng với sản phẩm nội thất của DO GO BAC: Độc đáo, đẹp, chất lượng và đặc biệt có nguồn gốc, xuất xứ rõ...",
+  };
+  const img = {
+    img1: "https://www.tutorialrepublic.com/examples/images/clients/2.jpg",
+    img2: "https://www.tutorialrepublic.com/examples/images/clients/4.jpg",
+    img3: "https://www.tutorialrepublic.com/examples/images/clients/3.jpg",
+  };
+
+  const people = [
+    { name: "Hoàng Anh Tuấn", occupation: "Kiến Trúc Sư" },
+    { name: "Ngọc Trinh", occupation: "Người Mẫu" },
+    { name: "Tuấn Hưng", occupation: "Ca Sỹ" },
+  ];
+
   return (
     <div
       className="testimonial"
       style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
     >
       <div style={{ width: "50%", textAlign: "center" }}>
-        <h1 style={{ marginBottom: 20 }}>KHÁCH HÀNG NÓI VỀ CHÚNG TÔI</h1>
+        <h1 style={{ marginBottom: 20 }}>LỜI KHÁCH HÀNG</h1>
         <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
-          <Card img="https://www.tutorialrepublic.com/examples/images/clients/1.jpg" />
-          <Card img="https://www.tutorialrepublic.com/examples/images/clients/2.jpg" />
-          <Card img="https://www.tutorialrepublic.com/examples/images/clients/3.jpg" />
+          <Card1 img={img} content={content} people={people} />
+          <Card2 img={img} content={content} people={people} />
+          <Card3 img={img} content={content} people={people} />
         </Slider>
       </div>
     </div>
   );
 };
 
-const Card = ({ img }) => {
+const Card1 = ({ img, content, people }) => {
   return (
     <div
       style={{
@@ -49,11 +69,12 @@ const Card = ({ img }) => {
         flexDirection: "column",
         textAlign: "center",
         color: "gray",
+        fontFamily: "Montserrat",
       }}
     >
       <Avatar
         imgProps={{ style: { borderRadius: "50%" } }}
-        src={img}
+        src={img.img1}
         style={{
           width: 120,
           height: 120,
@@ -62,14 +83,81 @@ const Card = ({ img }) => {
           marginBottom: 20,
         }}
       />
-      <p>
-        Showroom là một không gian sang trọng và đẳng cấp, mang đến những tác
-        phẩm tinh hoa và những giá trị kinh điển của thế giới đến với các
-        khách...
-      </p>
+      <p>{content.content1}</p>
       <p style={{ fontStyle: "italic", marginTop: 25 }}>
-        <span style={{ fontWeight: 500, color: "green" }}>Bùi Hải Trung</span> ,
-        Kiến Trúc Sư
+        <span style={{ fontWeight: 500, color: "green" }}>
+          {people[0].name}
+        </span>{" "}
+        , {people[0].occupation}
+      </p>
+    </div>
+  );
+};
+
+const Card2 = ({ img, content, people }) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        textAlign: "center",
+        color: "gray",
+        fontFamily: "Montserrat",
+      }}
+    >
+      <Avatar
+        imgProps={{ style: { borderRadius: "50%" } }}
+        src={img.img2}
+        style={{
+          width: 120,
+          height: 120,
+          border: "1px solid lightgray",
+          padding: 7,
+          marginBottom: 20,
+        }}
+      />
+      <p>{content.content2}</p>
+      <p style={{ fontStyle: "italic", marginTop: 25 }}>
+        <span style={{ fontWeight: 500, color: "green" }}>
+          {" "}
+          {people[1].name}
+        </span>{" "}
+        ,{people[1].occupation}
+      </p>
+    </div>
+  );
+};
+
+const Card3 = ({ img, content, people }) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        textAlign: "center",
+        color: "gray",
+        fontFamily: "Montserrat",
+      }}
+    >
+      <Avatar
+        imgProps={{ style: { borderRadius: "50%" } }}
+        src={img.img3}
+        style={{
+          width: 120,
+          height: 120,
+          border: "1px solid lightgray",
+          padding: 7,
+          marginBottom: 20,
+        }}
+      />
+      <p>{content.content3}</p>
+      <p style={{ fontStyle: "italic", marginTop: 25 }}>
+        <span style={{ fontWeight: 500, color: "green" }}>
+          {people[2].name}
+        </span>{" "}
+        ,{people[2].occupation}
       </p>
     </div>
   );

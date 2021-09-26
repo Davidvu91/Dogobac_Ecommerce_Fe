@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+.about-container {
+  font-family: Montserrat;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.about-sigle-row {
+}
+
+.about-row-main-title {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.about-main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.about-dogobac {
+  color: rgb(238, 77, 45);
+}
+
+.about-col-content {
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.about-sub-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-top: 16px;
+}
+
+.about-img-container {
+}
+
+.about-img {
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 25px;
+  padding: 2px;
+}
+
+.about-text {
+  line-height: 40px;
+  font-size: 16px;
+}

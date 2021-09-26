@@ -12,9 +12,10 @@ import { productActions } from "../redux/actions/product.action";
 import { ClipLoader } from "react-spinners";
 import "./style.css";
 import Category from "../components/category/Category";
+import AboutUs from "../components/AboutUs/AboutUs";
 
 const HomePage = () => {
-  const order = "asc";
+  const order = "desc";
   const sortBy = "price";
   const limit = 12;
 
@@ -113,7 +114,13 @@ const HomePage = () => {
             <Testimonial />{" "}
           </Col>
         </Row>
-        <br /> <br />
+        <hr />
+        <Row className=" row-padding ">
+          <Col>
+            {" "}
+            <AboutUs />
+          </Col>
+        </Row>
       </Container>
     </>
   );
