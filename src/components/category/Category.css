@@ -1,8 +1,15 @@
 .category-container {
+  margin-top: 35px;
 }
 
 .category-col {
+  cursor: pointer;
 }
+/* .category-col:hover {
+  transform: scale(1.01);
+  transition: 0.25s;
+  transition-duration: 0.3s;
+} */
 
 .category-item {
   padding: 10px;
@@ -17,6 +24,13 @@
   border: 1px solid lightgray;
   border-radius: 16px;
   padding: 2px;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+
+.category-item:hover .category-img {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
 }
 
 .category-text {

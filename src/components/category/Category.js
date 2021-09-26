@@ -2,11 +2,16 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import "./Category.css";
 
-const Category = () => {
+const Category = ({ handleCategory }) => {
   return (
     <Row className="category-container">
       <Col lg={2} md={2} className="category-col">
-        <div className="category-item">
+        <div
+          className="category-item"
+          onClick={() => {
+            handleCategory("sofa");
+          }}
+        >
           <img
             className="category-img"
             src="http://res.cloudinary.com/dejusl2dv/image/upload/v1631173883/jeuhj2arwfpgth46w5on.jpg"
@@ -17,7 +22,12 @@ const Category = () => {
       </Col>
 
       <Col lg={2} md={2} className="category-col">
-        <div className="category-item">
+        <div
+          className="category-item"
+          onClick={() => {
+            handleCategory("giường");
+          }}
+        >
           <img
             className="category-img"
             src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632396431/xcgdwlfx4hcdrafeps31.jpg"
@@ -28,10 +38,15 @@ const Category = () => {
       </Col>
 
       <Col lg={2} md={2} className="category-col">
-        <div className="category-item">
+        <div
+          className="category-item"
+          onClick={() => {
+            handleCategory("kệ tivi");
+          }}
+        >
           <img
             className="category-img"
-            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632396879/g6rlrbzuymppxpo2qoup.jpg"
+            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632397086/tgw00pwlgg5qxxw9wgiz.jpg"
             alt="Category"
           />
           <p className="category-text"> Kệ Tivi</p>
@@ -39,7 +54,12 @@ const Category = () => {
       </Col>
 
       <Col lg={2} md={2} className="category-col">
-        <div className="category-item">
+        <div
+          className="category-item"
+          onClick={() => {
+            handleCategory("bàn ăn");
+          }}
+        >
           <img
             className="category-img"
             src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632592095/ivvyp9anrt2kmudcfs6y.jpg"
@@ -50,23 +70,33 @@ const Category = () => {
       </Col>
 
       <Col lg={2} md={2} className="category-col">
-        <div className="category-item">
+        <div
+          className="category-item"
+          onClick={() => {
+            handleCategory("tủ áo");
+          }}
+        >
           <img
             className="category-img"
-            src="https://2.bp.blogspot.com/-b-bRsj0l2QQ/XHY49iE98hI/AAAAAAAAEK4/UFWy-kv_fgg0mAgW020kNawxWyA7LVJyACLcBGAs/s1600/tu-quan-ao-go-soi-nga-dep-13.jpg"
+            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632643138/wv4dg2plzc63yrsizq4k.jpg"
             alt="Category"
           />
           <p className="category-text"> Tủ Áo</p>
         </div>
       </Col>
       <Col lg={2} md={2} className="category-col">
-        <div className="category-item">
+        <div
+          className="category-item"
+          onClick={() => {
+            handleCategory("tủ giày");
+          }}
+        >
           <img
             className="category-img"
-            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632400505/fus8qzmwfpu7ei3vtexd.jpg"
+            src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632642025/uws816t7xem6ujwfrew9.jpg"
             alt="Category"
           />
-          <p className="category-text"> Giường</p>
+          <p className="category-text"> Tủ Giày Dép</p>
         </div>
       </Col>
     </Row>

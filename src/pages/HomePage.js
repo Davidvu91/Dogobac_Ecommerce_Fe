@@ -17,6 +17,12 @@ const HomePage = () => {
   const order = "asc";
   const sortBy = "price";
   const limit = 12;
+
+  const [category, setCategory] = useState("");
+  const handleCategory = (eventKey, event) => {
+    setCategory(eventKey);
+  };
+
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [searchInput, setSearchInput] = useState("");
@@ -42,8 +48,17 @@ const HomePage = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(productActions.getAllProducts(order, sortBy, limit, page, search));
-  }, [dispatch, order, sortBy, limit, page, search]);
+    dispatch(
+      productActions.getAllProducts(
+        order,
+        sortBy,
+        limit,
+        page,
+        search,
+        category
+      )
+    );
+  }, [dispatch, order, sortBy, limit, page, search, category]);
 
   return (
     <>
@@ -56,6 +71,11 @@ const HomePage = () => {
       </Container>
 
       <Container>
+        <Row>
+          <Col lg={12} md={12} xs={12}>
+            <Category handleCategory={handleCategory} />
+          </Col>
+        </Row>
         <Row style={{ justifyContent: "center" }} className="row-padding">
           <Col lg={6} md={6} xs={12}>
             <SearchBox
@@ -64,11 +84,6 @@ const HomePage = () => {
               handleSearchChange={handleSearchInputChange}
               handleSubmit={handleSubmit}
             />
-          </Col>
-        </Row>
-        <Row>
-          <Col lg={12} md={12} xs={12}>
-            <Category />
           </Col>
         </Row>
         <Row>

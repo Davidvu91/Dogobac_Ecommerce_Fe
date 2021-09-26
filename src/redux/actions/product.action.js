@@ -19,13 +19,17 @@ const createProduct = (formData) => async (dispatch) => {
 
 // GET ALL PRODUCTS
 // http://localhost:5000/product/list?order=asc&sortBy=price&limit=4&page=1&search=sofa
+// http://localhost:5000/product/filter?order=desc&sortBy=price&limit=8&page=1&category=giường
 
 const getAllProducts =
-  (order, sortBy, limit, page, search) => async (dispatch) => {
+  (order, sortBy, limit, page, search, category) => async (dispatch) => {
     dispatch({ type: types.GET_ALL_PRODUCT_REQUEST, payload: null });
     try {
       let url = `${REACT_APP_BACKEND_API}/product/list?order=${order}&sortBy=${sortBy}&limit=${limit}&page=${page}`;
       if (search) url += `&search=${search}`;
+      if (category)
+        url = `${REACT_APP_BACKEND_API}/product/filter?order=${order}&sortBy=${sortBy}&limit=${limit}&page=${page}&category=${category}`;
+      console.log("url: ", url);
       const data = await api.get(url);
       console.log("get list all product:", data);
       dispatch({ type: types.GET_ALL_PRODUCT_SUCCESS, payload: data });

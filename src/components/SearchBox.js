@@ -4,7 +4,7 @@ import "./searchbox.css";
 
 const SearchBox = ({ searchInput, handleSearchChange, handleSubmit }) => {
   return (
-    <div className="search-container mt-5">
+    <div className="search-container mt-4">
       <Form className="d-flex" onSubmit={handleSubmit}>
         <FormControl
           className="mr-2"
