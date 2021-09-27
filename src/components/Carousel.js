@@ -50,19 +50,6 @@ const CarouselPart = () => {
             <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p> */}
           </Carousel.Caption>
         </Carousel.Item>
-
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://doanhnghiepvanbagoto.com/uploads/plugin/product_items/1078/14-1.jpg"
-            alt="Fourth slide"
-          />
-
-          <Carousel.Caption className="carousel-content">
-            {/* <h3 className="carousel-title"> SOFA GỖ TỰ NHIÊN CAO CẤP</h3>
-            <p className="carousel-text">Uy Tín - Chất Lượng - Giá Rẻ Nhất!</p> */}
-          </Carousel.Caption>
-        </Carousel.Item>
       </Carousel>
     </Row>
   );

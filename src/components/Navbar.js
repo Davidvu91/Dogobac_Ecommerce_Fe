@@ -13,14 +13,14 @@ const Navbarr = () => {
   let role = profile?.role;
   console.log("role of user:", role);
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(userActions.getSingleUserInfo());
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(userActions.getSingleUserInfo());
+  // }, [dispatch]);
 
-  const handleGetSingleProfile = (e) => {
-    dispatch(userActions.getSingleUserInfo());
-  };
+  // const handleGetSingleProfile = (e) => {
+  //   dispatch(userActions.getSingleUserInfo());
+  // };
 
   const handleLogOut = (e) => {
     e.preventDefault();
@@ -49,7 +49,7 @@ const Navbarr = () => {
               as={Link}
               to="/cart"
               className="nav-title-layout"
-              onClick={handleGetSingleProfile}
+              // onClick={handleGetSingleProfile}
             >
               <i class="fas fa-cart-plus fa-lg"></i>
             </Nav.Link>
@@ -77,7 +77,7 @@ const Navbarr = () => {
                   as={Link}
                   to="/auth/profile"
                   className="nav-title-layout "
-                  onClick={handleGetSingleProfile}
+                  // onClick={handleGetSingleProfile}
                 >
                   <i class="fas fa-user fa-lg"></i>
                 </Nav.Link>

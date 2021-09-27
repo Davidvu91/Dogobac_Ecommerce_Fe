@@ -15,6 +15,7 @@ const userReducer = (state = initialState, action) => {
     case types.GET_SINGLE_USER_SUCCESS:
       return { ...state, user: payload, loading: false };
     case types.GET_SINGLE_USER_FAILURE:
+      localStorage.removeItem("accessToken");
       return { ...state, loading: false };
     //UPDATE SINGLE USER:
     case types.UPDATA_SINGLE_USER_REQUEST:

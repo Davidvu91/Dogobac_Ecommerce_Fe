@@ -14,7 +14,7 @@ const AboutUs = () => {
         </Col>
       </Row>
 
-      <Row className="about-sigle-row">
+      <Row className="about-sigle-row ">
         <Col lg={6} md={6} xs={12} className="about-col-content">
           <div className="about-img-container">
             <img
@@ -80,7 +80,7 @@ const AboutUs = () => {
         </Col>
       </Row>
 
-      <Row className="about-sigle-row">
+      <div className="about-sigle-row  flex-row-reverse flex-md-row">
         <Col lg={6} md={6} xs={12} className="about-col-content">
           <div className="about-img-container">
             <img
@@ -109,7 +109,7 @@ const AboutUs = () => {
             </p>
           </Row>
         </Col>
-      </Row>
+      </div>
     </Container>
   );
 };

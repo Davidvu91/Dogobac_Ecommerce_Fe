@@ -13,9 +13,9 @@ const FooterNew = () => {
             <Col lg={5} md={5} xs={12} className="footer-subBox">
               <Row className=" footer-sub-container">
                 <Col lg={2} md={2} xs={2} className="footer-main-icon">
-                  <Link className="link-class" to="/">
+                  <div>
                     <i class="fas fa-house-user fa-2x"></i>
-                  </Link>
+                  </div>
                 </Col>
                 <Col lg={10} md={10} xs={10} className="footer-content">
                   <div className="footer-title">DO GO BAC</div>
@@ -53,9 +53,9 @@ const FooterNew = () => {
             <Col lg={5} md={5} xs={12} className="footer-subBox">
               <Row className=" footer-sub-container">
                 <Col lg={2} md={2} xs={2} className="footer-main-icon">
-                  <Link className="link-class" to="/">
+                  <div>
                     <i class="fas fa-couch fa-2x"></i>
-                  </Link>
+                  </div>
                 </Col>
                 <Col lg={10} md={10} xs={10} className="footer-content">
                   <div className="footer-title">THỂ LOẠI </div>
@@ -85,7 +85,7 @@ const FooterNew = () => {
                   </Link>
                 </Col>
                 <Col lg={10} md={10} xs={10} className="footer-content">
-                  <div>
+                  <div className="d-none d-xl-block">
                     <div className="footer-text">FaceBook</div>
                     <div className="footer-text">Twitter</div>
                     <div className="footer-text">Instagram</div>

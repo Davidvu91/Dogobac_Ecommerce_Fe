@@ -27,8 +27,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { redirectActions } from "./redux/actions/redirect.actions";
 import Login from "./components/validationForm/Login";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { userActions } from "./redux/actions/user.actions";
 
 function App() {
+  const accessToken = localStorage.getItem("accessToken");
   const dispatch = useDispatch();
   const history = useHistory();
   const redirect = useSelector((state) => state.redirectReducer.redirect);
@@ -39,7 +41,14 @@ function App() {
       dispatch(redirectActions.deleteRedirect());
       history.push(tempRedirect);
     }
-  }, [redirect, dispatch]);
+  }, [redirect, dispatch, history]);
+
+  useEffect(() => {
+    if (accessToken) {
+      dispatch(userActions.getSingleUserInfo());
+    }
+  }, [dispatch, accessToken]);
+
   return (
     <div>
       <Navbarr />
