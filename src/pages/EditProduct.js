@@ -29,8 +29,6 @@ const EditProduct = () => {
   });
   const [getImage, setGetImage] = useState(product && product.imageUrl);
 
-  console.log("helle HUe...");
-
   useEffect(() => {
     if (product) {
       setFormData({
@@ -48,8 +46,8 @@ const EditProduct = () => {
   }, [product]);
 
   useEffect(() => {
-    dispatch(productActions.getSingleProductById());
-  }, [dispatch]);
+    dispatch(productActions.getSingleProductById(productId));
+  }, [dispatch, productId]);
 
   console.log("init formData:", formData);
   // Get value of form

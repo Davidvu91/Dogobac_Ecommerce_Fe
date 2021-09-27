@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
-import { userActions } from "../redux/actions/user.actions";
+// import { userActions } from "../redux/actions/user.actions";
 
 const Navbarr = () => {
   const user = useSelector((state) => state.userReducer.user);
@@ -31,16 +31,9 @@ const Navbarr = () => {
   return (
     <>
       <Navbar expand="lg" className="navbar-bg">
-        {/* <Navbar.Brand as={Link} to="/">
-        <img src={logo} alt="coderbook" width="50px" />
-      </Navbar.Brand> */}
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="mr-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
+          <Nav className="mr-auto my-2 my-lg-0" navbarScroll>
             <Nav.Link as={Link} to="/" className="nav-title-layout">
               <img src="/do-go-bac.png" alt="logo" height="45px" />
             </Nav.Link>

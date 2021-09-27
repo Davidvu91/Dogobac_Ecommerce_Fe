@@ -45,7 +45,7 @@ const AboutUs = () => {
         </Col>
       </Row>
 
-      <Row className="about-sigle-row">
+      <Row className="about-sigle-row flex-column-reverse flex-md-row">
         <Col lg={6} md={6} xs={12} className="about-col-content">
           <Row className="about-row-sub-title">
             <h5 className="about-sub-title">
@@ -80,7 +80,7 @@ const AboutUs = () => {
         </Col>
       </Row>
 
-      <div className="about-sigle-row  flex-row-reverse flex-md-row">
+      <Row className="about-sigle-row  ">
         <Col lg={6} md={6} xs={12} className="about-col-content">
           <div className="about-img-container">
             <img
@@ -109,7 +109,7 @@ const AboutUs = () => {
             </p>
           </Row>
         </Col>
-      </div>
+      </Row>
     </Container>
   );
 };
