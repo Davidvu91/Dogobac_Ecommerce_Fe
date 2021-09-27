@@ -26,6 +26,7 @@ import Register from "./components/validationForm/Register";
 import { useDispatch, useSelector } from "react-redux";
 import { redirectActions } from "./redux/actions/redirect.actions";
 import Login from "./components/validationForm/Login";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function App() {
   const dispatch = useDispatch();

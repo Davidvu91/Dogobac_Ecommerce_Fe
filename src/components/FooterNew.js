@@ -10,7 +10,7 @@ const FooterNew = () => {
       <Container>
         <Row className="row-padding footer-style">
           <Row className="footer-main-row">
-            <Col lg={6} md={6} xs={12} className="footer-subBox">
+            <Col lg={5} md={5} xs={12} className="footer-subBox">
               <Row className=" footer-sub-container">
                 <Col lg={2} md={2} xs={2} className="footer-main-icon">
                   <Link className="link-class" to="/">
@@ -71,37 +71,25 @@ const FooterNew = () => {
               </Row>
             </Col>
 
-            <Col lg={1} md={1} xs={1} className="footer-subBox">
+            <Col lg={2} md={2} xs={12} className="footer-subBox">
               <Row className=" footer-sub-container">
-                {/* <Col lg={2} md={2} xs={2} className="footer-main-icon">
+                <Col lg={2} md={2} xs={2} className="footer-main-icon">
                   <Link className="link-class" to="/">
-                    <i class="fas fa-users fa-2x"></i>
+                    <i class="fab fa-facebook-square icon fa-2x"> </i>
                   </Link>
-                </Col> */}
-                <Col className="footer-content">
-                  <Row>
-                    <Row>
-                      {" "}
-                      <Link className="link-class footer-text" to="/">
-                        <i class="fab fa-facebook-square icon fa-2x"> </i>
-                        <p className="icon-title"> FaceBook</p>
-                      </Link>
-                    </Row>
-                    <Row>
-                      {" "}
-                      <Link className="link-class footer-text" to="/">
-                        <i class="fab fa-twitter-square icon fa-2x"></i>
-                        <p className="icon-title"> Twitter</p>
-                      </Link>
-                    </Row>
-                    <Row>
-                      {" "}
-                      <Link className="link-class footer-text" to="/">
-                        <i class="fab fa-instagram-square icon fa-2x"></i>
-                        <p className="icon-title"> Instagram</p>
-                      </Link>
-                    </Row>
-                  </Row>
+                  <Link className="link-class" to="/">
+                    <i class="fab fa-twitter-square icon fa-2x"></i>
+                  </Link>
+                  <Link className="link-class" to="/">
+                    <i class="fab fa-instagram-square icon fa-2x"></i>
+                  </Link>
+                </Col>
+                <Col lg={10} md={10} xs={10} className="footer-content">
+                  <div>
+                    <div className="footer-text">FaceBook</div>
+                    <div className="footer-text">Twitter</div>
+                    <div className="footer-text">Instagram</div>
+                  </div>
                 </Col>
               </Row>
             </Col>

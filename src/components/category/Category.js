@@ -5,7 +5,7 @@ import "./Category.css";
 const Category = ({ handleCategory }) => {
   return (
     <Row className="category-container">
-      <Col lg={2} md={2} className="category-col">
+      <Col lg={2} md={2} xs={4} className="category-col">
         <div
           className="category-item"
           onClick={() => {
@@ -21,7 +21,7 @@ const Category = ({ handleCategory }) => {
         </div>
       </Col>
 
-      <Col lg={2} md={2} className="category-col">
+      <Col lg={2} md={2} xs={4} className="category-col">
         <div
           className="category-item"
           onClick={() => {
@@ -37,7 +37,7 @@ const Category = ({ handleCategory }) => {
         </div>
       </Col>
 
-      <Col lg={2} md={2} className="category-col">
+      <Col lg={2} md={2} xs={4} className="category-col">
         <div
           className="category-item"
           onClick={() => {
@@ -53,7 +53,7 @@ const Category = ({ handleCategory }) => {
         </div>
       </Col>
 
-      <Col lg={2} md={2} className="category-col">
+      <Col lg={2} md={2} xs={4} className="category-col">
         <div
           className="category-item"
           onClick={() => {
@@ -69,7 +69,7 @@ const Category = ({ handleCategory }) => {
         </div>
       </Col>
 
-      <Col lg={2} md={2} className="category-col">
+      <Col lg={2} md={2} xs={4} className="category-col">
         <div
           className="category-item"
           onClick={() => {
@@ -84,7 +84,7 @@ const Category = ({ handleCategory }) => {
           <p className="category-text"> Tủ Áo</p>
         </div>
       </Col>
-      <Col lg={2} md={2} className="category-col">
+      <Col lg={2} md={2} xs={4} className="category-col">
         <div
           className="category-item"
           onClick={() => {
@@ -96,7 +96,7 @@ const Category = ({ handleCategory }) => {
             src="http://res.cloudinary.com/dejusl2dv/image/upload/v1632642025/uws816t7xem6ujwfrew9.jpg"
             alt="Category"
           />
-          <p className="category-text"> Tủ Giày Dép</p>
+          <p className="category-text"> Tủ Dép</p>
         </div>
       </Col>
     </Row>

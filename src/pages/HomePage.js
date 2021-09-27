@@ -107,14 +107,14 @@ const HomePage = () => {
             />
           </Col>
         </Row>
-        <hr />
-        <Row className=" row-padding ">
+
+        <Row>
           <Col>
             {" "}
             <Testimonial />{" "}
           </Col>
         </Row>
-        <hr />
+
         <Row className=" row-padding ">
           <Col>
             {" "}

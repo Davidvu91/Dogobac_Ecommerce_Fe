@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import { cartActions } from "../../redux/actions/cart.actions";
 import "./productDetail.css";
 import NumberFormat from "react-number-format";
-import { redirectActions } from "../../redux/actions/redirect.actions";
 
 const PricePart = ({ product }) => {
   const history = useHistory();

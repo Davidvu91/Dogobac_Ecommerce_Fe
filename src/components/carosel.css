@@ -1,5 +1,5 @@
 .carousel-inner {
-  height: 85vh !important;
+  height: auto;
 }
 
 /* .carousel-caption {

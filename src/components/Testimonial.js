@@ -48,8 +48,12 @@ const Testimonial = () => {
       className="testimonial"
       style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
     >
-      <div style={{ width: "50%", textAlign: "center" }}>
-        <h1 style={{ marginBottom: 20 }}>LỜI KHÁCH HÀNG</h1>
+      <div className="testimonial-background"></div>
+      <div
+        className="testimonial-title-container"
+        style={{ width: "50%", textAlign: "center" }}
+      >
+        <h4 className="testimonial-title">LỜI KHÁCH HÀNG</h4>
         <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
           <Card1 img={img} content={content} people={people} />
           <Card2 img={img} content={content} people={people} />
@@ -83,12 +87,10 @@ const Card1 = ({ img, content, people }) => {
           marginBottom: 20,
         }}
       />
-      <p>{content.content1}</p>
+      <p className="testimonial-content">{content.content1}</p>
       <p style={{ fontStyle: "italic", marginTop: 25 }}>
-        <span style={{ fontWeight: 500, color: "green" }}>
-          {people[0].name}
-        </span>{" "}
-        , {people[0].occupation}
+        <span className="testimonial-name">{people[0].name}</span> ,{" "}
+        {people[0].occupation}
       </p>
     </div>
   );
@@ -117,13 +119,10 @@ const Card2 = ({ img, content, people }) => {
           marginBottom: 20,
         }}
       />
-      <p>{content.content2}</p>
-      <p style={{ fontStyle: "italic", marginTop: 25 }}>
-        <span style={{ fontWeight: 500, color: "green" }}>
-          {" "}
-          {people[1].name}
-        </span>{" "}
-        ,{people[1].occupation}
+      <p className="testimonial-content">{content.content2}</p>
+      <p style={{ fontStyle: "italic", marginTop: 25, color: "white" }}>
+        <span className="testimonial-name"> {people[1].name}</span> ,
+        {people[1].occupation}
       </p>
     </div>
   );
@@ -152,12 +151,10 @@ const Card3 = ({ img, content, people }) => {
           marginBottom: 20,
         }}
       />
-      <p>{content.content3}</p>
+      <p className="testimonial-content">{content.content3}</p>
       <p style={{ fontStyle: "italic", marginTop: 25 }}>
-        <span style={{ fontWeight: 500, color: "green" }}>
-          {people[2].name}
-        </span>{" "}
-        ,{people[2].occupation}
+        <span className="testimonial-name">{people[2].name}</span> ,
+        {people[2].occupation}
       </p>
     </div>
   );
