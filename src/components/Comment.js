@@ -5,7 +5,7 @@ import { commentActions } from "../redux/actions/comment.actions";
 import "./Comment.css";
 
 const Comment = ({ dispatch, productId }) => {
-  const [rating, setRating] = useState(1);
+  const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
 
   const handleOnChange = (e) => {

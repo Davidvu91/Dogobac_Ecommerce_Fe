@@ -20,16 +20,17 @@ const HomePage = () => {
   const limit = 12;
 
   const [category, setCategory] = useState("");
-  const handleCategory = (eventKey, event) => {
-    setCategory(eventKey);
-  };
-
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [searchInput, setSearchInput] = useState("");
   const loading = useSelector((state) => state.productReducer.loading);
   const data = useSelector((state) => state.productReducer.data);
   console.log("List data nhan tu product Reducer:", data);
+
+  const handleCategory = (eventKey, event) => {
+    setCategory(eventKey);
+    setSearch("");
+  };
 
   const products = data.data?.data?.products;
   console.log(products);
@@ -45,6 +46,7 @@ const HomePage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSearch(searchInput);
+    setCategory("");
   };
 
   const dispatch = useDispatch();
