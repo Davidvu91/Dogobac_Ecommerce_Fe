@@ -28,6 +28,7 @@ import { redirectActions } from "./redux/actions/redirect.actions";
 import Login from "./components/validationForm/Login";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { userActions } from "./redux/actions/user.actions";
+import ChartUser from "./components/dashBoard/ChartUser";
 
 function App() {
   const accessToken = localStorage.getItem("accessToken");
@@ -60,6 +61,7 @@ function App() {
         <Route exact path={`/auth/register`} component={Register} />
         <Route exact path={`/auth/create`} component={CreateProduct} />
         <Route exact path={`/auth/listUsers`} component={ListOfUsers} />
+        <Route exact path={`/auth/chart/users`} component={ChartUser} />
         <Route exact path={`/auth/listOrders`} component={ListOfOrder} />
         <Route exact path={`/auth/bill`} component={BillInfo} />
         <Route exact path={`/thanks`} component={Thankyou} />

@@ -32,6 +32,12 @@ const SideBar = () => {
         </ListGroup.Item>
 
         <ListGroup.Item className="sidebar-item">
+          <Nav.Link as={Link} to="/auth/create" className="dash-board-link">
+            Create Products
+          </Nav.Link>
+        </ListGroup.Item>
+
+        <ListGroup.Item className="sidebar-item">
           <Nav.Link
             as={Link}
             to="/auth/listUsers"
@@ -43,14 +49,18 @@ const SideBar = () => {
         </ListGroup.Item>
 
         <ListGroup.Item className="sidebar-item">
-          <Nav.Link as={Link} to="/auth/listOrders" className="dash-board-link">
-            List of Orders
+          <Nav.Link
+            as={Link}
+            to="/auth/chart/users"
+            className="dash-board-link"
+          >
+            User growth rate
           </Nav.Link>
         </ListGroup.Item>
 
         <ListGroup.Item className="sidebar-item">
-          <Nav.Link as={Link} to="/auth/create" className="dash-board-link">
-            Create Products
+          <Nav.Link as={Link} to="/auth/listOrders" className="dash-board-link">
+            List of Orders
           </Nav.Link>
         </ListGroup.Item>
       </ListGroup>

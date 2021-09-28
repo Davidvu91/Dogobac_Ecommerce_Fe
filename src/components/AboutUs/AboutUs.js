@@ -31,15 +31,14 @@ const AboutUs = () => {
           <Row>
             <p className="about-text">
               {" "}
-              <i>Thư giãn thông minh, trải nghiệm tuyệt vời</i>{" "}
+              <i>Đẳng cấp & Sang Trọng</i>{" "}
             </p>
             <p className="about-text">
-              Sofa văng có động cơ, đem đến trải nghiệm thư giãn thông minh tại
-              nhà. Với hệ thống động cơ mượt mà, bạn có thể điều chỉnh ghế theo
-              ý thích, như ngả lưng, nâng chân,... chỉ với 1 nút bấm. Sofa văng
-              có động cơ đến từ các thương hiệu hàng đầu: Chateau d’Ax, Milano &
-              Design, sử dụng chất liệu da thật và đệm mút êm ái, đem đến những
-              phút giây thư giãn êm ái tuyệt vời và tiện lợi.
+              Chúng tôi luôn mong muốn và khao khát mang thiên nhiên đến gần hơn
+              với ngôi nhà của bạn, mang những giá trị nguyên bản vào trong cuộc
+              sống hàng ngày. GỖ TỰ NHIÊN được yêu thích và trở thành thú chơi
+              đẳng cấp cũng bởi vì vậy. Vẻ đẹp của nó vô cùng tráng lệ nhưng lại
+              tinh tế, sắc sảo trong từng đường nét.
             </p>
           </Row>
         </Col>
@@ -56,15 +55,15 @@ const AboutUs = () => {
           <Row>
             <p className="about-text">
               {" "}
-              <i>Thư giãn thông minh, trải nghiệm tuyệt vời</i>{" "}
+              <i>Nâng tầm giá trị gỗ quý ngàn năm</i>{" "}
             </p>
             <p className="about-text">
-              Sofa văng có động cơ, đem đến trải nghiệm thư giãn thông minh tại
-              nhà. Với hệ thống động cơ mượt mà, bạn có thể điều chỉnh ghế theo
-              ý thích, như ngả lưng, nâng chân,... chỉ với 1 nút bấm. Sofa văng
-              có động cơ đến từ các thương hiệu hàng đầu: Chateau d’Ax, Milano &
-              Design, sử dụng chất liệu da thật và đệm mút êm ái, đem đến những
-              phút giây thư giãn êm ái tuyệt vời và tiện lợi.
+              Với mong muốn gìn giữ và nâng tầm vẻ đẹp cho những ngôi nhà Việt,
+              chúng tôi đang nỗ lực tạo ra nhiều sản phẩm đa dạng về chủng loại
+              cũng như phong phú về hình thức. Các loại GỖ TỰ NHIÊN NGUYÊN KHỐI
+              quý hiếm như: CẨM, HƯƠNG, GÕ VÀNG, GÕ ĐỎ, LIM,…. Đều là gỗ tự
+              nhiên 100%, có độ bền, dẻo dai và chịu được sự tác động lớn từ môi
+              trường bên ngoài.
             </p>
           </Row>
         </Col>
@@ -97,15 +96,14 @@ const AboutUs = () => {
           <Row>
             <p className="about-text">
               {" "}
-              <i>Thư giãn thông minh, trải nghiệm tuyệt vời</i>{" "}
+              <i>Khách hàng là nguồn cảm hứng sáng tạo</i>{" "}
             </p>
             <p className="about-text">
-              Sofa văng có động cơ, đem đến trải nghiệm thư giãn thông minh tại
-              nhà. Với hệ thống động cơ mượt mà, bạn có thể điều chỉnh ghế theo
-              ý thích, như ngả lưng, nâng chân,... chỉ với 1 nút bấm. Sofa văng
-              có động cơ đến từ các thương hiệu hàng đầu: Chateau d’Ax, Milano &
-              Design, sử dụng chất liệu da thật và đệm mút êm ái, đem đến những
-              phút giây thư giãn êm ái tuyệt vời và tiện lợi.
+              Hiện nay, với sự phát triển lớn mạnh của mình, chúng tôi không chỉ
+              dừng lại ở quy mô thị trường trong nước mà tương lai gần sẽ vươn
+              ra thị trường thế giới để cùng hội nhập và đóng góp vào sự nghiệp
+              kinh tế của Đất nước. Để làm được điều đó chúng tôi cần sự đồng
+              hành của quý vị, những người làm nên sức sống của công ty.
             </p>
           </Row>
         </Col>

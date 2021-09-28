@@ -9,6 +9,7 @@ import { productActions } from "../../redux/actions/product.action";
 import PopupToDelete from "../PopupToDelete";
 import { useHistory } from "react-router";
 import { ClipLoader } from "react-spinners";
+import { userActions } from "../../redux/actions/user.actions";
 
 const ListProduct = () => {
   const [selectedId, setSelectedId] = useState("");
@@ -52,6 +53,10 @@ const ListProduct = () => {
     console.log("selectedId: ", selectedId);
     dispatch(productActions.deletSingleProduct(selectedId, history));
   };
+
+  useEffect(() => {
+    dispatch(userActions.getAmountUserOf7Day());
+  }, [dispatch]);
 
   return (
     <>

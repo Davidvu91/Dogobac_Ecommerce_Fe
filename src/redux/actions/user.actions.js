@@ -46,4 +46,22 @@ const getAllUsers = () => async (dispatch) => {
   }
 };
 
-export const userActions = { getSingleUserInfo, updateUserInfo, getAllUsers };
+// GET AMOUNT OF USERS IN RECENT 7 DATE:
+// http://localhost:5000/user/getamount
+const getAmountUserOf7Day = () => async (dispatch) => {
+  dispatch({ type: types.GET_AMOUT_USERS_7DATE_REQUEST });
+  try {
+    const data = await api.get("user/getamount");
+    console.log("data to create chart in User actions:", data);
+    dispatch({ type: types.GET_AMOUT_USERS_7DATE_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: types.GET_AMOUT_USERS_7DATE_FAILURE });
+  }
+};
+
+export const userActions = {
+  getSingleUserInfo,
+  updateUserInfo,
+  getAllUsers,
+  getAmountUserOf7Day,
+};

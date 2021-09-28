@@ -4,6 +4,7 @@ const initialState = {
   user: {},
   loading: false,
   listUsers: {},
+  chartData: {},
 };
 
 const userReducer = (state = initialState, action) => {
@@ -30,6 +31,13 @@ const userReducer = (state = initialState, action) => {
     case types.GET_ALL_USERS_SUCCESS:
       return { ...state, listUsers: payload, loading: false };
     case types.GET_ALL_USERS_FAILURE:
+      return { ...state, loading: false };
+    // GET USERS OF RECENT 7 DATES:
+    case types.GET_AMOUT_USERS_7DATE_REQUEST:
+      return { ...state, loading: true };
+    case types.GET_AMOUT_USERS_7DATE_SUCCESS:
+      return { ...state, loading: false, chartData: payload };
+    case types.GET_AMOUT_USERS_7DATE_FAILURE:
       return { ...state, loading: false };
 
     default:

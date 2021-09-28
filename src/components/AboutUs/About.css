@@ -41,6 +41,7 @@
 }
 
 .about-img-container {
+  overflow: hidden;
 }
 
 .about-img {
@@ -48,6 +49,13 @@
   border: 1px solid lightgray;
   border-radius: 25px;
   padding: 2px;
+  transition-duration: 0.2s;
+  overflow: hidden;
+}
+
+.about-img-container img:hover {
+  transform: scale(1.05);
+  transition-duration: 0.2s;
 }
 
 .about-text {
