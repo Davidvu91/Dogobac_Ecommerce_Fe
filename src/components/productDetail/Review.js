@@ -18,12 +18,13 @@ const Review = ({ product }) => {
             <Card.Img src={review.owner.avataUrl} className="review-image" />
           </div>
           <div className="review-content-box">
+            <div className="reivew-name">{review.owner.name}</div>
             <div>
               <div className="star-rating-name">
                 <div className="reivew-star">
                   <RatingView ratingValue={review.rating} size="20" />
                 </div>
-                <div className="reivew-name">{review.owner.name}</div>
+
                 <div className="reivew-createdAt">
                   {" "}
                   <span>Ngày tạo: </span>

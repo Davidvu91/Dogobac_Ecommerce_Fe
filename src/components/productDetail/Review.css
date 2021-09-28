@@ -14,11 +14,15 @@
 }
 .star-rating-name {
   display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
 }
 
 .reivew-name {
   font-family: Montserrat;
-  margin-left: 10px;
+  margin-left: 15px;
+  font-size: larger;
+  font-weight: 600;
 }
 
 .reivew-star {
@@ -27,17 +31,20 @@
 
 .review-content {
   font-family: Montserrat;
+  margin-left: 10px;
 }
 
 .review-card {
   display: flex;
   margin-bottom: 15px;
   padding-bottom: 15px;
+  border-bottom: 1px solid lightgray;
 }
 
 .review-img-box {
   padding-right: 5px;
-  width: 10%;
+  width: 12%;
+  padding-top: 5px;
 }
 
 .review-image {
@@ -45,9 +52,10 @@
 }
 
 .review-content-box {
-  width: 90%;
+  width: 88%;
 }
 .reivew-createdAt {
   font-family: Montserrat;
   margin-left: 10px;
+  font-style: italic;
 }

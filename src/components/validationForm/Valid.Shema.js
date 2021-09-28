@@ -6,7 +6,7 @@ export const SignupSchema = Yup.object().shape({
     .max(100, "Quá dài!")
     .required("Bạn chưa nhập tên!"),
   password: Yup.string()
-    .min(8, "Quá ngắn!")
+    .min(8, "Mật khẩu tối thiểu 8 ký tứ!")
     .max(100, "Quá dài!")
     .required("Bạn chưa tạo password!"),
   email: Yup.string()

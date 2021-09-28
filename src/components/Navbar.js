@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
@@ -53,7 +53,7 @@ const Navbarr = () => {
                   to="/auth/register"
                   className="nav-title-layout"
                 >
-                  Register
+                  Đăng ký
                 </Nav.Link>
 
                 <Nav.Link
@@ -61,7 +61,7 @@ const Navbarr = () => {
                   to="/auth/login"
                   className="nav-title-layout"
                 >
-                  Login
+                  Đăng nhập
                 </Nav.Link>
               </>
             ) : role === 0 ? (
@@ -76,7 +76,7 @@ const Navbarr = () => {
                 </Nav.Link>
 
                 <Nav.Link className="nav-title-layout" onClick={handleLogOut}>
-                  Log out
+                  Đăng xuất
                 </Nav.Link>
               </>
             ) : (

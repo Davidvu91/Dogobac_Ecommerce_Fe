@@ -74,13 +74,31 @@ const FooterNew = () => {
             <Col lg={2} md={2} xs={12} className="footer-subBox">
               <Row className=" footer-sub-container">
                 <Col lg={2} md={2} xs={2} className="footer-main-icon">
-                  <Link className="link-class" to="/">
+                  <Link
+                    className="link-class"
+                    to={{
+                      pathname: "https://www.facebook.com/dogobac0982781221",
+                    }}
+                    target="_blank"
+                  >
                     <i class="fab fa-facebook-square icon fa-2x"> </i>
                   </Link>
-                  <Link className="link-class" to="/">
+                  <Link
+                    className="link-class"
+                    to={{
+                      pathname: "https://www.facebook.com/dogobac0982781221",
+                    }}
+                    target="_blank"
+                  >
                     <i class="fab fa-twitter-square icon fa-2x"></i>
                   </Link>
-                  <Link className="link-class" to="/">
+                  <Link
+                    className="link-class"
+                    to={{
+                      pathname: "https://www.facebook.com/dogobac0982781221",
+                    }}
+                    target="_blank"
+                  >
                     <i class="fab fa-instagram-square icon fa-2x"></i>
                   </Link>
                 </Col>

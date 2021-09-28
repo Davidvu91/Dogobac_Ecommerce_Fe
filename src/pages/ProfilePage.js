@@ -34,7 +34,7 @@ const ProfilePage = () => {
           <Card className="profileStyle">
             <Card.Img variant="top" src={profile?.avataUrl} />
             <div className="profile-content">
-              <Card.Title>{profile?.name}</Card.Title>
+              <Card.Title className="profile-name">{profile?.name}</Card.Title>
               <Card.Text>{profile?.email}</Card.Text>
               <Card.Text>{profile?.phone}</Card.Text>
               <Card.Text>{profile?.address}</Card.Text>
@@ -46,7 +46,9 @@ const ProfilePage = () => {
           {/* MODALS: */}
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Update Your Profile</Modal.Title>
+              <Modal.Title className="modal-title">
+                Update Your Profile
+              </Modal.Title>
             </Modal.Header>
 
             <UpdateProfile handleClose={handleClose} profile={profile} />

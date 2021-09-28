@@ -69,7 +69,7 @@ const Login = () => {
             </div>
 
             <div className="lg-rg-content">
-              <p>Already has an account? </p>
+              <p>Bạn chưa có tài khoản? </p>
               <NavLink as={Link} to="/auth/register" style={{ color: "blue" }}>
                 Đăng Ký
               </NavLink>

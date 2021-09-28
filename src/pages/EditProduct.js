@@ -97,7 +97,7 @@ const EditProduct = () => {
   };
 
   return (
-    <Container>
+    <Container style={{ fontFamily: "Montserrat" }}>
       <Row>
         <Col lg={2} md={3}>
           <SideBar />

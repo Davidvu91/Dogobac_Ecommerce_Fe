@@ -5,11 +5,6 @@
 .category-col {
   cursor: pointer;
 }
-/* .category-col:hover {
-  transform: scale(1.01);
-  transition: 0.25s;
-  transition-duration: 0.3s;
-} */
 
 .category-item {
   padding: 10px;
@@ -35,5 +30,5 @@
 
 .category-text {
   font-family: Montserrat;
-  font-weight: bold;
+  font-weight: 400;
 }

@@ -8,7 +8,7 @@ const SearchBox = ({ searchInput, handleSearchChange, handleSubmit }) => {
       <Form className="d-flex" onSubmit={handleSubmit}>
         <FormControl
           className="mr-2"
-          placeholder="Search..."
+          placeholder="Tìm sản phẩm..."
           value={searchInput}
           onChange={handleSearchChange}
         />
@@ -18,7 +18,7 @@ const SearchBox = ({ searchInput, handleSearchChange, handleSubmit }) => {
           type="submit"
           onSubmit={handleSubmit}
         >
-          Search...
+          Tìm...
         </Button>
       </Form>
     </div>

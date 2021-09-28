@@ -18,13 +18,13 @@ const MainImage = ({ product }) => {
       autoPlay
     >
       <div>
-        <img src={product.imageUrl[0]} alt="Product" />
+        <img src={product?.imageUrl[0]} alt="Product" />
       </div>
       <div>
-        <img src={product.imageUrl[1]} alt="Product" />
+        <img src={product?.imageUrl[1]} alt="Product" />
       </div>
       <div>
-        <img src={product.imageUrl[2]} alt="Product" />
+        <img src={product?.imageUrl[2]} alt="Product" />
       </div>
     </Carousel>
   );

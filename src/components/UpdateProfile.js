@@ -57,7 +57,7 @@ const UpdateProfile = ({ handleClose, profile }) => {
   };
 
   return (
-    <div style={{ width: "60%", margin: "auto" }}>
+    <div style={{ width: "60%", margin: "auto", fontFamily: "Montserrat" }}>
       <Form onSubmit={handleSubmit} className="loginForm">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
