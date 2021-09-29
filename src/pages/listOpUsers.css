@@ -15,7 +15,9 @@
 
 .image-dashboard {
   width: 100%;
-  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 3px;
 }
 
 .dash-row {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import SideBar from "../components/dashBoard/SideBar";
@@ -6,8 +6,11 @@ import { userActions } from "../redux/actions/user.actions";
 import "./listOpUsers.css";
 import Moment from "react-moment";
 import { ClipLoader } from "react-spinners";
+import DBPagination from "../components/dashBoard/DBPagination";
 
 const ListOfUsers = () => {
+  const [page, setPage] = useState(1);
+  const limit = 6;
   const data = useSelector((state) => state.userReducer.listUsers);
   const loading = useSelector((state) => state.userReducer.loading);
   console.log("data in dash board:", data);
@@ -15,6 +18,7 @@ const ListOfUsers = () => {
   console.log("tong so users la:", totalUsers);
   const users = data?.data?.data?.data;
   console.log("list of user in dash board:", users);
+  const totalPage = Math.ceil(totalUsers / limit);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -48,8 +52,7 @@ const ListOfUsers = () => {
                           <img
                             src={user.avataUrl}
                             alt="user img"
-                            className="image-dashboard  "
-                            style={{ borderRadius: "50%" }}
+                            className="image-dashboard "
                           />
                         </Col>
                         <Col lg={2} md={2} className="userName-box dash-box">
@@ -92,6 +95,13 @@ const ListOfUsers = () => {
           </Row>
         </Container>
       )}
+      <Row>
+        <DBPagination
+          pageNum={page}
+          setPageNum={setPage}
+          totalPageNum={totalPage}
+        />
+      </Row>
     </>
   );
 };

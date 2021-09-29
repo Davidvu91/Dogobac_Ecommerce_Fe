@@ -41,3 +41,8 @@ p {
   background-color: rgb(238 77 45);
   width: 100%;
 }
+
+.form-control:focus {
+  border-color: #ee4d2d9e !important;
+  box-shadow: 0 0 0 0.25rem rgb(240 186 175 / 28%) !important;
+}

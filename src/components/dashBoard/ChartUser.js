@@ -83,7 +83,7 @@ const ChartUser = () => {
                     ],
                     datasets: [
                       {
-                        label: "Register: ",
+                        label: "New Registers ",
                         backgroundColor: [
                           colors[0],
                           colors[1],
