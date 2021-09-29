@@ -14,10 +14,10 @@ const addToCart = (product, passData, history) => async (dispatch) => {
   try {
     await api.post(`/cart/add/${productId}`, passData);
     dispatch({ type: types.ADD_PRODUCT_TO_CART_SUCCESS, payload: null });
-    toast.success(`Add ${product.name} to cart successfully!`);
+    toast.success(`THÊM SẢN PHẨM THÀNH CÔNG!`);
   } catch (error) {
     dispatch({ type: types.ADD_PRODUCT_TO_CART_FAILURE, payload: null });
-    toast.error(`Add ${product.name} Failure`);
+    toast.error(`THÊM SẢN PHẨM THẤT BẠI!`);
     history.push("/auth/login");
   }
 };

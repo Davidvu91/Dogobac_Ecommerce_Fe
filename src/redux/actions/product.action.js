@@ -11,7 +11,7 @@ const createProduct = (formData) => async (dispatch) => {
     const data = await api.post("/product/create", formData);
     console.log(data);
     dispatch({ type: types.POST_CREATE_PRODUCT_SUCCESS, payload: data });
-    toast.success("create product successfully");
+    toast.success("TẠO SẢN PHẨM MỚI THÀNH CÔNG!");
   } catch (error) {
     dispatch({ type: types.POST_CREATE_PRODUCT_FAILURE });
   }
@@ -64,11 +64,11 @@ const upadateSingleProduct =
       const data = await api.put(`product/${productId}`, passData);
       console.log("updated product in actions:", data);
       dispatch({ type: types.UPDATE_SIGLE_PRODUCT_SUCCESS, payload: data });
-      toast.success("update product successfully");
+      toast.success("SỬA SẢN PHẨM THÀNH CÔNG!");
       history.push("/admin/dashboard");
     } catch (error) {
       dispatch({ type: types.UPDATE_SIGLE_PRODUCT_FAILURE, payload: null });
-      toast.error("something wrong...");
+      toast.error("SỬA SẢN PHẨM THẤT BẠI");
     }
   };
 

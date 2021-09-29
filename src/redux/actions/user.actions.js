@@ -27,7 +27,7 @@ const updateUserInfo = (passData, history) => async (dispatch) => {
     console.log("Updated user info:", data);
     dispatch({ type: types.UPDATA_SINGLE_USER_SUCCESS, payload: data });
     history.push("/auth/profile");
-    toast.success("Update Your Profile successfully!");
+    toast.success("CẬP NHẬT THÔNG TIN THÀNH CÔNG!");
   } catch (error) {
     dispatch({ type: types.UPDATA_SINGLE_USER_FAILURE, payload: null });
   }

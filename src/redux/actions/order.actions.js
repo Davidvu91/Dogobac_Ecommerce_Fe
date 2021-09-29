@@ -1,16 +1,22 @@
 import * as types from "../constants/order.constants";
 import api from "../../apiService";
-import { toast } from "react-toastify";
+import { cartActions } from "./cart.actions";
 
 //CREATE AN ORDER:
 // http://localhost:5000/order/create
 const createOrder = (passData) => async (dispatch) => {
-  console.log(passData);
+  console.log("passData in create Order action", passData);
+  const cartIds = passData.items;
+  console.log("array of cartId: ", cartIds);
   dispatch({ type: types.POST_CREATE_ORDER_REQUEST });
   try {
     const data = await api.post("/order/create", passData);
     console.log("data:", data);
     dispatch({ type: types.POST_CREATE_ORDER_SUCCESS, payload: "paid" });
+    for (let i = 0; i < cartIds.length; i++) {
+      dispatch(cartActions.deleteCart(cartIds[i]));
+    }
+    console.log("haha, xoa cart sau khi mua");
   } catch (error) {
     dispatch({ type: types.POST_CREATE_ORDER_FAILURE });
   }
@@ -37,7 +43,7 @@ const updateStatusOfOrder = (orderId, passData) => async (dispatch) => {
     const data = await api.put(`order/update/${orderId}`, passData);
     console.log("updated product in actions:", data);
     dispatch({ type: types.PUT_UPDATE_ORDER_SUCCESS, payload: data });
-    toast.success("update status successfully");
+
     dispatch(orderActions.getAllOrder());
   } catch (error) {
     dispatch({ type: types.PUT_UPDATE_ORDER_FAILURE, payload: null });

@@ -16,10 +16,10 @@ const register = (formData, history) => async (dispatch) => {
     console.log(data);
     dispatch({ type: types.REGISTER_SUCCESS, payload: data.data.data });
     history.push("/auth/login");
-    toast.success("Register successfully!");
+    toast.success("TẠO TÀI KHOẢN THÀNH CÔNG!");
   } catch (error) {
     dispatch({ type: types.REGISTER_FAILURE });
-    toast.error("Register Failure!");
+    toast.error("TẠO TÀI KHOẢN THẤT BẠI!");
   }
 };
 
@@ -38,10 +38,10 @@ const login = (formData, history) => async (dispatch) => {
     dispatch({ type: types.LOGIN_SUCCESS, payload: data });
     dispatch(userActions.getSingleUserInfo());
     history.push("/");
-    toast.success("Login successfully!");
+    toast.success("ĐĂNG NHẬP THÀNH CÔNG!");
   } catch (error) {
     dispatch({ type: types.LOGIN_FAILURE });
-    toast.error("Login Failure!");
+    toast.error("ĐĂNG NHẬP THẤT BẠI!");
   }
 };
 
