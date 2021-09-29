@@ -11,9 +11,31 @@ const UpdateProfile = ({ handleClose, profile }) => {
     name: profile && profile.name,
     email: profile && profile.email,
     address: profile && profile.address,
-    phone: profile && profile.phone,
   });
   const [getImage, setGetImage] = useState(profile && profile.avataUrl);
+
+  // Xử lý valid phone numbers:
+  // 1.Lấy số phone mới từ form:
+  const [phones, setPhones] = useState(profile && profile.phone);
+  const handlePhoneChange = (e) => {
+    setPhones(e.target.value);
+  };
+  console.log("so phone moi la: ", phones);
+  // 2. validate phone numbers:
+  let errorMess = {};
+
+  function isVietnamesePhoneNumber(number) {
+    let isTrue = /([+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/.test(
+      number
+    );
+    if (!isTrue) {
+      errorMess.message = "Số Đt không hợp lệ";
+    } else console.log("good job");
+  }
+
+  isVietnamesePhoneNumber(phones);
+  console.log("errormessage:", errorMess);
+  console.log(Object.keys(errorMess).length === 0);
 
   const handleOnChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -40,7 +62,7 @@ const UpdateProfile = ({ handleClose, profile }) => {
     name: formData.name,
     email: formData.email,
     address: formData.address,
-    phone: formData.phone,
+    phone: phones,
     avataUrl: getImage,
   };
   console.log("data befor dispatch:", passData);
@@ -50,6 +72,9 @@ const UpdateProfile = ({ handleClose, profile }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if ((Object.keys(errorMess).length === 0) === false) {
+      return;
+    }
     dispatch(userActions.updateUserInfo(passData, history));
     setFormData({});
     setGetImage([]);
@@ -95,9 +120,12 @@ const UpdateProfile = ({ handleClose, profile }) => {
             type="text"
             placeholder="Số điện thoại"
             name="phone"
-            value={formData.phone}
-            onChange={handleOnChange}
+            value={phones}
+            onChange={handlePhoneChange}
           />
+          <div style={{ color: "red", fontSize: "16" }}>
+            {errorMess.message}
+          </div>
         </Form.Group>
 
         {/* upload avata below*/}
