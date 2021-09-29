@@ -6,10 +6,15 @@ const Thankyou = () => {
   return (
     <Container className="thank-page">
       <Row>
-        <Col>
-          <img src="/thank-you.png" alt="thankyou-img" />
+        <Col xs={12} md={6} lg={6}>
+          <img
+            src="/thank_you.jpg"
+            alt="thankyou-img"
+            className="thank-page-img"
+            style={{ width: "100%" }}
+          />
         </Col>
-        <Col>
+        <Col xs={12} md={6} lg={6}>
           <div>
             {" "}
             <h4 className="thanks-title">CẢM ƠN BẠN ĐÃ MUA HÀNG</h4>
@@ -34,7 +39,7 @@ const Thankyou = () => {
               <p>Xin Cảm Ơn!</p>{" "}
             </i>
           </div>
-          <div>
+          <div style={{ marginTop: "50px", textAlign: "center" }}>
             {" "}
             <Button variant="" className="single-btn">
               <Link to="/">Tiếp Tục Mua Hàng!</Link>
