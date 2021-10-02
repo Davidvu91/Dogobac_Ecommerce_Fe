@@ -31,7 +31,7 @@ const ProductDetailPage = () => {
   return (
     <>
       {loading ? (
-        <div className="text-center">
+        <div className="text-center loading-time">
           <ClipLoader color="#f86c6b" size={150} loading={true} />
         </div>
       ) : (

@@ -18,7 +18,8 @@ const register = (formData, history) => async (dispatch) => {
     history.push("/auth/login");
     toast.success("TẠO TÀI KHOẢN THÀNH CÔNG!");
   } catch (error) {
-    dispatch({ type: types.REGISTER_FAILURE });
+    const errorMessage = error.error[0].message;
+    dispatch({ type: types.REGISTER_FAILURE, payload: errorMessage });
     toast.error("TẠO TÀI KHOẢN THẤT BẠI!");
   }
 };

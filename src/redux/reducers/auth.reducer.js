@@ -5,6 +5,7 @@ const initialState = {
   user: {},
   loading: false,
   isAuthenticated,
+  message: {},
 };
 
 const authReducer = (state = initialState, action) => {
@@ -21,7 +22,7 @@ const authReducer = (state = initialState, action) => {
         isAuthenticated: true,
       };
     case types.REGISTER_FAILURE:
-      return { ...state, loading: false };
+      return { ...state, loading: false, message: payload };
     // LOGIN
     case types.LOGIN_REQUEST:
       return { ...state, loading: true };
